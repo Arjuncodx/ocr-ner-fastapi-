@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OCR Model — Upload</title>
+
+  <style>
+    /* -----------------------
+       Elite SaaS Style Theme
+    ------------------------*/
+    :root {
+      --bg1: #0f172a;
+      --bg2: #1e293b;
+      --accent1: #4f46e5;
+      --accent2: #06b6d4;
+      --accent3: #22c55e;
+      --glass-bg: rgba(255,255,255,0.08);
+      --glass-border: rgba(255,255,255,0.18);
+      --radius: 16px;
+    }
+
+    /* Animated background gradient */
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+      color: #f8fafc;
+      background: linear-gradient(-45deg, var(--bg1), var(--bg2), #111827, #0f172a);
+      background-size: 400% 400%;
+      animation: gradientShift 18s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Floating blurred orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      animation: float 12s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    .orb.blue { background: var(--accent1); width: 400px; height: 400px; top: -80px; left: -120px; }
+    .orb.teal { background: var(--accent2); width: 320px; height: 320px; bottom: 60px; right: -100px; animation-delay: 3s; }
+    .orb.green { background: var(--accent3); width: 280px; height: 280px; top: 200px; right: 20%; animation-delay: 6s; }
+    @keyframes float {
+      from { transform: translateY(0px) translateX(0px) scale(1); }
+      to { transform: translateY(-40px) translateX(30px) scale(1.05); }
+    }
+
+    header {
+      z-index: 10;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    header .logo {
+      font-weight: 800;
+      font-size: 20px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    header nav a {
+      margin-left: 18px;
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: var(--accent2); }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* Left content */
+    .content h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .content h1 span {
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .content p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 16px;
+    }
+    .feature {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      padding: 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.35);
+    }
+
+    /* Upload card */
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(16px);
+      padding: 28px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+      color: #f1f5f9;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .drop {
+      border: 2px dashed rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      padding: 40px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      transition: all 0.2s ease;
+    }
+    .drop.dragover {
+      border-color: var(--accent2);
+      background: rgba(255,255,255,0.08);
+    }
+    .btn {
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn.primary {
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      color: white;
+      box-shadow: 0 6px 20px rgba(79,70,229,0.4);
+    }
+    .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,70,229,0.6); }
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #f1f5f9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+      color: #94a3b8;
+      z-index: 5;
+      position: relative;
+    }
+
+    @media (max-width: 960px) {
+      .container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating decorative orbs -->
+  <div class="orb blue"></div>
+  <div class="orb teal"></div>
+  <div class="orb green"></div>
+
+  <header>
+    <div class="logo">OCR Model</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/ocr">Image OCR</a>
+      <a href="/ner">NER</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Left -->
+      <div class="content">
+        <h1>Next-gen <span>OCR + NER</span> for documents</h1>
+        <p>Upload PDFs or images and get instant text extraction and structured entity recognition with high accuracy. Built with Tesseract, EasyOCR, and spaCy NER.</p>
+        <div class="features">
+          <div class="feature">⚡ Fast preprocessing</div>
+          <div class="feature">🤖 Tesseract + EasyOCR</div>
+          <div class="feature">🔎 spaCy NER model</div>
+          <div class="feature">📂 Download results</div>
+        </div>
+      </div>
+
+      <!-- Right Upload Card -->
+      <div class="card">
+        <h2>Upload & Process</h2>
+        <div id="dropArea" class="drop">Drop PDF here or click to select</div>
+        <input id="fileInput" type="file" accept="application/pdf" style="display:none" />
+        <button id="chooseBtn" class="btn primary">Choose PDF</button>
+        <button id="uploadBtn" class="btn primary" disabled>Upload</button>
+        <button id="gotoOcr" class="btn secondary" onclick="location.href='/ocr'">Image OCR</button>
+        <div id="fileHolder" style="margin-top:14px;"></div>
+        <div id="status" style="margin-top:10px; font-weight:600;"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>© {{ year }} OCR Model — All rights reserved.</footer>
+
+  <script>
+    // same JS logic from your previous index.html for handling uploads
+  </script>
+</body>
+</html>

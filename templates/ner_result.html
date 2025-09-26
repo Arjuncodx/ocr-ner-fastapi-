@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NER — Results</title>
+<style>
+  :root{ --bg1:#0f172a; --glass-border: rgba(255,255,255,0.12); --radius:14px; --accent1:#4f46e5; --accent2:#06b6d4; }
+  html,body{ height:100%; margin:0; font-family:Inter, system-ui, sans-serif; color:#eaf4ff; background: linear-gradient(-45deg,var(--bg1),#07122a); }
+  header{ padding:18px 36px; display:flex; justify-content:space-between; align-items:center; }
+  .logo{ font-weight:800; background:linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+
+  main{ padding:110px 20px 80px; display:flex; justify-content:center; }
+  .wrap{ width:min(1180px,94%); display:grid; grid-template-columns: 520px 1fr; gap:28px; align-items:start; }
+
+  .card{ background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); padding:18px; border-radius:14px; border:1px solid var(--glass-border); color:#eaf4ff; }
+  img.annot{ width:100%; border-radius:10px; display:block; border:1px solid rgba(255,255,255,0.04); }
+
+  .entities h3{ margin:0 0 8px 0; color:#eaf4ff; }
+  .entities ul{ padding-left:18px; color:#bcd7ee; }
+
+  .actions{ margin-top:12px; display:flex; gap:10px; align-items:center; }
+  .btn{ padding:10px 14px; border-radius:10px; font-weight:800; border:none; cursor:pointer; }
+  .btn.primary{ background: linear-gradient(90deg,var(--accent1),var(--accent2)); color:white; }
+  .btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,0.06); color:#e6f0ff; }
+
+  footer{ text-align:center; padding:16px; color:#93a7c2; }
+
+  @media(max-width:980px){ .wrap{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header><div class="logo">OCR Model</div></header>
+
+<main>
+  <div class="wrap">
+    <div class="card">
+      <h2 style="margin:0 0 8px 0; color:#dff7ff">NER Result</h2>
+
+      {% if error %}
+        <div style="color:#ffb4b4; font-weight:800">❌ {{ error }}</div>
+      {% else %}
+        {% if image_file %}
+          <img src="/download/{{ image_file }}" class="annot" alt="Annotated image" />
+        {% else %}
+          <div style="color:#bcd7ee">No annotated image available.</div>
+        {% endif %}
+
+        <div class="actions">
+          {% if image_file %}<a class="btn primary" href="/download/{{ image_file }}" download>⬇ Download annotated image</a>{% endif %}
+          {% if text_file %}<a class="btn ghost" href="/download/{{ text_file }}">⬇ Download entities (.txt)</a>{% endif %}
+          <a class="btn ghost" href="/ner">↩ Analyze another</a>
+          <a class="btn ghost" href="/">↩ Home</a>
+        </div>
+      {% endif %}
+    </div>
+
+    <aside class="card entities">
+      <h3>Extracted Entities</h3>
+      {% if error %}
+        <div style="color:#ffb4b4; font-weight:800">No results to show.</div>
+      {% else %}
+        <ul>
+          {% for key, items in entities.items() %}
+            <li><strong>{{ key }}:</strong>
+              {% if items and items|length>0 %}
+                {{ items | join(', ') }}
+              {% else %}<em>—</em>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        <p style="color:#bcd7ee; margin-top:12px;">Tip: Names shown in small font on image to reduce occlusion. Use download to inspect full results.</p>
+      {% endif %}
+    </aside>
+  </div>
+</main>
+
+<footer>© {{ year }} OCR+NER — All rights reserved.</footer>
+</body>
+</html>

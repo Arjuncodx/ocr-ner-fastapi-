@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ title if title else 'OCR Result' }}</title>
+  <style>
+    :root{
+      --bg1:#071028; --bg2:#0b1220; --panel:#0e2333;
+      --muted:#9fb6d0; --text:#e6f0ff; --accent:#4f46e5; --accent2:#06b6d4;
+      --ok:#16a34a; --err:#ef4444;
+    }
+    *{ box-sizing:border-box }
+    html,body{ margin:0; padding:0; min-height:100%; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:linear-gradient(180deg,var(--bg1),var(--bg2)); }
+    header{ display:flex; align-items:center; justify-content:space-between; padding:18px 28px; }
+    .brand{ font-weight:800; font-size:18px; background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .nav a{ color:#cde7ff; text-decoration:none; margin-left:14px; padding:8px 10px; border-radius:8px; border:1px solid rgba(255,255,255,0.08); }
+    .nav a:hover{ background:rgba(255,255,255,0.05); }
+
+    main{ display:grid; gap:24px; grid-template-columns: 1fr 360px; padding:32px; max-width:1200px; margin:0 auto; }
+    @media (max-width:1100px){ main{ grid-template-columns:1fr; } }
+
+    .card{ background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015)); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:22px; }
+    h2{ margin:0 0 6px 0; font-size:22px; }
+    .meta{ color:var(--muted); font-size:14px; margin:6px 0; }
+    .ok{ color:var(--ok); font-weight:800; }
+    .err{ color:var(--err); font-weight:800; }
+
+    .actions{ display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 8px; }
+    .btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700; border:1px solid rgba(255,255,255,.08); color:var(--text); }
+    .btn.primary{ background:linear-gradient(90deg,var(--accent),var(--accent2)); border:none; }
+    .btn.ghost{ background:transparent; }
+    .btn:hover{ filter:brightness(1.05); }
+
+    .section-title{ margin:14px 0 6px; color:#dff7ff; }
+    pre.ocr-text{
+      white-space:pre-wrap; word-wrap:break-word; background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06); border-radius:10px; padding:14px;
+      color:#cfe6ff; max-height:420px; overflow:auto;
+    }
+
+    .aside{ color:#bcd7ee; }
+    ul.tip{ margin:8px 0 0; padding-left:18px; }
+    footer{ text-align:center; padding:20px; color:#87a6c1; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">OCR Model</div>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/ocr">OCR</a>
+      <a href="/ner">NER</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>OCR Result</h2>
+
+      {% if error %}
+        <div class="err">❌ {{ error }}</div>
+        <p class="meta">Please try again or check the server logs.</p>
+      {% else %}
+        <div class="ok">✅ OCR completed</div>
+        {% if filename %}
+          <p class="meta"><strong>Saved as:</strong> {{ filename }}</p>
+        {% endif %}
+        <p class="meta"><strong>Source chosen:</strong> {{ ocr_source if ocr_source else 'tesseract/easyocr' }}</p>
+
+        <div class="actions">
+          {% if filename %}
+            <a class="btn primary" href="/ocr/download/{{ filename }}">⬇ Download OCR .txt</a>
+          {% endif %}
+          {% if summary_file %}
+            <a class="btn ghost" href="/download/{{ summary_file }}">⬇ Download summary (.txt)</a>
+          {% endif %}
+          <a class="btn ghost" href="/ocr">↩ OCR another</a>
+          <a class="btn ghost" href="/">↩ Home</a>
+        </div>
+
+        {% if ocr_text %}
+          <h3 class="section-title">Raw OCR text</h3>
+          <pre class="ocr-text">{{ ocr_text | e }}</pre>
+        {% endif %}
+
+        {% if summary_preview %}
+          <h3 class="section-title">Extracted &amp; formatted summary</h3>
+          <pre class="ocr-text">{{ summary_preview | e }}</pre>
+        {% endif %}
+      {% endif %}
+    </section>
+
+    <aside class="card aside">
+      <h3 style="margin:0 0 6px 0;">Quick tips to improve OCR</h3>
+      <ul class="tip">
+        <li>Use high-resolution images (≥ 300 dpi).</li>
+        <li>Crop tightly to the document region.</li>
+        <li>Avoid shadows, tilt, and reflections.</li>
+        <li>Prefer clear, plain backgrounds.</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>© {{ year }} {{ site_name if site_name else 'OCR Model' }} — All rights reserved.</footer>
+</body>
+</html>
