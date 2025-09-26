@@ -1,0 +1,6 @@
+Chosen: EasyOCR (conf: 0.87)
+Tesseract length: 522, confidence: 91.99
+EasyOCR length: 472, confidence: 0.87
+
+Chosen text:
+Cell 8099948528 8466045457 email lictsrikant@gmailcom LIFE INSURANCE CORPORATION OF INDIA seosrikantht@gmail.com THATHINENI SRIKANTH Insurance Advisor Agent Code No. 0316164Y LIFE INSURANCE CORPORATION OF INDIA Br. Off. LIC Office, Trimulgherry, Secbad 500 016. Add. Borabanda, Hyderabad ~ 500 018. lictsrikant8099948528.blogspotin; interviewsinhyderabad blogspot.in facebookcomllictsrikant8099948528, facebook com/thathineni.srikanth.9 Promote your business online (PYBO)

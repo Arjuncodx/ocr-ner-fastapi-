@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+jinja2
+aiofiles
+easyocr
+pytesseract
+opencv-python-headless
+pillow
+spacy
+pandas
