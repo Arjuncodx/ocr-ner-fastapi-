@@ -1,0 +1,5 @@
+﻿seller,seller_address,date,doc_no,bill_to,ship_to,item,quantity,unit_price,tax_rate,tax_amount,line_total,subtotal,tax_total,total,currency,payment_method,payment_status,notes
+East Repair Inc,1912 Harvest Lane New York; NY 12210,2019-11-02,US-001,John Smith,John Smith,,,,,,145.00,145.00,9.06,154.06,USD,,,
+East Repair Inc,1912 Harvest Lane New York; NY 12210,2019-11-02,US-001,John Smith,John Smith,Front and rear brake cables,1,100.00,,,100.00,145.00,9.06,154.06,USD,,,
+East Repair Inc,1912 Harvest Lane New York; NY 12210,2019-11-02,US-001,John Smith,John Smith,New set of pedal arms,2,15.00,,,30.00,145.00,9.06,154.06,USD,,,
+East Repair Inc,1912 Harvest Lane New York; NY 12210,2019-11-02,US-001,John Smith,John Smith,Labor 3hrs,3,5.00,,,15.00,145.00,9.06,154.06,USD,,,

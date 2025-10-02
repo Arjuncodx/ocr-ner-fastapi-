@@ -1,0 +1,4 @@
+﻿description,quantity,unit_price,tax_rate,tax_amount,line_total,notes
+Frontend design restructure,1,9999.0,,,9999.0,
+Custom icon package,1,975.0,,,950.0,
+Gandhi mouse pad,1,99.0,,,297.0,

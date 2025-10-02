@@ -1,0 +1,5 @@
+﻿seller,date,doc_no,bill_to,line_item_description,line_item_quantity,line_item_unit_price,line_item_amount,subtotal,tax,total,currency
+Saffron Design,2019-01-29,IN-001,"Kavindra Mannan, Delhi 400077",,,,,12246.00,12.0%,13715.52,
+Frontend design restructure,1,9999.00,9999.00,,,,,,,,
+Custom icon package,1,975.00,950.00,,,,,,,,
+Gandhi mouse pad,1,99.00,297.00,,,,,,,,

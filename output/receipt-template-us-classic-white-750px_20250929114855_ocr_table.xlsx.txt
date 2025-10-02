@@ -1,0 +1,2 @@
+﻿SELLER/STORE,DATE,DOC NO/INVOICE NO,BILL-TO,LINE ITEMS,SUBTOTAL,TAX,TOTAL
+East Repair Inc,11/02/2019,US-001,"Bill To (no specific details provided, uncertain)","Front and rear brake cables: QTY=100.00, UNIT PRICE=$100.00, AMOUNT=$100.00",$145.00,6.25%,$154.06

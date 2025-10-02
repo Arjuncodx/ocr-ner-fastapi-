@@ -1,0 +1,4 @@
+﻿seller,seller_address,date,doc_no,bill_to,item,quantity,unit_price,tax_rate,tax_amount,line_total,subtotal,tax_total,total,currency,payment_method,payment_status,notes
+East Repair Inc.,"1912 Harvest Lane, New York; NY 12210",,US-001,John Smith,Front and rear brake cables,100.00,100.00,,145.00,145.00,9.06,154.06,,,Payment due within 15 days.,,
+East Repair Inc.,"1912 Harvest Lane, New York; NY 12210",,US-001,John Smith,New set of pedal arms,30.00,30.00,,145.00,145.00,9.06,154.06,,,Payment due within 15 days.,,
+East Repair Inc.,"1912 Harvest Lane, New York; NY 12210",,US-001,John Smith,Labor 3hrs,15.00,15.00,,145.00,145.00,9.06,154.06,,,Payment due within 15 days.,,

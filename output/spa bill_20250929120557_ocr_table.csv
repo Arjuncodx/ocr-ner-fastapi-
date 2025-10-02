@@ -1,0 +1,4 @@
+﻿seller,seller_address,date,doc_no,bill_to,item,quantity,unit_price,tax_rate,tax_amount,line_total,subtotal,tax_total,total,currency,payment_method,payment_status,notes
+Lotus Blossom Spa,"San Francisco, 94158-2230",,2025-100034,Gia Bruno,Colar Explosion Bottlo,,$28.00,,,$28.00,$138.00,,$138.00,USD,,,
+Lotus Blossom Spa,"San Francisco, 94158-2230",,2025-100034,Gia Bruno,Salt Rub Massage,,$0.00,,,$0.00,$138.00,,$138.00,USD,,,
+,,2025-02-09,,,,,,,,,,,,USD,Payin,,

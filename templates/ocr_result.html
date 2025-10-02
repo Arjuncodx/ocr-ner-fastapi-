@@ -75,6 +75,12 @@
           {% if summary_file %}
             <a class="btn ghost" href="/download/{{ summary_file }}">⬇ Download summary (.txt)</a>
           {% endif %}
+          {% if csv_file %}
+            <a class="btn primary" href="/download/{{ csv_file }}">⬇ Download CSV</a>
+          {% endif %}
+          {% if xlsx_file %}
+            <a class="btn primary" href="/download/{{ xlsx_file }}">⬇ Download Excel (.xlsx)</a>
+          {% endif %}
           <a class="btn ghost" href="/ocr">↩ OCR another</a>
           <a class="btn ghost" href="/">↩ Home</a>
         </div>

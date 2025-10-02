@@ -1,0 +1,5 @@
+﻿seller,seller_address,date,doc_no,bill_to,item,quantity,unit_price,tax_rate,tax_amount,line_total,subtotal,tax_total,total,currency,payment_method,payment_status,notes
+Saffron Design,"77 Namrata Bldg, Delhi; Delhi 400077",2019-01-29,IN-001,Kavindra Mannan,,,,,,12246.00,12246.00,469.52,13715.52,USD,,,
+Saffron Design,"77 Namrata Bldg, Delhi; Delhi 400077",2019-01-29,IN-001,Kavindra Mannan,Frontend design restructure,9999,9999.00,,,12246.00,12246.00,469.52,13715.52,USD,,,
+Saffron Design,"77 Namrata Bldg, Delhi; Delhi 400077",2019-01-29,IN-001,Kavindra Mannan,Custom icon package,975,950.00,,,950.00,12246.00,469.52,13715.52,USD,,,
+Saffron Design,"77 Namrata Bldg, Delhi; Delhi 400077",2019-01-29,IN-001,Kavindra Mannan,Gandhi mouse pad,99,297.00,,,297.00,12246.00,469.52,13715.52,USD,,,

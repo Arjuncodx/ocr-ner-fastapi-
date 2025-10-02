@@ -1,0 +1,4 @@
+﻿description,quantity,unit_price,tax_rate,tax_amount,line_total,notes
+Front and rear brake cables,,100.0,,,100.0,
+New set of pedal arms,,15.0,,,30.0,
+Labor 3hrs,,5.0,,,15.0,

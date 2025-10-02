@@ -1,0 +1,4 @@
+﻿seller/store,date,doc no/invoice no,bill-to,line items,subtotal,tax,total,currency,payment mode
+Lotus Blossom Spa,2025-02-09,Receipt 2025-100034,Gia Bruno,,USS138.00,None mentioned explicitly,USS138.00,US Dollar (USS),Paid in full by Gia Bruno
+Colar Explosion Bottlo,,1,USS28.00,,,,,,
+Salt Rub Massage,,1,USS10.00,,,,,,

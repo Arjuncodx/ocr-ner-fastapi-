@@ -1,0 +1,4 @@
+name,address1,address2,phone,fax,email,url
+Stanford,,,,,http: / /wulab stanford edu,
+Stanford,,,,,http: / /cvi stanfordedu,
+MEDICIN E,Cardiovascular Institute,"Joseph € Wu, MD, PhD",Director; Stanford Cardiovascular Institute,Professor Medicine (Cardiology) & Radiology,,

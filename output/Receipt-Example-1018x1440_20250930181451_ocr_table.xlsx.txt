@@ -1,0 +1,112 @@
+﻿text
+"DOCUMENT TYPE: Other
+EXECUTIVE SUMMARY:
+• Title guess: RECEIPT
+• Emails: machinery@big.com
+• Phones: 117
+44332
+• URLs: —
+
+CLEANED TEXT:
+RECEIPT
+Receipt number: 117
+44332
+Date of purchase: December 8, 2023
+Big Machinery, LLC
+Bill By
+3345,Diamond St, Orange City, ST
+Doe John
+9987
+Address: 1111, Flemming St, Yellow
+machinery@big.com
+City, AT 1121
+Item
+Quantity
+Unit Price
+Total
+Fuel Plastic Jug (10 gallons)
+01
+S34.00
+S34.00
+Gas Hose (5 feet)
+01
+S15.00
+S15.00
+Aluminum Screw (4 inches)
+100
+S0.87
+S87.00
+nothing follows
+Subtotal: S136.00
+Additional Charges
+Tax (12%): S16.32
+Total: S147.32
+
+RAW:
+RECEIPT
+Receipt number: 117
+44332
+Date of purchase: December 8, 2023
+Big Machinery, LLC
+Bill By
+3345,Diamond St, Orange City, ST
+Doe John
+9987
+Address: 1111, Flemming St, Yellow
+machinery@big.com
+City, AT 1121
+Item
+Quantity
+Unit Price
+Total
+Fuel Plastic Jug (10 gallons)
+01
+S34.00
+S34.00
+Gas Hose (5 feet)
+01
+S15.00
+S15.00
+Aluminum Screw (4 inches)
+100
+S0.87
+S87.00
+nothing follows
+Subtotal: S136.00
+Additional Charges
+Tax (12%): S16.32
+Total: S147.32
+
+RECEIPT
+Receipt number: 117
+44332
+Date of purchase: December 8, 2023
+Big Machinery, LLC
+Bill By
+3345,Diamond St, Orange City, ST
+Doe John
+9987
+Address: 1111, Flemming St, Yellow
+machinery@big.com
+City, AT 1121
+Item
+Quantity
+Unit Price
+Total
+Fuel Plastic Jug (10 gallons)
+01
+S34.00
+S34.00
+Gas Hose (5 feet)
+01
+S15.00
+S15.00
+Aluminum Screw (4 inches)
+100
+S0.87
+S87.00
+nothing follows
+Subtotal: S136.00
+Additional Charges
+Tax (12%): S16.32
+Total: S147.32"

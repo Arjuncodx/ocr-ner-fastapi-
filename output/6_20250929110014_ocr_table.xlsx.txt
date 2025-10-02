@@ -1,0 +1,2 @@
+﻿name,designation,org,phone,email
+THATHINENI SRIKANTH,Insurance Advisor Agent,LIFE INSURANCE CORPORATION OF INDIA,"+91-8099948528, +91-8466045457","licsrikant@gmail.com, seosrikantht@gmail.com, lictsrikant8099948528.blogspot.in, facebook.com/llictsrikant8o99948528, facebook.com/thathineni.srikanth.9"

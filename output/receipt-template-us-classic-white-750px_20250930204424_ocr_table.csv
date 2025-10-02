@@ -1,0 +1,4 @@
+﻿seller,date,doc_no/invoice_no,bill-to,ship-to,qty,description,unit_price,amount
+East Repair Inc,11/02/2019,US-001,"2 Court Square, New York; NY 12210",3787 Pineview Drive,100,Front and rear brake cables,100.00,100.00
+,,,,,1,New set of pedal arms,15.00,30.00
+,,,,,1,Labor 3hrs,5.00,15.00

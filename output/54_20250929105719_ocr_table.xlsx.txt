@@ -1,0 +1,2 @@
+﻿name,designation,org,address1,city,state,postal_code,country,phone,email
+"Joseph Wu, MD, PhD",Director; Stanford Cardiovascular Institute Professor Medicine (Cardiology) & Radiology,Stanford MEDICIN E Cardiovascular Institute,"265 Campus Drive, G-1120B",Stanford,CA,94305,MC-5454,"(650) 736-2246, (650) 725-7964","joewu@stanfordedu, http://cvi.stanford.edu"
