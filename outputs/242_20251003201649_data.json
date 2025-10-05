@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "primary_name": "Dr. S. Reddy",
+    "organization": "LEA Associates South India Rivate Ltd.",
+    "job_title": "Senior Consultant",
+    "primary_email": "tsr@lasaindia.com",
+    "secondary_email": "linmappagari@ymail.com",
+    "primary_phone": "+91-91778 82230",
+    "agent_code": "",
+    "address": "H. No: 1-4-879/54/1A, Street No. 8, Pat oad, Near Vijaya Sank, Lower Tank Bund, Gandhinagar, Hyderabad-500080 (A.P.) ind",
+    "city": "Hyderabad",
+    "state": "A.P.",
+    "country": "ind",
+    "postal_code": "500080",
+    "website": "wary lasaindia.com"
+  },
+  "summary": {
+    "headline": "LEA Associates South India Private Ltd. - Consulting Engineers & Planners",
+    "key_points": [
+      "Consulting engineers and planners based in Hyderabad, India",
+      "Provides services for transportation and other projects",
+      "Contact information: phone numbers, email addresses, and website"
+    ],
+    "full_summary": "LEA Associates South India Private Ltd. is a consulting engineering and planning company based in Hyderabad, India. They offer services for various projects, including transportation-related ones. You can reach out to them through their contact details provided.",
+    "document_type": "Company Profile"
+  },
+  "metadata": {},
+  "line_items": []
+}

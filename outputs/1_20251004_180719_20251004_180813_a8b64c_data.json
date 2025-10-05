@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "Company Name": "COMPANY NAME",
+    "Employee ID": "LOP Days",
+    "Bank Name": "Axis Bank",
+    "Bank Ac No": "5412XXXX20",
+    "Gross Salary": 20000,
+    "Basic Salary": 9000,
+    "House Rent Allowances": 3600,
+    "Conveyance Allowances": 1600,
+    "Medical Allowances": 1250,
+    "Special Allowances": 4550,
+    "Net Salary": 20000,
+    "Amount in Words": "Eighteen Thousand Rupee",
+    "Total Working Days": 31,
+    "Paid Days": 31
+  },
+  "summary": {
+    "headline": "Slip Oct 2022: Employee's Special Allowances",
+    "key_points": [
+      "Employee Name",
+      "Total Working Days",
+      "Gross Salary",
+      "Net Salary"
+    ],
+    "full_summary": "This slip details an employee's special allowances for October 2022, including gross salary and net salary.",
+    "document_type": "receipt"
+  },
+  "document_type": "invoice",
+  "confidence": 1.0,
+  "ocr_source": "easy_orig"
+}

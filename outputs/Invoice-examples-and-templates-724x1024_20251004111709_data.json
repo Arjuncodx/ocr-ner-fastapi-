@@ -1,0 +1,16 @@
+{
+  "entities": {
+    "Primary Name": "Saffron Design",
+    "Primary Phone": "999.00\n9",
+    "Secondary Phone": "00\n950.00"
+  },
+  "summary": {
+    "headline": "Document for Saffron Design",
+    "key_points": [
+      "Contains 3 entities"
+    ],
+    "full_summary": "Extracted using fallback method."
+  },
+  "document_type": "document",
+  "confidence": 0.6
+}

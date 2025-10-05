@@ -1,0 +1,26 @@
+{
+  "entities": {
+    "Primary Name": "AdAtech Material LLC",
+    "Primary Email": "ad4example@gmail.com",
+    "Mobile Phone": "+123456789",
+    "Address": "67h, Martin street, Alexander road, City park, Honk Kong",
+    "Invoice Number": "INV-005",
+    "Date": "Jun 22,2021",
+    "Due Date": "Jun 27,2021",
+    "Total Amount": "S 1,564.00",
+    "Contact Name": "John Doe"
+  },
+  "summary": {
+    "headline": "Invoice from AdAtech Material LLC to Green1 Materials LLC",
+    "key_points": [
+      "Invoice No: INV-005",
+      "Due Date: Jun 27, 2021",
+      "Total: S 1,564.00"
+    ],
+    "full_summary": "This is an invoice from AdAtech Material LLC to Green1 Materials LLC for various services and materials provided. The total amount due is S 1,564.00 with a balance of S 1,332.00 after payment.",
+    "document_type": "invoice"
+  },
+  "document_type": "invoice",
+  "confidence": 0.9,
+  "ocr_source": "easy_orig"
+}

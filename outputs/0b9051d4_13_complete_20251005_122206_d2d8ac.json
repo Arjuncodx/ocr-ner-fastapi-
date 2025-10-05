@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "Company Name": "po Company ome",
+    "Name": "Orsertment",
+    "Employee Number": "Emp No",
+    "Bank Name": "Ceseraton A Ha.",
+    "Salary": "29292",
+    "EPF": "18CO",
+    "House Rent Allowance": "sao8",
+    "Health Insurance": "$3",
+    "Conveyance Allowance": "1499",
+    "Professional Tax": "203",
+    "Education Allowance": "1te8P ns",
+    "Cras Smeal": "$6999",
+    "Transport Allowance": "2500",
+    "Other Allowance": "a Ss"
+  },
+  "metadata": {
+    "Filename": "0b9051d4_13.jpg",
+    "Processing Date": "2025-10-05T12:22:06.088261",
+    "OCR Engine": "tesseract_psm6",
+    "OCR Confidence": "23.43%",
+    "Quality Score": "61.93%",
+    "Model": "qwen3:8b",
+    "Version": "9.0.0"
+  },
+  "raw_text": "po Company ome\nName Orsertment\n\nEmp No Bank Name\n\nCeseraton A Ha.\n\neet Salary 29292 EPF 18CO\nHouse ReriAlionarces sao8 Heath Psrance $3)\nConveyance Aizenices 1499 Profers onal Tae 203\ntéwdcat Algeeroey 1te8P ns\n\nSpecsd Alomancas tve73z\n\nCrcas Smeal $6999 Tor] Oedxtcrs 2500\na Ss =\nee\n",
+  "cleaned_text": "po Company ome\nName Orsertment\n\nEmp No Bank Name\n\nCeseraton A Ha.\n\neet Salary 29292 EPF 18CO\nHouse ReriAlionarces sao8 Heath Psrance $3)\nConveyance Aizenices 1499 Profers onal Tae 203\n\ntéwdcat Algeeroey 1te8P ns\n\nCrcas Smeal $6999 Tor] Oedxtcrs 2500\n\na Ss = ee"
+}

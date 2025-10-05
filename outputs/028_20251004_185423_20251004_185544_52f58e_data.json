@@ -1,0 +1,19 @@
+{
+  "entities": {
+    "Primary Name": "i ‘|",
+    "Document Number": "oice",
+    "Postal Code": "17610"
+  },
+  "summary": {
+    "headline": "Invoice Summary",
+    "key_points": [
+      "Invoice details",
+      "Payment information"
+    ],
+    "full_summary": "This appears to be an invoice with payment information and a request for cable returns. The document contains various codes, numbers, and abbreviations that are difficult to decipher.",
+    "document_type": "invoice"
+  },
+  "document_type": "invoice",
+  "confidence": 0.75,
+  "ocr_source": "tess_psm11"
+}

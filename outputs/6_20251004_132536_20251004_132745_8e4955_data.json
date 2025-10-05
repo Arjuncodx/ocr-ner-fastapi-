@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "Primary Name": "THATAINENT SRIKANTA",
+    "Organization": "LIFE INSURANCE CORPORATION OF INDIA",
+    "Primary Email": [
+      "lictsrikant@gmail.com",
+      "seosrikantht@gmail.com"
+    ],
+    "Secondary Email": [
+      "lictsrikant8099948528.blogspot.in",
+      "interviewsinhyderabad.blogspot.in"
+    ],
+    "Primary Phone": "8099948528",
+    "Address": "Br. Off. LIC Office, Trimulgherry, Sec’bad - 500 016.\nAdd. Borabanda, Hyderabad - 500 018.",
+    "Agent Code No": "0316164Y"
+  },
+  "summary": {
+    "headline": "Contact Information for Insurance Advisor",
+    "key_points": [
+      "Contact information for Life Insurance Corporation of India",
+      "Insurance Advisor details"
+    ],
+    "full_summary": "The document provides contact information for an insurance advisor, including phone number, email addresses, and social media handles.",
+    "document_type": "business_card"
+  },
+  "document_type": "business_card",
+  "confidence": 1.0,
+  "ocr_source": "tess_psm11"
+}

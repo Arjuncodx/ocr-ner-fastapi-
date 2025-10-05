@@ -1,0 +1,19 @@
+{
+  "entities": {
+    "Primary Name": "Saffron Design",
+    "Primary Phone": "999.00\n9",
+    "Secondary Phone": "999.00\n2",
+    "Date": "29/01/2019",
+    "Document Number": "To"
+  },
+  "summary": {
+    "headline": "Document for Saffron Design",
+    "key_points": [
+      "Phone: 999.00\n9"
+    ],
+    "full_summary": "Document contains information for Saffron Design with 5 extracted fields.",
+    "document_type": "document"
+  },
+  "document_type": "invoice",
+  "confidence": 0.7
+}

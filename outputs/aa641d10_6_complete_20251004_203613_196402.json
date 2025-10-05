@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "Company Name": "LIFE INSURANCE CORPORATION OF INDIA",
+    "Agent Name": "THATHINENI SRIKANTH",
+    "Job Title": "Insurance Advisor",
+    "Agent Code": "0316164Y",
+    "Phone Number 1": "8099948528",
+    "Phone Number 2": "8466045457",
+    "Primary Email": "lictsrikant@gmail.com",
+    "Secondary Email": "seosrikantht@gmail.com",
+    "Branch Office": "LIC Office, Trimulgherry; Sec'bad 500 016",
+    "Physical Address": "Borabanda, Hyderabad 500 018",
+    "Website URL": "lictsrikant8099948528.blogspot.in, interviewsinhyderabad.blogspot.in",
+    "Social Media Link 1": "facebook.com/lictsrikant8099948528",
+    "Social Media Link 2": "facebook.com/thathineni.srikanth.9",
+    "Promotional Note": "Promote your business online (PYBO)"
+  },
+  "metadata": {
+    "Filename": "aa641d10_6.jpg",
+    "Processing Date": "2025-10-04T20:36:13.108001",
+    "OCR Engine": "easyocr_orig",
+    "OCR Confidence": "70.49%",
+    "Quality Score": "83.27%",
+    "Model": "qwen3:8b",
+    "Version": "9.0.0"
+  },
+  "raw_text": "Cell\n8099948528\nLIc\n8466045457\nemail\nlictsrikant@gmail.com\nLIFE INSURANCE CORPORATION OF INDIA\nseosrikantht@gmail.com\nTHATHINENI SRIKANTH\nInsurance Advisor\nAgent Code No. 0316164Y\nLIFE INSURANCE CORPORATION OF INDIA\nBr: Off: LIC Office, Trimulgherry; Sec'bad\n500 016.\nAdd. Borabanda, Hyderabad\n500 018.\nlictsrikant8099948528.blogspotin, interviewsinhyderabad blogspot.in\nfacebook comllictsrikant8o99948528, facebook comlthathineni.srikanth.9\nPromote your business online (PYBO)\nahiclh\nariuet",
+  "cleaned_text": "Cell\n8099948528\nLIc\n8466045457\nemail\nlictsrikant@gmail.com\nLIFE INSURANCE CORPORATION OF INDIA\nseosrikantht@gmail.com\nTHATHINENI SRIKANTH\nInsurance Advisor\nAgent Code No. 0316164Y\nLIFE INSURANCE CORPORATION OF INDIA\nBr: Off: LIC Office, Trimulgherry; Sec'bad\n500 016.\nAdd. Borabanda, Hyderabad\n500 018.\nlictsrikant8099948528.blogspotin, interviewsinhyderabad blogspot.in\nfacebook comllictsrikant8o99948528, facebook comlthathineni.srikanth.9\nPromote your business online (PYBO)\nahiclh\nariuet"
+}

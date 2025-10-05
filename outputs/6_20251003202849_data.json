@@ -1,0 +1,36 @@
+{
+  "ocr_metadata": {
+    "engine": "easy_orig",
+    "quality_score": 89.95126766476238,
+    "text_length": 491
+  },
+  "entities": {
+    "primary_name": "THATHINENI SRIKANTH",
+    "organization": "LIFE INSURANCE CORPORATION OF INDIA",
+    "job_title": "Insurance Advisor",
+    "agent_code": "0316164Y",
+    "primary_email": "lictsrikant@gmail.com",
+    "secondary_email": "seosrikantht@gmail.com",
+    "primary_phone": "8099948528",
+    "address": "Off: LIC Office, Trimulgherry; Sec'bad 500 016. Add. Borabanda, Hyderabad 500 018.",
+    "city": "Hyderabad",
+    "state": "Sec'bad",
+    "country": "India",
+    "postal_code": "500 016"
+  },
+  "summary": {
+    "headline": "Business card for Thathineni Srikanth, Insurance Advisor at LIFE INSURANCE CORPORATION OF INDIA",
+    "key_points": [
+      "Insurance Advisor with Agent Code 0316164Y",
+      "Primary contact: email licfrikant@gmail.com and phone 8099948528",
+      "LIC office locations include Trimulgherry (Sec'bad 500 016) and Borabanda (Hyderabad 500 018)"
+    ],
+    "full_summary": "This is a business card for Thathineni Srikanth, an Insurance Advisor at LIFE INSURANCE CORPORATION OF INDIA with Agent Code 0316164Y. Primary contact methods include email licfrikant@gmail.com and phone 8099948528. LIC office locations include Trimulgherry (Sec'bad 500 016) and Borabanda (Hyderabad 500 018).",
+    "document_type": "business_card"
+  },
+  "metadata": {
+    "total_entities_found": 12,
+    "extraction_method": "ollama_ai"
+  },
+  "line_items": []
+}

@@ -1,0 +1,30 @@
+{
+  "ocr_metadata": {
+    "engine": "tess_psm6",
+    "quality_score": 88.08192680872304,
+    "text_length": 398
+  },
+  "entities": {
+    "primary_name": "Gia Bruno",
+    "organization": "Lotus Blossom Spa",
+    "primary_email": "julexannedy@zmail.com",
+    "primary_phone": "8551234",
+    "address": "San Francisco 94158-2230, United Stotes"
+  },
+  "summary": {
+    "headline": "Receipt from Lotus Blossom Spa for Gia Bruno",
+    "key_points": [
+      "Receipt #2025-100034 from Lotus Blossom Spa in San Francisco",
+      "Total paid: US$136.00 with payment details on 2025-02-09",
+      "Gia Bruno's transactions include Color Explosion Bottle and Salt Rub Massage"
+    ],
+    "full_summary": "This receipt from Lotus Blossom Spa summarizes Gia Bruno's transactions, including a Color Explosion Bottle and Salt Rub Massage. The total amount paid was US$136.00 with payment details on 2025-02-09.",
+    "document_type": "receipt"
+  },
+  "metadata": {
+    "confidence_score": 1.0,
+    "total_entities_found": 5,
+    "extraction_method": "ollama_ai"
+  },
+  "line_items": []
+}

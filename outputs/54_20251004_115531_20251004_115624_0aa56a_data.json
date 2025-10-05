@@ -1,0 +1,31 @@
+{
+  "entities": {
+    "Primary Name": "Joseph C. Wu, MD, PhD",
+    "Organization": "Stanford",
+    "Title": "Mirector, Stanford Cardiovascular Institute; Professor Medicine (Cardiology) & Radiology",
+    "Address": "268 Campus Drive, G 11208, Stanford, CA 94305, MC-$454",
+    "Phone": "(650) 736-2246",
+    "Email": [
+      "jaewudd@stanford.edu",
+      "joseph.wu@stanford.edu"
+    ],
+    "Fax": "(650) 736-0234",
+    "Website": [
+      "http://wulab.stanford.edu",
+      "https://evi.stanford.edu"
+    ]
+  },
+  "summary": {
+    "headline": "Stanford Medicine",
+    "key_points": [
+      "Joseph C. Wu, MD, PhD",
+      "Director of Stanford Cardiovascular Institute",
+      "Professor of Medicine (Cardiology) & Radiology"
+    ],
+    "full_summary": "Summary not available as there is no additional text to summarize.",
+    "document_type": "business_card"
+  },
+  "document_type": "business_card",
+  "confidence": 1.0,
+  "ocr_source": "tess_psm11"
+}

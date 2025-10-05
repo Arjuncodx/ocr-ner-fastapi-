@@ -1,0 +1,62 @@
+{
+  "document_type": "invoice",
+  "ai_summary": {
+    "headline": "Invoice IN-001 for Kavindra Mannan from Saffron Design",
+    "key_points": [
+      "Invoice IN-001 is due on 26/04/2019 with a total amount of ₹13,715.52",
+      "The invoice includes three items: Frontend design restructure, Custom icon package, and Gandhi mouse pad",
+      "Payment terms are 15 days from the invoice date"
+    ],
+    "full_summary": "Invoice IN-001 is issued by Saffron Design to Kavindra Mannan. The invoice includes three items with a total amount of ₹13,715.52. Payment is due within 15 days."
+  },
+  "critical_fields": {
+    "primary_name": "Kavindra Mannan",
+    "primary_organization": "Saffron Design"
+  },
+  "important_fields": {
+    "unique_identifiers": "IN-001"
+  },
+  "supplementary_fields": {
+    "additional_info": "Terms & Conditions: Payment is due within 15 days. State Bank of India, Account Number: 12345678, Routing Number: 09876543210"
+  },
+  "location_data": {
+    "primary_address": "77 Namrata Bldg, Delhi; Delhi 400077",
+    "city": "Delhi",
+    "postal_code": "400077"
+  },
+  "financial_data": {
+    "amounts": [
+      {
+        "item": "Frontend design restructure",
+        "amount": "9,999.00"
+      },
+      {
+        "item": "Custom icon package",
+        "amount": "975,00"
+      },
+      {
+        "item": "Gandhi mouse pad",
+        "amount": "99,00"
+      }
+    ]
+  },
+  "line_items": [
+    {
+      "item": "Frontend design restructure",
+      "details": ""
+    },
+    {
+      "item": "Custom icon package",
+      "details": ""
+    },
+    {
+      "item": "Gandhi mouse pad",
+      "details": ""
+    }
+  ],
+  "metadata": {
+    "confidence_score": 1.0,
+    "extraction_quality": "excellent",
+    "data_completeness": "complete"
+  }
+}

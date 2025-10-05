@@ -1,0 +1,32 @@
+{
+  "ocr_metadata": {
+    "engine": "easy_orig",
+    "quality_score": 83.63998646752704,
+    "text_length": 586
+  },
+  "entities": {
+    "primary_name": "Kavindra Mannan",
+    "organization": "Saffron Design",
+    "agent_code": "IN-001",
+    "address": "77 Namrata Bldg, Delhi; Delhi 400077",
+    "city": "Delhi",
+    "country": "India",
+    "postal_code": "400077"
+  },
+  "summary": {
+    "headline": "Invoice #IN-001 from Saffron Design to Kavindra Mannan",
+    "key_points": [
+      "Invoice number: IN-001, due date: 26/04/2019",
+      "Total amount: ₹13,715.52, payment terms: within 15 days",
+      "Payment details: State Bank of India, Account Number: 12345678, Routing Number: 09876543210"
+    ],
+    "full_summary": "This invoice from Saffron Design to Kavindra Mannan includes a total amount of ₹13,715.52 with a due date of 26/04/2019. Payment terms require payment within 15 days. The invoice details include State Bank of India account number 12345678 and routing number 09876543210.",
+    "document_type": "invoice"
+  },
+  "metadata": {
+    "confidence_score": 0.9,
+    "total_entities_found": 7,
+    "extraction_method": "ollama_ai"
+  },
+  "line_items": []
+}

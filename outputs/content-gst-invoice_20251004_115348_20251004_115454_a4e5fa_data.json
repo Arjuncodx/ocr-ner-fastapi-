@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "Primary Name": "leyoke",
+    "Organization": "Oven:ered Tae credit mt wewBatne to 2 Paes tte Peruges mparend Can eres sity",
+    "Phone Number": "+ - - - x “x3 '",
+    "Address": "CIV. 1h 1da lay hes ¥, + - - - x “x3 '",
+    "Invoice Number": "4497292",
+    "Date": "21 ieie D ney 406? Nee ace Td ORDITDIP",
+    "Total Amount": "89.9602 80"
+  },
+  "summary": {
+    "headline": "Summary of unclear document",
+    "key_points": [
+      "Unclear text",
+      "No clear points"
+    ],
+    "full_summary": "The provided document appears to be a collection of seemingly unrelated words and phrases, making it difficult to determine its purpose or meaning.",
+    "document_type": "unknown"
+  },
+  "document_type": "invoice",
+  "confidence": 0.8,
+  "ocr_source": "tess_psm6"
+}

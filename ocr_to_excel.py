@@ -10,7 +10,7 @@ End-to-end helper to:
 
 Environment variables:
  - OLLAMA_BASE (default: http://127.0.0.1:11434)
- - OLLAMA_MODEL (default: llama3:8b)
+ - OLLAMA_MODEL (default: qwen3:8b)
  - OLLAMA_TIMEOUT (seconds, default: 300)
 """
 from __future__ import annotations
@@ -41,7 +41,7 @@ except Exception:
 
 # -- configuration from env --
 OLLAMA_BASE = os.getenv("OLLAMA_BASE", "http://127.0.0.1:11434")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3:8b")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:8b")
 OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "300"))
 
 # Uploads directory (same as your app)

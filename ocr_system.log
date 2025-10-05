@@ -1,0 +1,80 @@
+2025-10-03 20:56:47 [INFO    ] main:872 - ================================================================================
+2025-10-03 20:56:47 [INFO    ] main:874 - ================================================================================
+2025-10-03 20:56:47 [INFO    ] main:875 - Features:
+2025-10-03 20:56:47 [INFO    ] main:881 - ================================================================================
+2025-10-03 20:57:12 [INFO    ] main:747 - Image loaded: (724, 1024)
+2025-10-03 20:57:12 [INFO    ] main:752 - ================================================================================
+2025-10-03 20:57:12 [INFO    ] main:754 - ================================================================================
+2025-10-03 20:57:12 [INFO    ] main:760 - STEP 1: Advanced OCR (10-stage preprocessing, 8+ engines)
+2025-10-03 20:57:12 [DEBUG   ] main:292 - Starting ultimate preprocessing pipeline
+2025-10-03 20:57:13 [DEBUG   ] main:335 - Preprocessing complete
+2025-10-03 20:57:13 [DEBUG   ] main:352 - Running EasyOCR
+2025-10-03 20:57:41 [DEBUG   ] main:428 - OCR easy_orig: score=100.00, len=586
+2025-10-03 20:57:41 [DEBUG   ] main:428 - OCR easy_proc: score=100.00, len=577
+2025-10-03 20:57:41 [DEBUG   ] main:428 - OCR tess_psm3: score=100.00, len=617
+2025-10-03 20:57:41 [DEBUG   ] main:428 - OCR tess_psm4: score=100.00, len=609
+2025-10-03 20:57:41 [DEBUG   ] main:428 - OCR tess_psm6: score=100.00, len=583
+2025-10-03 20:57:41 [DEBUG   ] main:428 - OCR tess_psm11: score=100.00, len=627
+2025-10-03 20:57:41 [DEBUG   ] main:428 - OCR tess_psm12: score=100.00, len=637
+2025-10-03 20:57:41 [DEBUG   ] main:428 - OCR tess_psm13: score=11.63, len=3
+2025-10-03 20:57:41 [INFO    ] main:785 - STEP 2: AI text correction
+2025-10-03 20:57:41 [DEBUG   ] main:206 - Calling Ollama: temp=0.0, max_tokens=8000
+2025-10-03 20:58:32 [DEBUG   ] main:211 - Ollama response: 609 chars
+2025-10-03 20:58:32 [INFO    ] main:795 - STEP 3: Complete extraction (100% fields)
+2025-10-03 20:58:32 [DEBUG   ] main:206 - Calling Ollama: temp=0.1, max_tokens=8000
+2025-10-03 20:59:30 [DEBUG   ] main:211 - Ollama response: 1292 chars
+2025-10-03 20:59:30 [INFO    ] main:802 - STEP 4: Creating Excel
+2025-10-03 20:59:31 [ERROR   ] main:812 - Pipeline failed: At least one sheet must be visible
+Traceback (most recent call last):
+  File "E:\fast api project\main.py", line 803, in ocr_upload
+    xlsx_path, csv_path = await loop.run_in_executor(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        EXECUTOR, create_excel_from_extraction, extraction, OUTPUT_DIR, Path(safe_name).stem
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\anaconda3\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "E:\fast api project\main.py", line 648, in create_excel_from_extraction
+    with pd.ExcelWriter(xlsx_path, engine='openpyxl') as writer:
+         ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\fast api project\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1353, in __exit__
+    self.close()
+    ~~~~~~~~~~^^
+  File "E:\fast api project\venv\Lib\site-packages\pandas\io\excel\_base.py", line 1357, in close
+    self._save()
+    ~~~~~~~~~~^^
+  File "E:\fast api project\venv\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 110, in _save
+    self.book.save(self._handles.handle)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\fast api project\venv\Lib\site-packages\openpyxl\workbook\workbook.py", line 386, in save
+    save_workbook(self, filename)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "E:\fast api project\venv\Lib\site-packages\openpyxl\writer\excel.py", line 294, in save_workbook
+    writer.save()
+    ~~~~~~~~~~~^^
+  File "E:\fast api project\venv\Lib\site-packages\openpyxl\writer\excel.py", line 275, in save
+    self.write_data()
+    ~~~~~~~~~~~~~~~^^
+  File "E:\fast api project\venv\Lib\site-packages\openpyxl\writer\excel.py", line 89, in write_data
+    archive.writestr(ARC_WORKBOOK, writer.write())
+                                   ~~~~~~~~~~~~^^
+  File "E:\fast api project\venv\Lib\site-packages\openpyxl\workbook\_writer.py", line 150, in write
+    self.write_views()
+    ~~~~~~~~~~~~~~~~^^
+  File "E:\fast api project\venv\Lib\site-packages\openpyxl\workbook\_writer.py", line 137, in write_views
+    active = get_active_sheet(self.wb)
+  File "E:\fast api project\venv\Lib\site-packages\openpyxl\workbook\_writer.py", line 35, in get_active_sheet
+    raise IndexError("At least one sheet must be visible")
+IndexError: At least one sheet must be visible
+2025-10-03 20:59:46 [INFO    ] main:887 - Shutdown complete
+2025-10-03 21:09:21 [INFO    ] main:831 - ================================================================================
+2025-10-03 21:09:21 [INFO    ] main:832 - Enterprise OCR System v9.0.0 - ERROR-FREE
+2025-10-03 21:09:21 [INFO    ] main:833 - ================================================================================
+2025-10-03 21:09:21 [INFO    ] main:834 - PIL: True
+2025-10-03 21:09:21 [INFO    ] main:835 - CV2: True
+2025-10-03 21:09:21 [INFO    ] main:836 - Tesseract: True
+2025-10-03 21:09:21 [INFO    ] main:837 - EasyOCR: True
+2025-10-03 21:09:21 [INFO    ] main:838 - Ollama: True
+2025-10-03 21:09:21 [INFO    ] main:839 - ================================================================================
+2025-10-03 21:09:56 [INFO    ] main:845 - Shutdown complete

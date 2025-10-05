@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "primary_name": "Kavindra Mannan",
+    "organization": "Saffron Design",
+    "job_title": "",
+    "primary_email": "",
+    "secondary_email": "",
+    "primary_phone": "",
+    "agent_code": "",
+    "address": "77 Namrata Bldg, Delhi; Delhi 400077",
+    "city": "Delhi",
+    "state": "Delhi",
+    "country": "India",
+    "postal_code": "400077",
+    "website": ""
+  },
+  "summary": {
+    "headline": "Saffron Design Invoice Summary",
+    "key_points": [
+      "Saffron Design issued an invoice to Gupta for a total amount of ₹13,715.52 on January 29th, 2019.",
+      "The invoice includes three items: frontend design restructure, custom icon package, and Gandhi mouse pad.",
+      "The payment terms are due within 15 days from the invoice date."
+    ],
+    "full_summary": "Saffron Design issued an invoice to Gupta for a total amount of ₹13,715.52 on January 29th, 2019. The invoice includes three items: frontend design restructure, custom icon package, and Gandhi mouse pad. The payment terms are due within 15 days from the invoice date.",
+    "document_type": "Invoice"
+  },
+  "metadata": {},
+  "line_items": []
+}

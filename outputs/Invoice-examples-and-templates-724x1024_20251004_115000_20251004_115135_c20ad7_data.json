@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "Primary Name": "Saffron Design",
+    "Address": "77 Namrata Bldg, Delhi; Delhi 400077",
+    "City": "Delhi",
+    "Postal Code": "400077",
+    "Invoice Number": "IN-001",
+    "Date": "29/01/2019",
+    "Due Date": "26/04/2019",
+    "Total Amount": 13715.52,
+    "Tax Amount": 469.52,
+    "Contact Name": "Kavindra Mannan"
+  },
+  "summary": {
+    "headline": "Invoice from Saffron Design",
+    "key_points": [
+      "Invoice # IN-001",
+      "Due Date: 26/04/2019",
+      "Total Amount: ₹13,715.52"
+    ],
+    "full_summary": "This invoice from Saffron Design details a payment of ₹13,715.52 to Kavindra Mannan for services rendered, with a due date of 26th April 2019.",
+    "document_type": "invoice"
+  },
+  "document_type": "invoice",
+  "confidence": 1.0,
+  "ocr_source": "easy_orig"
+}

@@ -1,0 +1,21 @@
+{
+  "entities": {
+    "primary_name": "Saffron Design",
+    "primary_phone": "999.00\n9"
+  },
+  "summary": {
+    "headline": "Document for Saffron Design",
+    "key_points": [
+      "Contains 46 lines of text",
+      "Email: Not found",
+      "Phone: 999.00\n9"
+    ],
+    "full_summary": "Document contains 46 lines with 0 email(s) and 5 phone number(s).",
+    "document_type": "document"
+  },
+  "metadata": {
+    "confidence_score": 0.6,
+    "total_entities_found": 2
+  },
+  "line_items": []
+}
