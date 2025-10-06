@@ -1,0 +1,20 @@
+{
+  "entities": {
+    "Vendor_Name": "raw_output: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",
+    "Total_Amount": "0.00",
+    "Currency": "USD"
+  },
+  "metadata": {
+    "filename": "e3a5d5cd_34.jpg",
+    "processing_date": "2025-10-05T20:34:26.421151",
+    "ocr_engine": "advanced_donut",
+    "ocr_confidence": "50.00%",
+    "ocr_quality": "0.550",
+    "ocr_time": "43.52s",
+    "ai_extraction_time": "0.02s",
+    "total_time": "43.62s",
+    "ai_model": "qwen2.5:3b",
+    "app_version": "28.0.0"
+  },
+  "exported_at": "2025-10-05T20:34:26.490151"
+}

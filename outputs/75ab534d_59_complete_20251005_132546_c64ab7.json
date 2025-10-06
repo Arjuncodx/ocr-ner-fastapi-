@@ -1,0 +1,18 @@
+{
+  "entities": {
+    "Primary Name": "ELECTRICITY BILL",
+    "Primary Phone": "2009\n96.64"
+  },
+  "metadata": {
+    "Filename": "75ab534d_59.jpg",
+    "Processing Date": "2025-10-05T13:25:46.827616",
+    "OCR Engine": "easyocr_orig",
+    "OCR Confidence": "87.03%",
+    "Quality Score": "68.17%",
+    "Model": "qwen3:8b",
+    "Version": "11.0.0",
+    "AI Engines": "Surya + PaddleOCR + Donut"
+  },
+  "raw_text": "ELECTRICITY BILL\nNo\nAmount (Rs:)\n6440.00\nBill Date\n26-Jun-2009\nDue Date:\n14-Jul-2009\nBill Month:\nLPSC for 30 days or Part\nJUN-2009\n96.64\nAmount Upto 30 days:\n6530.00\nAmount Upto 60 days\n6630.00\nDerived Connected Load\nMax MDI 4.00 KW",
+  "cleaned_text": "ELECTRICITY BILL\nNo\nAmount (Rs:)\n6440.00\nBill Date\n26-Jun-2009\nDue Date:\n14-Jul-2009\nBill Month:\nLPSC for 30 days or Part\nJUN-2009\n96.64\nAmount Upto 30 days:\n6530.00\nAmount Upto 60 days\n6630.00\nDerived Connected Load\nMax MDI 4.00 KW"
+}

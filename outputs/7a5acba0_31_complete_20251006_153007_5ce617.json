@@ -1,0 +1,31 @@
+{
+  "entities": {
+    "Company Name": "ELECTRIC COMPANY",
+    "Address Line 1": "PO BOX 123",
+    "City": "Anytown",
+    "Country": "USA",
+    "Account Number": "23458789",
+    "Service Charges Type": "LCONTNUAL RATE CYCLE SERVICE CHARGES",
+    "Handling Fee Rate": "0815",
+    "Meter Reading Frequency": "09/11",
+    "General Meter Reading Footer Message": "HESEN NOTICE CANCELLATION FACTOR",
+    "Energy Charge Amount": "440.8001440k\"",
+    "Fuel Cost Adjustment Menu": "(50 005) (1400 sookmh)",
+    "Demand Charge Rate": "KWxS5kw",
+    "Fove Factor Penalty Rate": "KOKWXS5kW",
+    "Salestax - State Amount": "6800.00",
+    "Salestax Special Amount": "(150)",
+    "Total Amount Due": "87122885"
+  },
+  "metadata": {
+    "Filename": "7a5acba0_31.jpg",
+    "Processing Date": "2025-10-06T15:30:07.807756",
+    "OCR Engine": "easyocr_orig",
+    "OCR Confidence": "52.25%",
+    "Quality Score": "64.64%",
+    "Model": "llama3.1:8b",
+    "Version": "10.0.0"
+  },
+  "raw_text": "ELECTRIC COMPANY\nPO. BOX 123_\nAnytown_\nUSA\nACCOUMT NUVBER\nLCCONTNAUF\nRATE\nCYCLE|\nSERMCEACOAESS\n23458789\nTYT\nhanWacLung\nLares\nGeneral geryca\nFo8\n123 Main Street\nSERVCE PERDD\nERREADING\nFOTER\nMMtIfLEF\nFREvIJUS\n\"HESEN\nNSACEF\nCENANE\nFACTOR\n0815\n09/1\n88543\n71345\n440.8001440k\"\n794\nAMCUNT\nCUST CMER CHARCE\n810.00\nENERGY QARCE:\n(1,44Q800X S Oo5kmH)\n857,824.00\nFUEL CCGI ADUUST MENI (50 005)\n(1,4\"0\nsoo5kMH)\n87,203.00\nDEMAND QARCE\nKWxS5kwn\n82,200.00\nFOVE\nFACTCR PENALTY:\n(KOkWxS5kw)\n6800.00\nSALESTAX - SIATE:\n82,713.48\nSALESTAX\nSPECIAL:\n(150)\n6878.37\nTOIALAMOUNI DLE:\n871,228.85\nJal %",
+  "cleaned_text": "ELECTRIC COMPANY\nPO BOX 123\nAnytown\nUSA\nACCOUNT NUMBER\nLCONTNUAL RATE CYCLE SERVICE CHARGES\n23458789\nTYPE HANDLING FEE LARES GENERAL METER READING FOOTER MESSAGE FREQUENCY \"HESEN\" NOTICE CANCELLATION FACTOR\n0815\n09/11\n88543\n71345\n440.8001440k\"\n794\nAMOUNT CUSTOMER CHANGE 810.00 ENERGY CHARGE: (14,4800 x SOO5KMH)\n857824.00 FUEL COST ADJUSTMENT MENU (50 005) (1400 sookmh)\n87203.00 DEMAND CHARGE KWxS5kw\n82200.00 FOVE FACTOR PENALTY: KOKWXS5kW\n6800.00 SALESTAX - STATE:\n8271348 SALESTAX SPECIAL: (150)\n687837 TOIAL AMOUNT DUE:\n87122885"
+}

@@ -1,0 +1,24 @@
+{
+  "entities": {
+    "Account Number": "Period Statement from Leslie Holden",
+    "Statement Date": "November 15,2021",
+    "Address": "4344 Poco Mays Drive Dallas, FL, 33009",
+    "Meter Information - Usage (kWh)": "300.00",
+    "Meter Information - Cost (per kWh)": "3.0000",
+    "Bill Summary - Previous Charges ($)": "$ 1.00",
+    "Bill Summary - Current Charges ($)": "$ 3,000.00",
+    "Total Amount ($):": "",
+    "Due Date": "November 19, 2021"
+  },
+  "metadata": {
+    "Filename": "2cbbceba_22.jpg",
+    "Processing Date": "2025-10-06T14:24:07.129809",
+    "OCR Engine": "easyocr_orig",
+    "OCR Confidence": "85.38%",
+    "Quality Score": "83.73%",
+    "Model": "llama3.1:8b",
+    "Version": "10.0.0"
+  },
+  "raw_text": "ABC Powers Inc:\n(123) 123-4567\nABCPOWERS]\ninfo@abcpowerscom\nwwWabcpowers.com\nUTILITY BILL\nAccount No\nStatement Date\n12345678910\nNovember 15,2021\nAccount Name\nPeriod Statement from\nLeslie Holden\nNovember\n2021\nAddress\nPeriod Statement until\n4344 Poco Mas Drive\nNovember 13,2021\nDallas; FL, 33009\nMeter Information\nDate\nUsage (kWh)\nCost (per kWh)\nAmount (S)\n11/01/2021\n300\n3000\nBill Summary\nPrevious Charges (S)\n$ 1.00\nCurrent Charges (S)\n$ 3,000.00\nTotal Amount (S)\nS3001\nDue Date\nNovember 19, 2021\nREMINDERS:\n1. Present your Statement of Account when paying your utility bill\n2. Without this document, you will be required to provide the\naccount number; account name; and amountto be paid_\nPlease check your online accounts after payment in order to make\nsure that the payment is pushed through:\n4. If you have any questions, please contact us at (123) 123-4567 or\nemail us at info@noemailcom:",
+  "cleaned_text": "ABC Powers Inc:\n(123) 456-7890\nabcpowers.com\nUTILITY BILL\nAccount No.\nStatement Date: November 15,2021\nAccount Name\nPeriod Statement from Leslie Holden\nNovember \n2021\nAddress\nPeriod Statement until\n4344 Poco Mays Drive\nDallas, FL, 33009\nMeter Information\nDate Usage (kWh) Cost (per kWh) Amount ($)\n11/01/2021 300.00 3.0000 $ 300.00\nBill Summary\nPrevious Charges ($) \n$ 1.00\nCurrent Charges ($) \n$ 3,000.00\nTotal Amount ($) S3010\nDue Date: November 19, 2021\nREMINDERS:\n1. Present your Statement of Account when paying your utility bill.\n2. Without this document, you will be required to provide the account number; account name; and amountto be paid.\nPlease check your online accounts after payment in order to make sure that the payment is pushed through: \n4. If you have any questions, please contact us at (123) 456-7890 or email us at info@abcpowers.com"
+}

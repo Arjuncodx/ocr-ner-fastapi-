@@ -1,0 +1,28 @@
+{
+  "entities": {
+    "Date": "26-Jun-2009",
+    "Due Date": "14-Jul-2009",
+    "Amount (Rs)": "6440.00",
+    "Duration": "30 days or part",
+    "Additional Amount to 30 days": "96.64",
+    "Total Amount to 30 days": "6530.00",
+    "Additional Amount to 60 days": "6630.00"
+  },
+  "metadata": {
+    "Filename": "2651cf27_16.jpg",
+    "Processing Date": "2025-10-06T13:21:12.972040",
+    "OCR Engine": "tesseract_psm4",
+    "Initial Confidence": "67.88%",
+    "Final Confidence": "72.27%",
+    "Confidence Boost": "+0.00%",
+    "Quality Score": "68.17%",
+    "Preprocessing Variants": 4,
+    "Engines Used": 5,
+    "Corrections Made": 43,
+    "Retry Count": 0,
+    "Model": "llama3.1:8b",
+    "Version": "14.0.0-FINAL-ERROR-FREE"
+  },
+  "raw_text": "La\n\ny ae,\n\non yf to te . mos Deo . Fr ee . ; ° eee ;\newe a D4 ww CO, i ee oe aT a et 4 . a athe nm whe wae,\n: Ld Qe? . ce! arn ’ atts\nei ee — Wom se 2 Tansee\nvit: ~ fe 7 ; . aan | hoe) . \"Hee . Fol ga Tt tk en\n‘ey i a Jidbe t . a Yer rs Sort\n—— a ~ Los rn ., 7?\nah a ee eee mat te Se beet ee ee ee Lat teva SR ee\na\n\nca ee a\n\nXXXXXNAXXNXXNX\n\nAmount (Rs). gS) “6440.00 -\n\nBill Date 26-Jun-2009 | Due Date: 14-Jul-2009\n\nBill Month: JUN-2009 LPSC for 30 days or Part: 96.64\nAmount Upto 30 days: 6530.00 Amount Upto 60 days : 6630.00\n\nE)\nDerived Connected Load / Max MDI 4.00 KW\n",
+  "cleaned_text": "La y aet on yf to te . mos leo . Fr ee . ; ° see ; ewe a D4 ww CO, i ee oe aT a et 4 . a the nm the was : Ld be . cen are ’ arts ei ee — com se 2 hansen vita ~ fe 7 ; . an | hoe . free . vol ga Tt tk en key i a side t . a her rs sort —— a ~ los rn ., 7? ah a ee see mat te Se beet ee ee ee at tea SR ee a ca ee a XXXXXNAXXNXXNX amount (Rs). get “6440.00 - will date 26-Jun-2009 | due date 14-Jul-2009 will month JUN-2009 LPSC for 30 days or part 96.64 amount to 30 days 6530.00 amount to 60 days : 6630.00 E) derived connected road / tax MDI 4.00 KW"
+}

@@ -1,0 +1,17 @@
+{
+  "entities": {
+    "Primary Name": "raw_output: 3</s_answer>"
+  },
+  "metadata": {
+    "Filename": "f01e0fee_1.jpg",
+    "Processing Date": "2025-10-05T13:14:24.048610",
+    "OCR Engine": "donut",
+    "OCR Confidence": "50.00%",
+    "Quality Score": "66.62%",
+    "Model": "qwen3:8b",
+    "Version": "11.0.0",
+    "AI Engines": "Surya + PaddleOCR + Donut"
+  },
+  "raw_text": "raw_output: 3</s_answer>",
+  "cleaned_text": "raw_output: 3</s_answer>"
+}

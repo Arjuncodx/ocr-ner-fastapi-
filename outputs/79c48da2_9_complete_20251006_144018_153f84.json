@@ -1,0 +1,37 @@
+{
+  "entities": {
+    "Account Number": "Aa/ad",
+    "Billing Address": "Palika Kendra, Sansad Marg; New Delhi - 110001",
+    "Bill Amount": "362939.00",
+    "Bill Cycle": "Jun-2015",
+    "Billing Basis": "Actual",
+    "By Date": "30/06/2015",
+    "CA Number": "22683758834",
+    "Code": "Bizn",
+    "Commuter's Ro Number": "6201977",
+    "Consumer's Name and Address": "",
+    "Contract Demand": "",
+    "Corporation Circle Court Order Part No.": "-141565 E Rail Carcendmc 6uin",
+    "Energisation Date": "\"20/10/2014\"",
+    "Late Re-reading": "66219e9-ofn",
+    "Meter Serial Number": "",
+    "Meter Type": "PPMPE1308",
+    "Mobile Tel No.": "TNA",
+    "Power Factor": "Bil No. \"268374547705\"",
+    "Sanctioned Load": "Jrva",
+    "Seal No.": "2237/101/1",
+    "Supply Address": "2 KRISHNA MENON MARG SECURITY, LIGHT; NEW DELHI - 110001",
+    "Tariff Category": "8-C53"
+  },
+  "metadata": {
+    "Filename": "79c48da2_9.jpg",
+    "Processing Date": "2025-10-06T14:40:18.001154",
+    "OCR Engine": "easyocr_orig",
+    "OCR Confidence": "43.26%",
+    "Quality Score": "64.67%",
+    "Model": "llama3.1:8b",
+    "Version": "10.0.0"
+  },
+  "raw_text": "NEW DELHI MUNICIPAL COUNCIL\nBill Amount\n362939.00\nELECTRICITY BILL\nAa /ad\nPalika Kendra, Sansad Marg: New Delhi\n110 C01\nRa] TQ\nBy Date\n30/06/2015\nT7\n07-0001\nA\nNane;\nEXENG (E) DIVMI CPWD\ncomcume Ro\n6201977\nBMDate\n120812015\nLPBHAWAN\nMRB { Page\nSenal\n2237/101/1\nBill Group\nMINISTER\nBulling Adaress:\nEX ENG (E) DIv\nCPWND L,P BHAWAN\n@vision\nCA No\n22683758834\nRACE COURSE ROAD, NEW DELHI;\nVobilelTel No\nTNA\nNeW DELHI\n110001\nSanctioned Lold\nJrva\nRENc\n\"K31644\nConiract Demand\nEnergisalion Date\n\"20/102014\nCode:\nBizn\nLZUZ\nWDI Rcading\n0.OCO\nMetet Type\nPPMPE1308\nSupEly Address:\n2 KRISHNA MENON MARG SECURITY\nZone / Seal No\nMeter Sclal No\nLIGHT; NEWDELHI\n110001\nWalkng Sequenc\nTarli Calegory\n8-C53\nSupplyiCon Type\nJPC\nPovrer Facicr\nBil No\n\"268374547705\nBill Cycle\"\nJJun-2015\nBhI Basis\n\"Actual\nCrelorner Cir Cortor Ptars No-011 -141565 Erail Carcendmc 6uin\nUTPTVENUURCHAROEnP0c)ct PRuROTOMIToTTo 00y OFDEL477707erDEAc 0Titin\nERCATTCLTICF\nIOEPREvERTOY_AOCoaiRa\nLaterecae66219e9-ofn\nOmPrI\nLe96\nHtle\nn\nLAnCre\nFcA DISCREPA CEARLEBECOYTACTLOiPH'\nFocuto\n4LHE1E\nEneee\nCTstREOL\n4UibZ\nATAducCAL4 COURTE\nEEG\nOI-oaclu\nIEEEnO\n'EEEise\naitouc \nPay",
+  "cleaned_text": "NEW DELHI MUNICIPAL COUNCIL\nBill Amount: 362939.00\nELECTRICITY BILL\nAccount No.: Aa/ad\nPalika Kendra, Sansad Marg; New Delhi - 110001\nBy Date: 30/06/2015\nT7-0001\nA/C Name:\nEXENG (E) DIVISION CPWD\nCommuter's Ro Number: 6201977\nBM Date: 12.08.2015\nLP BHAWAN, MRB { Page No.\nSeal No.: 2237/101/1\nBill Group: MINISTER\nBilling Address:\nEX ENG (E) DIVISION CPWD,\nL.P. BHAWAN, NEW DELHI - 110001;\nCA Number: 22683758834\nRACE COURSE ROAD, NEW DELHI; \nMobile Tel No.: TNA\nNew Delhi - 110001\nSanctioned Load: Jrva\nRENCE \"K31644\nContract Demand:\nEnergisation Date: \"20/10/2014\nCode: Bizn\nLZUZ\nWDI Reading: 0.000 (OCO)\nMeter Type: PPMPE1308\nSupply Address:\n2 KRISHNA MENON MARG SECURITY,\nZone / Seal No.: Meter Serial No.\nLIGHT; NEW DELHI - 110001\nWalking Sequence:\nTariff Category: 8-C53\nSupply Contract Type: JPC\nPower Factor: Bil No. \"268374547705\nBill Cycle: Jun-2015\nBilling Basis: Actual\nConsumer's Name and Address: \nCorporation Circle Court Order Part No.-011 -141565 E Rail Carcendmc 6uin\nUTP TVENUUR CHAROEn P0ct PRuROTOMIToTTo OF DEL477707er DEAc 0Titin\nERC ATT CL TICF\nIOE PREvERTOY_AOC OaiRa\nLate Re-reading:66219e9-ofn\nOm PrI Le96\nHtle n LAnCre FcA DISCREPA CEARLEBECOYTACTLOiPH'\nFocus:\n4LHE1E Eneee CTstREOL 4UibZ ATAducCAL4 COURTE EEG OI-oaclu IEEEnO 'EEEise aitouc \nPay"
+}

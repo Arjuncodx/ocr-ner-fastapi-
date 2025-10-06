@@ -1,0 +1,19 @@
+{
+  "entities": {
+    "Primary Name": "HP GAS",
+    "Primary Phone": "986602845",
+    "Date": "6/7/303"
+  },
+  "metadata": {
+    "Filename": "68dfc428_27.jpg",
+    "Processing Date": "2025-10-05T13:22:56.207945",
+    "OCR Engine": "easyocr_orig",
+    "OCR Confidence": "54.78%",
+    "Quality Score": "85.31%",
+    "Model": "qwen3:8b",
+    "Version": "11.0.0",
+    "AI Engines": "Surya + PaddleOCR + Donut"
+  },
+  "raw_text": "HP GAS\nPPHnRei Booking\n986602845\nOMI HP GAS ENTERPRISES\nFor Emergency\n6301685752\nFor Complaint\n1800 233 3555\n14.2 (HSN:Z7111900)\n1\n768. 00\n618814\n1115400-03/05/19_\nIPPILI SRI RAA MURTHY\n1\n5-100/0/6/7/303, FNO-3o3\nTRICON HEIGHTS , SECRETARIAT CO\n8\nPUPPALGUDA 500089\nLPG Id:2 9111 0141 0010 8010\n8\n500371 29/04/2019 11.49:07\nSubsidy Consuned:1/12\n209\n#oug\n{ka\nJvetGuJ]\nDud{\nCUSTOMFf coFY |\nben8cdane weaan\nLane Beside PAI\nHyd-48. Tlmlngs : 0.00 am, t 8;00 pm\nPh: 040-66611115\n116\nScanned by CamScanner\nStore,",
+  "cleaned_text": "HP GAS\nPPHnRei Booking\n986602845\nOMI HP GAS ENTERPRISES\nFor Emergency\n6301685752\nFor Complaint\n1800 233 3555\n14.2 (HSN:Z7111900)\n1\n768. 00\n618814\n1115400-03/05/19_\nIPPILI SRI RAA MURTHY\n1\n5-100/0/6/7/303, FNO-3o3\nTRICON HEIGHTS , SECRETARIAT CO\n8\nPUPPALGUDA 500089\nLPG Id:2 9111 0141 0010 8010\n8\n500371 29/04/2019 11.49:07\nSubsidy Consuned:1/12\n209\n#oug\n{ka\nJvetGuJ]\nDud{\nCUSTOMFf coFY |\nben8cdane weaan\nLane Beside PAI\nHyd-48. Tlmlngs : 0.00 am, t 8;00 pm\nPh: 040-66611115\n116\nScanned by CamScanner\nStore,"
+}

@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "Account No": "1234567890-1",
+    "Statement Date": "09/07/2019",
+    "Due Date": "09/28/2019",
+    "Meter #": "T111111111",
+    "Service For": "12345 ENERGY CT",
+    "Prior Meter Reading": 37330,
+    "Current Meter Reading": 37710,
+    "Total Usage": 380.0,
+    "Rate Schedule": "E1 X Residential Service",
+    "Tier Allowance": 297.0,
+    "Generation Credit": -44.68
+  },
+  "metadata": {
+    "filename": "68.jpg",
+    "processing_date": "2025-10-06T15:02:31.800746",
+    "app_version": "10.0.0",
+    "best_ocr_engine": "easyocr_orig",
+    "confidence_score": "78.26%",
+    "image_quality_score": "82.87%",
+    "image_dimensions": "787x389",
+    "image_dpi": 72,
+    "total_processing_time": "0.00s",
+    "ocr_time": "5.66s",
+    "ollama_time": "70.50s",
+    "excel_time": "0.00s"
+  },
+  "raw_text": "Account No: 1234567890-1\nENERGY STATEMENT\nStatement Date:\n09/07/2019\nPpc\nwww-pge com/MyEnergy\nDue Date:\n09/28/2019\nDetails of PG&E Electric Delivery Charges\nService Information\nMeter #\nT111111111\n08/02/2019\n08/31/2019 (30 billing days)\nCurrent Meter Reading\n37,710\nService For:\n12345 ENERGY CT\nPrior Meter Reading\n37,330\nService Agreement ID:\n111111111\nTotal Usage\n380.OO0ODO kWh\nRate Schedule:\nE1 X Residential Service\nBaseline Territory\nHeat Source\nNot Electric\nSerial\n07/02/2019\n07/31/2019\nYour Tier Usage\nRotating Outage Block\nTier\nAllowance\n297.00\nKWh\n(30 days\n9 kWhlday)\nTier\nUsage\n297.Oo00OO\nkWh\n50.22376\n566.46\nTier\n83.O00000\nkWh\n@50.28159\n23.37\nGeneration Credit\n-44.68\nPower Charge Indifference Adjustment\n10.26\nFranchise Fee Surcharge\n0.25\nTotal PGRE Electric Delivery Charges\n555.66\nUsuge",
+  "cleaned_text": "Account No: 1234567890-1\nENERGY STATEMENT\nStatement Date:\n09/07/2019\nPGE (www.pge.com/MyEnergy)\nDue Date:\n09/28/2019\nDetails of PG&E Electric Delivery Charges\nService Information\nMeter #\nT111111111\n08/02/2019 - 08/31/2019 (30 billing days)\nCurrent Meter Reading: 37,710\nService For:\n12345 ENERGY CT\nPrior Meter Reading: 37,330\nService Agreement ID:\n111111111\nTotal Usage: 380.00000 kWh\nRate Schedule: E1 X Residential Service\nBaseline Territory\nHeat Source: Not Electric\nSerial Number (07/02/2019 - 07/31/2019)\nYour Tier Usage\nRotating Outage Block\nTier Allowance: 297.00 KWh (30 days, 9 KWh/day)\nTier Usage: 297.00000 kWh @50.28159 $566.46\nTier 83: 0.800000 kWh @$50.28159 $23.37\nGeneration Credit -$44.68\nPower Charge Indifference Adjustment +$10.26\nFranchise Fee Surcharge +$0.25\nTotal PG&E Electric Delivery Charges: $555.66",
+  "generated_at": "2025-10-06T15:02:31.896990"
+}

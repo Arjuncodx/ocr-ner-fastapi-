@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "Job Title": [
+      {
+        "Inspector Posts as per 7th CPC": ""
+      },
+      {
+        "Inspector Posts as per IPPB": ""
+      }
+    ],
+    "Basic Pay (INR)": [
+      "44900",
+      "31705"
+    ],
+    "DA (5%) (INR)": [
+      "2245",
+      ""
+    ],
+    "TA (INR)": [
+      "3600",
+      ""
+    ],
+    "Special Pay (7.75%) (INR)": [
+      "3725",
+      ""
+    ],
+    "HRA (24%) (INR)": [
+      "10776",
+      ""
+    ],
+    "CCA (4%) (INR)": [
+      "870",
+      ""
+    ],
+    "Fixed Personal Allowance (INR)": [
+      "1453",
+      ""
+    ],
+    "Bouquet of allowances = 50% of Basic Pay (INR)": [
+      "15853",
+      ""
+    ],
+    "HRA (9%) (INR)": [
+      "2853",
+      ""
+    ],
+    "Total Salary at first scale of pay": [
+      {
+        "Inspector Posts as per 7th CPC": "60166"
+      },
+      {
+        "Postal Assistant": "36495"
+      }
+    ],
+    "In Case Of Company Lease": [
+      {
+        "Inspector Posts as per 7th CPC": "72819"
+      },
+      {
+        "Postal Assistant": "54072"
+      }
+    ]
+  },
+  "metadata": {
+    "Filename": "c587979d_25.jpg",
+    "Processing Date": "2025-10-06T15:45:52.824576",
+    "OCR Engine": "easyocr_orig",
+    "OCR Confidence": "91.58%",
+    "Quality Score": "84.01%",
+    "Model": "llama3.1:8b",
+    "Version": "10.0.0"
+  },
+  "raw_text": "Salary comparison of_DoP Employees:\nInspector Posts as per 7th CPC\nInspector Posts as per IPPB\nEarnings\nINR\nEarnings\nINR\nBasic\n44900\nBasic\n31705\nDA (5%)\n2245\nDA (51.60%)\n16360\nTA\n3600\nSpecial Pay (7.75%)\n3725\nHRA (24%)\n10776\nCCA (4%)\n870\nFixed Personal\n1453\nBouquet of allowances\n15853\n(50% of\nBasic)\nHRA (9%\n2853\nTotal^\n60166\nTotal\n72819\nIn case of company lease: 102466\n^Salary at first scale of pay\nPostal Assistant\nAs per 7th CPC\nAs per IPPB\nEarnings\nINR\nEarnings\nINR\nBasic Pay\n25500\nBasic\n23700\nDA (5%)\n1275\nDA (51.60%)\n12229\nTA\n3600\nSpecial Pay (7.75%)\n1837\nHRA (24%)\n6120\nCCA (4%)\n870\nFixed Personal\n1453\nBouquet of allowances\n11850\n(50% of\nBasic)\nLease/HRA (9%\n2133\nTotal^\n36495\nTotal\n54072\nIn case of company lease: 75639\nPay\nPay\nPay\nPay\nPay",
+  "cleaned_text": "Salary comparison of DoP Employees:\nInspector Posts as per 7th CPC\nInspector Posts as per IPPB\nEarnings INR\nEarnings INR\nBasic Pay: 44900\nBasic Pay: 31705\nDA (5%): 2245\nDA (51.60%): 16360\nTA: 3600\nSpecial Pay (7.75%): 3725\nHRA (24%): 10776\nCCA (4%): 870\nFixed Personal Allowance: 1453\nBouquet of allowances = 50% of Basic Pay: 15853\nHRA (9%): 2853\nTotal^ Salary at first scale of pay: 60166\nTotal: 72819\nIn case of company lease: 102466\n\nPostal Assistant\nAs per 7th CPC\nAs per IPPB\nEarnings INR\nEarnings INR\nBasic Pay: 25500\nBasic Pay: 23700\nDA (5%): 1275\nDA (51.60%): 12229\nTA: 3600\nSpecial Pay (7.75%): 1837\nHRA (24%): 6120\nCCA (4%): 870\nFixed Personal Allowance: 1453\nBouquet of allowances = 50% of Basic Pay: 11850\nLease/HRA (9%): 2133\nTotal^ Salary at first scale of pay: 36495\nTotal: 54072\nIn case of company lease: 75639"
+}

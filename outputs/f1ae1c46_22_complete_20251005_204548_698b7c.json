@@ -1,0 +1,33 @@
+{
+  "entities": {
+    "Company Name": "ABC Powers Inc",
+    "Primary Phone": "(123) 123-4567",
+    "Website": "www.abcpowers.com",
+    "Email": "info@abcpowers.com",
+    "Account Number": "12345678910",
+    "Statement Date": "November 15, 2021",
+    "Account Name": "Leslie Holden",
+    "Address": "4344 Poco Mas Drive, Dallas; FL, 33009",
+    "Period Statement From": "November 2021",
+    "Period Statement Until": "November 13, 2021",
+    "Meter Date": "11/01/2021",
+    "Usage kWh": "300",
+    "Cost Per kWh": "$3000",
+    "Amount": "$3001",
+    "Previous Charges": "$1.00",
+    "Current Charges": "$3,000.00",
+    "Total Amount": "$3001",
+    "Due Date": "November 19, 2021"
+  },
+  "metadata": {
+    "Filename": "f1ae1c46_22.jpg",
+    "Processing Date": "2025-10-05T20:45:48.706316",
+    "OCR Engine": "easyocr_orig",
+    "OCR Confidence": "85.38%",
+    "Quality Score": "83.73%",
+    "Model": "qwen3:8b",
+    "Version": "9.0.0"
+  },
+  "raw_text": "ABC Powers Inc:\n(123) 123-4567\nABCPOWERS]\ninfo@abcpowerscom\nwwWabcpowers.com\nUTILITY BILL\nAccount No\nStatement Date\n12345678910\nNovember 15,2021\nAccount Name\nPeriod Statement from\nLeslie Holden\nNovember\n2021\nAddress\nPeriod Statement until\n4344 Poco Mas Drive\nNovember 13,2021\nDallas; FL, 33009\nMeter Information\nDate\nUsage (kWh)\nCost (per kWh)\nAmount (S)\n11/01/2021\n300\n3000\nBill Summary\nPrevious Charges (S)\n$ 1.00\nCurrent Charges (S)\n$ 3,000.00\nTotal Amount (S)\nS3001\nDue Date\nNovember 19, 2021\nREMINDERS:\n1. Present your Statement of Account when paying your utility bill\n2. Without this document, you will be required to provide the\naccount number; account name; and amountto be paid_\nPlease check your online accounts after payment in order to make\nsure that the payment is pushed through:\n4. If you have any questions, please contact us at (123) 123-4567 or\nemail us at info@noemailcom:",
+  "cleaned_text": "ABC Powers Inc:(123) 123-4567 ABCPOWERS] info@abcpowerscom wwWabcpowers.com UTILITY BILL Account No Statement Date 12345678910 November 15,2021 Account Name Period Statement from Leslie Holden November 2021 Address Period Statement until 4344 Poco Mas Drive November 13,2021 Dallas; FL, 33009 Meter Information Date Usage (kWh) Cost (per kWh) Amount (S) 11/01/2021 300 3000 Bill Summary Previous Charges (S) $ 1.00 Current Charges (S) $ 3,000.00 Total Amount (S) S3001 Due Date November 19, 2021 REMINDERS: 1. Present your Statement of Account when paying your utility bill 2. Without this document, you will be required to provide the account number; account name; and amountto be paid_ Please check your online accounts after payment in order to make sure that the payment is pushed through: 4. If you have any questions, please contact us at (123) 123-4567 or email us at info@noemailcom:"
+}

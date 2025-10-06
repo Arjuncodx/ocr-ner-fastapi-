@@ -1,0 +1,30 @@
+{
+  "entities": {
+    "Company Name": "ELE CTRIC COHPANY",
+    "Address": "PO. BOX 123, Anytown, USA",
+    "Account Number": "Kuwiber ACOOUTMAVE RATE CYCLE",
+    "Service Address": "23450789 XYZ Nanufocburing Lesb2 general %erVic2 708 128 main treat",
+    "Billing Period Start Date": "08/13",
+    "Billing Period End Date": "09/11",
+    "Total Amount Due": "71,228.85",
+    "Sales Tax - State": "82,713.48",
+    "Sales Tax - Special": "7,078.37"
+  },
+  "metadata": {
+    "Filename": "322d6a3d_31.jpg",
+    "Processing Date": "2025-10-06T12:45:31.044873",
+    "OCR Engine": "easyocr",
+    "Initial Confidence": "76.85%",
+    "Final Confidence": "77.67%",
+    "Confidence Boost": "+0.00%",
+    "Quality Score": "64.64%",
+    "Preprocessing Variants": 4,
+    "Engines Used": 3,
+    "Corrections Made": 5,
+    "Retry Count": 0,
+    "Model": "llama3.1:8b",
+    "Version": "14.0.0"
+  },
+  "raw_text": "ELE CTRIC COHPANY\nPO. BOX 123, Anytown, USA\nACCOUKT Kuwiber\nACOOUTMAVE\nRATE\nCYCLE]\nSERVCEACDRESS\n23450789\nXYZ Nanufocburing\nLesb2 Genera) %erVic2\n708\n128 Nain Streat\nSERVCE PERDD\n1_\nBILL\nVEERREADI}\nAnvh\nPEAK\nRONBR\nFROI\nTo\nCAYS\nTYIE\nPREvDUS\nPRESERT\nWUU IPUER\nUSAGE\nCEWAKD\nFAC TOR\n08/13\n09/1 1\n29\n0\n88543\n71345\n300\n1,4440,800/440kl\n7976\n5 AHCUNT\nCUSTCMER CHARCE\nSlo.00\nENERGY QARCE:\n(L,+4Q800X Sq @oqkikij)\n857,024.00\nFUEL CCST AQUUSTHENT (Q005: (4,42,80X SQOOSKItif)\nS7,203.00\nDEHANID QARCE:\n(40kxSqki5)\n82,200.00\nFOIERFACTCR PENALTY:\n(40ki\"xsqkiw)\nS8oo.0o\nSALESTAX -STATE\n(4S9:\n82,713.48\nSALESTAX -SPECIAL:\n(15)\nS078.37\nTOTALAHOUNT Dle:\nS71,228.85",
+  "cleaned_text": "ELE CTRIC COHPANY PO. BOX 123, Anytown, USA ACCOUKT Kuwiber ACOOUTMAVE RATE CYCLE] SERVCEACDRESS 23450789 XYZ Nanufocburing Lesb2 general %erVic2 708 128 main treat SERVCE PERDD 1_ BILL VEERREADI} inch PEAK RONBR FROI To CAYS TYIE PREvDUS PRESERT WUU IPUER USAGE CEWAKD FAC TOR 08/13 09/1 1 29 0 88543 71345 300 1,4440,800/440kl 7976 5 AHCUNT CUSTCMER CHARCE Slo.00 ENERGY QARCE: (L,+4Q800X Sq @oqkikij) 857,024.00 FUEL CCST AQUUSTHENT (Q005: (4,42,80X SQOOSKItif) S7,203.00 DEHANID QARCE: (40kxSqki5) 82,200.00 FOIERFACTCR PENALTY: (40ki\"xsqkiw) S8oo.0o SALESTAX -STATE (4S9: 82,713.48 SALESTAX -SPECIAL: (15) S078.37 TOTALAHOUNT let S71,228.85"
+}

@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "Company Name": "Water And Wastewater Service",
+    "Customer Name": "T. 4",
+    "Account Number": "4",
+    "Total Amount": "£206.22",
+    "Payment Method": "Pay by Cereca",
+    "Reference Number": "CAGE (9 3",
+    "Due Date": "Unknown"
+  },
+  "metadata": {
+    "Filename": "4b061800_34.jpg",
+    "Processing Date": "2025-10-05T21:22:33.507820",
+    "OCR Engine": "tesseract_psm6",
+    "OCR Confidence": "28.06%",
+    "Quality Score": "74.11%",
+    "Model": "qwen3:8b",
+    "Version": "9.0.0"
+  },
+  "raw_text": "T. 4, om\ni CDi\nUe eS\noo\n[or\n-—\n= (Oem re I\n= =\n= nse\n=: ——-\nSeemed —_—e_\nee oe\nYour water and wastewater bill fore\n(at ree 8 heres OO cya\nee ee Se\n=a en £206.22\n-—nee\n|\nPay by Cereca Oth ered CAGE (9 3\n!\nox — 7 mam 5\n= c= . = :\neqeore) A\nLene EE\n_—__ an, ma a\n",
+  "cleaned_text": "T. 4, om\ni CDi\nUe eS\noo\n[or\n-—\n= (Oem re I\n= =\n= nse\n=: ——-\nSeemed —_—e_\n ee oe\nYour water and wastewater bill fore\n(at ree 8 heres OO cya\n ee ee Se\n=a en £206.22\n-—nee\n|\nPay by Cereca Oth ered CAGE (9 3\n!\n ox — 7 mam 5\n= c= . = :\neqeore) A\nLene EE\n_—__ an, ma a"
+}
