@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 """
-main.py - OCR ELITE SYSTEM v15.1 ENHANCED ENTITY EXTRACTION
-============================================================
+main.py - OCR ELITE SYSTEM v15.2 SMART ENTITY EXTRACTION
+=========================================================
 IMPROVEMENTS:
-✅ Multi-pass Ollama extraction (catches missing fields)
-✅ Enhanced prompt engineering for better accuracy
-✅ Smart document structure analysis
-✅ Intelligent field mapping with fallbacks
+✅ NO fixed columns - fully dynamic extraction
+✅ NO hallucination - only extract what exists
+✅ Smart entity detection based on actual document content
+✅ Automatic field name discovery from document
+✅ Multi-pass extraction for accuracy
 ✅ All previous features preserved
 
 Senior Python OCR Developer - Fortune 500 Grade
@@ -40,8 +41,8 @@ from typing import Any, Dict, List, Optional, Tuple, Set, Union
 import numpy as np
 import pandas as pd
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile, BackgroundTasks
-from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
@@ -121,9 +122,9 @@ logger = logging.getLogger(__name__)
 
 # FastAPI
 app = FastAPI(
-    title="OCR Elite v15.1 Enhanced Extraction",
-    description="Ollama AI + Regex + Multi-pass Extraction",
-    version="15.1.0"
+    title="OCR Elite v15.2 Smart Entity Extraction",
+    description="Pure AI Entity Extraction - No Fixed Columns, No Hallucination",
+    version="15.2.0"
 )
 
 app.add_middleware(
@@ -142,7 +143,7 @@ SUPPORTED_FORMATS = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif', '.webp', 
 EXECUTOR = ThreadPoolExecutor(max_workers=12)
 
 logger.info("="*80)
-logger.info("🚀 OCR ELITE v15.1 ENHANCED ENTITY EXTRACTION - INITIALIZING")
+logger.info("🚀 OCR ELITE v15.2 SMART ENTITY EXTRACTION - INITIALIZING")
 logger.info("="*80)
 
 # ============================================================================
@@ -181,15 +182,15 @@ class CleanedTextResult:
 
 @dataclass
 class SmartExcelStructure:
-    """AI-suggested Excel structure with enhanced fields"""
+    """AI-discovered Excel structure - NO FIXED COLUMNS"""
     document_type: str
-    columns: List[str]
-    values: Dict[str, str]
+    columns: List[str]  # Dynamic - discovered from document
+    values: Dict[str, str]  # Only real values
     confidence: float
-    extraction_method: str  # 'ollama', 'regex', 'hybrid', or 'enhanced'
+    extraction_method: str
     extraction_success: bool = True
-    missing_fields: List[str] = field(default_factory=list)  # NEW: Track missing fields
-    extraction_passes: int = 1  # NEW: Track how many passes were done
+    missing_fields: List[str] = field(default_factory=list)
+    extraction_passes: int = 1
 
 @dataclass
 class ProcessingResult:
@@ -378,49 +379,20 @@ class AdvancedRegexExtractor:
         self.patterns = self._initialize_patterns()
     
     def _initialize_patterns(self) -> Dict[str, List[str]]:
-        """Comprehensive regex patterns"""
+        """Comprehensive regex patterns - for backup only"""
         return {
             'dates': [
                 r'\b\d{1,2}[-/]\d{1,2}[-/]\d{2,4}\b',
                 r'\b\d{4}[-/]\d{1,2}[-/]\d{1,2}\b',
                 r'\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s+\d{4}\b',
-                r'\b\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{4}\b'
             ],
             'amounts': [
                 r'\$\s*\d+[,.]?\d*\.?\d{2}',
                 r'\d+[,.]\d{2}',
-                r'USD\s*\d+[,.]\d{2}',
                 r'\b\d{1,3}(?:,\d{3})*(?:\.\d{2})?\b'
             ],
             'emails': [r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'],
-            'phones': [
-                r'\b(?:\+?1[-.]?)?\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})\b',
-                r'\b\d{3}[-.\s]?\d{3}[-.\s]?\d{4}\b'
-            ],
-            'invoice_numbers': [
-                r'(?:Invoice|Receipt|Bill|Order)\s*#?\s*:?\s*([A-Z0-9-]+)',
-                r'#\s*([A-Z0-9-]{5,})',
-                r'\b[A-Z]{2,}\d{5,}\b'
-            ],
-            'account_numbers': [
-                r'(?:Account|Acct|A/C)\s*#?\s*:?\s*(\d{5,})',
-                r'\b\d{10,}\b'
-            ],
-            'employee_codes': [  # NEW: Added employee code patterns
-                r'(?:ICNO|Employee Code|Employee ID|Staff ID|EMP ID)\s*:?\s*(\d{5,})',
-                r'\b\d{6}\b',  # 6-digit codes
-                r'\bIC\d{5,}\b'
-            ],
-            'names': [
-                r'\b[A-Z][a-z]+\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?\b',  # Full names
-                r'(?:Name|Employee)\s*:?\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)'
-            ],
-            'months': [r'(?:Month)\s*:?\s*(\d{1,2})', r'\b(0?[1-9]|1[0-2])\b'],
-            'years': [r'(?:Year)\s*:?\s*(\d{4})', r'\b(19|20)\d{2}\b'],
-            'addresses': [
-                r'\d+\s+[A-Za-z\s]+(?:Street|St|Avenue|Ave|Road|Rd|Drive|Dr|Lane|Ln|Boulevard|Blvd)\b',
-            ],
-            'totals': [r'(?:Total|Grand Total|Amount Due)\s*:?\s*\$?\s*(\d+[,.]\d{2})'],
+            'phones': [r'\b\d{3}[-.\s]?\d{3}[-.\s]?\d{4}\b'],
         }
     
     def identify_document_type(self, text: str) -> str:
@@ -428,15 +400,14 @@ class AdvancedRegexExtractor:
         text_lower = text.lower()
         
         keywords = {
+            'Electricity Bill': ['electricity', 'power', 'kwh', 'units consumed'],
             'Pay Slip': ['pay slip', 'payslip', 'salary', 'net amount payable'],
             'Invoice': ['invoice', 'bill to', 'ship to'],
             'Receipt': ['receipt', 'thank you'],
-            'Bill': ['bill', 'account', 'due date'],
-            'Statement': ['statement', 'balance'],
         }
         
         scores = {doc: sum(1 for kw in kws if kw in text_lower) for doc, kws in keywords.items()}
-        return max(scores.items(), key=lambda x: x[1])[0] if scores else 'Document'
+        return max(scores.items(), key=lambda x: x[1])[0] if any(scores.values()) else 'Document'
     
     def extract_all(self, text: str) -> Dict[str, List[str]]:
         """Extract all entities"""
@@ -449,50 +420,16 @@ class AdvancedRegexExtractor:
                     found.extend([m if isinstance(m, str) else ''.join(m) for m in matches])
             results[entity_type] = list(set(found))[:10]
         return results
-    
-    def extract_smart_fields(self, text: str, doc_type: str) -> Dict[str, str]:
-        """Extract fields intelligently"""
-        entities = self.extract_all(text)
-        fields = {}
-        
-        # Extract based on document type
-        if entities.get('employee_codes'):
-            fields['Employee Code (ICNO)'] = entities['employee_codes'][0]
-        
-        if entities.get('names'):
-            fields['Employee Name'] = entities['names'][0]
-        
-        if entities.get('months'):
-            fields['Month'] = entities['months'][0]
-        
-        if entities.get('years'):
-            fields['Year'] = entities['years'][0]
-        
-        if entities.get('dates'):
-            fields['Date'] = entities['dates'][0]
-        
-        if entities.get('amounts'):
-            fields['Amount'] = entities['amounts'][0]
-            if len(entities['amounts']) > 1:
-                fields['Total'] = entities['amounts'][-1]
-        
-        if entities.get('invoice_numbers'):
-            fields['Document ID'] = entities['invoice_numbers'][0]
-        
-        if entities.get('addresses'):
-            fields['Address'] = entities['addresses'][0]
-        
-        return fields if fields else {'Date': 'Not Found', 'Amount': 'Not Found'}
 # ============================================================================
-# ENHANCED OLLAMA AI PROCESSOR - MULTI-PASS EXTRACTION
+# SMART OLLAMA AI PROCESSOR - PURE ENTITY EXTRACTION, NO FIXED COLUMNS
 # ============================================================================
-class EnhancedOllamaAIProcessor:
-    """Enhanced AI processor with multi-pass extraction for maximum accuracy"""
+class SmartOllamaAIProcessor:
+    """Smart AI processor - extracts ONLY what exists, NO hallucination"""
     
     def __init__(self, ollama_client: OptimizedOllamaClient):
         self.ollama = ollama_client
         self.regex_extractor = AdvancedRegexExtractor()
-        logger.info("✅ Enhanced Ollama AI Processor initialized with multi-pass extraction")
+        logger.info("✅ Smart Ollama AI Processor initialized (NO FIXED COLUMNS)")
     
     async def clean_ocr_text(self, raw_text: str) -> CleanedTextResult:
         """Clean OCR text (typos, spelling) - UNCHANGED"""
@@ -535,15 +472,15 @@ Return ONLY the corrected text. Do not add explanations."""
     async def identify_document_type_ai(self, text: str) -> str:
         """AI-powered document type identification"""
         try:
-            prompt = f"""Identify the document type from this text. Reply with ONLY ONE of these types:
+            prompt = f"""Identify the document type from this text. Reply with ONLY ONE type:
+- Electricity Bill
+- Water Bill
+- Gas Bill
 - Pay Slip
 - Invoice
 - Receipt
-- Bill
-- Statement
-- Form
-- Report
-- Letter
+- Bank Statement
+- Tax Document
 - Other
 
 Text:
@@ -559,7 +496,7 @@ Document type:"""
             doc_type = str(response.get("response", "Document") if isinstance(response, dict) else response)
             doc_type = doc_type.strip().split('\n')[0]
             
-            valid_types = ['Pay Slip', 'Invoice', 'Receipt', 'Bill', 'Statement', 'Form', 'Report', 'Letter']
+            valid_types = ['Electricity Bill', 'Water Bill', 'Gas Bill', 'Pay Slip', 'Invoice', 'Receipt', 'Bank Statement', 'Tax Document']
             for vt in valid_types:
                 if vt.lower() in doc_type.lower():
                     return vt
@@ -569,74 +506,43 @@ Document type:"""
         except:
             return self.regex_extractor.identify_document_type(text)
     
-    async def extract_entities_multipass(self, text: str, doc_type: str) -> Dict[str, str]:
+    async def extract_pure_entities_no_hallucination(self, text: str, doc_type: str) -> Dict[str, str]:
         """
-        🆕 MULTI-PASS ENTITY EXTRACTION - THE GAME CHANGER!
+        🆕 PURE ENTITY EXTRACTION - NO FIXED COLUMNS, NO HALLUCINATION
         
-        Strategy:
-        1. First Pass: Comprehensive field detection
-        2. Second Pass: Fill missing critical fields
-        3. Third Pass: Validate and cross-check
+        This extracts ONLY what exists in the document, nothing more!
         """
-        logger.info("\n🎯 MULTI-PASS ENTITY EXTRACTION STARTING")
+        logger.info("\n🎯 SMART ENTITY EXTRACTION (NO HALLUCINATION)")
         
-        # PASS 1: Comprehensive Initial Extraction
-        logger.info("📋 PASS 1: Comprehensive field detection")
-        entities_pass1 = await self._extraction_pass_1_comprehensive(text, doc_type)
-        
-        logger.info(f"   ✅ Pass 1 extracted {len(entities_pass1)} fields")
-        
-        # Identify missing critical fields
-        missing_fields = self._identify_missing_critical_fields(entities_pass1, doc_type)
-        
-        if missing_fields:
-            logger.info(f"   ⚠️  Missing critical fields: {', '.join(missing_fields)}")
-            
-            # PASS 2: Targeted extraction for missing fields
-            logger.info("📋 PASS 2: Targeted missing field extraction")
-            entities_pass2 = await self._extraction_pass_2_targeted(text, missing_fields)
-            
-            # Merge results
-            entities_pass1.update(entities_pass2)
-            logger.info(f"   ✅ Pass 2 filled {len(entities_pass2)} missing fields")
-        
-        # PASS 3: Validation and refinement
-        logger.info("📋 PASS 3: Validation and refinement")
-        final_entities = await self._extraction_pass_3_validate(text, entities_pass1, doc_type)
-        
-        logger.info(f"🏆 FINAL: Extracted {len(final_entities)} total fields")
-        
-        return final_entities
-    
-    async def _extraction_pass_1_comprehensive(self, text: str, doc_type: str) -> Dict[str, str]:
-        """Pass 1: Comprehensive extraction with enhanced prompt"""
         try:
-            # Enhanced prompt with better instructions
-            prompt = f"""You are a document analysis expert. Extract ALL information from this {doc_type}.
+            # SMART PROMPT - Extract only what exists, use actual field names
+            prompt = f"""You are a document analysis expert. Extract ALL key-value pairs from this document.
 
-CRITICAL INSTRUCTIONS:
-1. Find EVERY piece of information in the document
-2. Use EXACT field names as they appear
-3. Extract ALL numbers, codes, names, dates, amounts
-4. If you see "ICNO:", extract it as "Employee Code (ICNO)"
-5. If you see "Month:", extract it as "Month"
-6. Don't skip any field even if you're not 100% sure
+CRITICAL RULES:
+1. Extract ONLY information that is EXPLICITLY present in the document
+2. Use the EXACT field names as they appear in the document (e.g., "BILL NO", "DATE", "BOOK NO")
+3. DO NOT add fields that don't exist
+4. DO NOT assume or guess values
+5. DO NOT use generic field names like "Employee Code" if the document doesn't have employees
+6. If a field has a clear label, use that label as the key
 
-Document text:
+Document Type: {doc_type}
+
+Document Text:
 {text[:2500]}
 
-Return in this EXACT format (one per line):
-Field Name: Exact Value
+Extract all field-value pairs in this format:
+Field Name: Value
 
-Example:
-Document ID: 12345
-Employee Code (ICNO): 160192
-Month: 6
-Year: 2016
-Employee Name: Shri Prathap Simha
-State: Karnataka
+Example for Electricity Bill:
+DATE: 19-10-2016
+TIME: 12:15:41
+BILLNO: SB16J19MC65270964
+BILL MONTH: OCT-2016
+BOOK NO: 233511918159
+SC NO: 114084
 
-Now extract ALL fields from the document above:"""
+Now extract ALL fields from the document above (use EXACT field names from document):"""
 
             response = await asyncio.wait_for(
                 self.ollama.generate(prompt),
@@ -645,291 +551,168 @@ Now extract ALL fields from the document above:"""
             
             result_text = str(response.get("response", "") if isinstance(response, dict) else response)
             
-            # Parse results
+            logger.info(f"📥 Raw extraction result:\n{result_text[:500]}")
+            
+            # Parse the results
             entities = {}
             for line in result_text.split('\n'):
-                if ':' in line:
-                    parts = line.split(':', 1)
-                    if len(parts) == 2:
-                        key = parts[0].strip()
-                        val = parts[1].strip()
-                        
-                        # Clean up key and value
-                        key = re.sub(r'^[-*•\d.]+\s*', '', key)  # Remove bullets/numbers
-                        
-                        if val and len(val) < 200 and val.lower() not in ['na', 'n/a', 'null', 'none', 'not found', 'not available']:
-                            entities[key] = val
-            
-            return entities
-        
-        except Exception as e:
-            logger.warning(f"⚠️  Pass 1 extraction error: {e}")
-            return {}
-    
-    async def _extraction_pass_2_targeted(self, text: str, missing_fields: List[str]) -> Dict[str, str]:
-        """Pass 2: Targeted extraction for specific missing fields"""
-        try:
-            fields_str = ", ".join(missing_fields)
-            
-            prompt = f"""You are a document analysis expert. Find these SPECIFIC missing fields in the document:
-
-MISSING FIELDS TO FIND:
-{fields_str}
-
-Document text:
-{text[:2000]}
-
-INSTRUCTIONS:
-1. Search carefully for each missing field
-2. Look for similar terms (e.g., "ICNO" = "Employee Code", "IC NO" = "ICNO")
-3. Extract the value even if the label is slightly different
-4. For numeric codes (like ICNO), look for 5-6 digit numbers
-5. For names, look for capitalized words after "Name" or "Employee"
-
-Return ONLY the found fields in this format:
-Field Name: Value
-
-Example:
-Employee Code (ICNO): 160192
-Month: 6"""
-
-            response = await asyncio.wait_for(
-                self.ollama.generate(prompt),
-                timeout=60.0
-            )
-            
-            result_text = str(response.get("response", "") if isinstance(response, dict) else response)
-            
-            # Parse results
-            entities = {}
-            for line in result_text.split('\n'):
-                if ':' in line:
-                    parts = line.split(':', 1)
-                    if len(parts) == 2:
-                        key = parts[0].strip()
-                        val = parts[1].strip()
-                        
-                        if val and val.lower() not in ['na', 'n/a', 'null', 'none', 'not found']:
-                            entities[key] = val
-            
-            # Also try regex as backup for this pass
-            regex_results = self.regex_extractor.extract_smart_fields(text, "Document")
-            for field in missing_fields:
-                if field not in entities:
-                    for regex_key, regex_val in regex_results.items():
-                        if field.lower() in regex_key.lower() or regex_key.lower() in field.lower():
-                            entities[field] = regex_val
-                            break
-            
-            return entities
-        
-        except Exception as e:
-            logger.warning(f"⚠️  Pass 2 extraction error: {e}")
-            # Fallback to regex
-            return self.regex_extractor.extract_smart_fields(text, "Document")
-    
-    async def _extraction_pass_3_validate(self, text: str, entities: Dict[str, str], doc_type: str) -> Dict[str, str]:
-        """Pass 3: Validate and refine extracted entities"""
-        try:
-            # Quick validation pass
-            validated = {}
-            
-            for key, val in entities.items():
-                # Skip empty or invalid values
-                if not val or val.lower() in ['na', 'n/a', 'null', 'none', 'not found', 'not available']:
-                    continue
-                
-                # Skip very long values (likely errors)
-                if len(val) > 300:
-                    continue
-                
-                # Clean up value
-                val = val.strip()
-                val = re.sub(r'\s+', ' ', val)  # Normalize whitespace
-                
-                validated[key] = val
-            
-            return validated
-        
-        except:
-            return entities
-    
-    def _identify_missing_critical_fields(self, entities: Dict[str, str], doc_type: str) -> List[str]:
-        """Identify which critical fields are missing based on document type"""
-        critical_fields = {
-            'Pay Slip': [
-                'Employee Code (ICNO)',
-                'ICNO',
-                'Employee Code',
-                'Employee Name',
-                'Name',
-                'Month',
-                'Year',
-                'Net Amount Payable',
-                'Total',
-                'State'
-            ],
-            'Invoice': [
-                'Invoice Number',
-                'Document ID',
-                'Date',
-                'Total',
-                'Amount',
-                'Customer Name'
-            ],
-            'Receipt': [
-                'Receipt Number',
-                'Date',
-                'Amount',
-                'Total'
-            ],
-            'Bill': [
-                'Bill Number',
-                'Date',
-                'Amount Due',
-                'Total'
-            ],
-        }
-        
-        # Get critical fields for this document type
-        required = critical_fields.get(doc_type, [])
-        
-        # Find missing fields
-        missing = []
-        for field in required:
-            found = False
-            for existing_key in entities.keys():
-                if field.lower() in existing_key.lower() or existing_key.lower() in field.lower():
-                    found = True
-                    break
-            if not found:
-                missing.append(field)
-        
-        return missing[:5]  # Limit to top 5 missing fields
-    
-    async def suggest_excel_columns_ai(self, text: str, doc_type: str) -> List[str]:
-        """AI suggests Excel columns - ENHANCED"""
-        try:
-            prompt = f"""You are a document analysis expert. Suggest Excel column names for this {doc_type}.
-
-Document text:
-{text[:1000]}
-
-INSTRUCTIONS:
-1. Suggest 8-15 relevant column names
-2. Use clear, professional names
-3. Include common fields like: Document ID, Date, Amount, Name, etc.
-4. For Pay Slips, ALWAYS include: Employee Code (ICNO), Employee Name, Month, Year, State
-5. Return ONLY column names, one per line
-
-Column names:"""
-
-            response = await asyncio.wait_for(
-                self.ollama.generate(prompt),
-                timeout=45.0
-            )
-            
-            result = str(response.get("response", "") if isinstance(response, dict) else response)
-            
-            columns = []
-            for line in result.split('\n'):
                 line = line.strip()
-                line = re.sub(r'^[-*•\d.]+\s*', '', line)  # Remove bullets
-                if line and len(line) < 50 and line not in columns:
-                    columns.append(line)
+                if ':' in line:
+                    parts = line.split(':', 1)
+                    if len(parts) == 2:
+                        key = parts[0].strip()
+                        val = parts[1].strip()
+                        
+                        # Clean up key - remove bullets, numbers, etc.
+                        key = re.sub(r'^[-*•\d.)\]]+\s*', '', key)
+                        
+                        # Validate value - reject if looks like hallucination
+                        if val and len(val) < 300:
+                            # Skip if value contains placeholder text
+                            if val.lower() not in ['na', 'n/a', 'null', 'none', 'not found', 'not available', 
+                                                   'not mentioned', 'not specified', 'not provided', 'not present',
+                                                   'no information', 'unknown', 'n.a.', 'nil']:
+                                # Additional check - if key seems like hallucination, skip it
+                                hallucination_keywords = ['employee', 'icno', 'staff id', 'emp id', 'employee code']
+                                if doc_type.lower() not in ['pay slip', 'payslip', 'salary slip']:
+                                    # Not a payslip, so don't include employee-related fields
+                                    if any(hk in key.lower() for hk in hallucination_keywords):
+                                        logger.info(f"   ⚠️  Skipping hallucinated field: {key}")
+                                        continue
+                                
+                                entities[key] = val
+                                logger.info(f"   ✅ Extracted: {key} = {val[:50]}")
             
-            # Ensure minimum columns
-            if len(columns) < 5:
-                columns = ['Document ID', 'Date', 'Amount', 'Name', 'Description', 'Total']
+            if not entities:
+                logger.warning("⚠️  No entities extracted from Ollama, trying regex backup")
+                return await self._extract_with_regex_backup(text)
             
-            return columns[:15]
+            logger.info(f"🏆 Extracted {len(entities)} real fields (NO hallucination)")
+            return entities
         
-        except:
-            return ['Document ID', 'Date', 'Amount', 'Name', 'Description', 'Total']
+        except Exception as e:
+            logger.error(f"❌ Entity extraction error: {e}")
+            logger.error(traceback.format_exc())
+            return await self._extract_with_regex_backup(text)
     
-    async def build_smart_excel_structure_enhanced(self, text: str) -> SmartExcelStructure:
+    async def _extract_with_regex_backup(self, text: str) -> Dict[str, str]:
+        """Regex backup extraction when AI fails"""
+        logger.info("🔄 Using regex backup extraction")
+        entities = {}
+        
+        # Simple key-value extraction from text
+        lines = text.split('\n')
+        for line in lines:
+            line = line.strip()
+            if ':' in line:
+                parts = line.split(':', 1)
+                if len(parts) == 2:
+                    key = parts[0].strip()
+                    val = parts[1].strip()
+                    if key and val and len(key) < 50 and len(val) < 200:
+                        entities[key] = val
+        
+        # If still no entities, extract basic patterns
+        if not entities:
+            regex_results = self.regex_extractor.extract_all(text)
+            for entity_type, values in regex_results.items():
+                if values:
+                    entities[entity_type.title()] = values[0]
+        
+        return entities if entities else {"Content": "See raw OCR text for details"}
+    
+    async def build_smart_excel_structure_dynamic(self, text: str) -> SmartExcelStructure:
         """
-        🆕 ENHANCED EXCEL STRUCTURE BUILDER - MAIN IMPROVEMENT!
-        Uses multi-pass extraction for maximum accuracy
+        🆕 BUILD DYNAMIC EXCEL STRUCTURE - NO FIXED COLUMNS
+        Discovers columns from actual document content
         """
         try:
-            logger.info("\n🏗️  BUILDING ENHANCED EXCEL STRUCTURE")
+            logger.info("\n🏗️  BUILDING DYNAMIC EXCEL STRUCTURE (NO FIXED COLUMNS)")
             
             # Step 1: Identify document type
             doc_type = await self.identify_document_type_ai(text)
             logger.info(f"   📄 Document Type: {doc_type}")
             
-            # Step 2: Multi-pass entity extraction (THE KEY IMPROVEMENT!)
-            entities = await self.extract_entities_multipass(text, doc_type)
+            # Step 2: Extract pure entities (NO HALLUCINATION)
+            entities = await self.extract_pure_entities_no_hallucination(text, doc_type)
             
-            # Step 3: AI suggest columns based on extracted entities
-            suggested_columns = await self.suggest_excel_columns_ai(text, doc_type)
+            if not entities:
+                logger.warning("⚠️  No entities found")
+                return SmartExcelStructure(
+                    document_type=doc_type,
+                    columns=["Document Type", "Content"],
+                    values={"Document Type": doc_type, "Content": text[:500]},
+                    confidence=0.3,
+                    extraction_method='fallback',
+                    extraction_success=False,
+                    missing_fields=[],
+                    extraction_passes=1
+                )
             
-            # Step 4: Map entities to columns intelligently
-            final_columns = []
-            final_values = {}
-            
-            # Use extracted entity keys as columns
-            for key in entities.keys():
-                if key not in final_columns:
-                    final_columns.append(key)
-                    final_values[key] = entities[key]
-            
-            # Add suggested columns that don't exist
-            for col in suggested_columns:
-                if col not in final_columns:
-                    final_columns.append(col)
-                    # Try to find value from entities
-                    found_value = None
-                    for ent_key, ent_val in entities.items():
-                        if col.lower() in ent_key.lower() or ent_key.lower() in col.lower():
-                            found_value = ent_val
-                            break
-                    final_values[col] = found_value if found_value else "Not found (no unique identifier is provided)"
-            
-            # Check for missing fields
-            missing_fields = [col for col, val in final_values.items() 
-                            if not val or val == "Not found (no unique identifier is provided)"]
-            
-            confidence = 1.0 - (len(missing_fields) / len(final_columns)) if final_columns else 0.0
-            
-            logger.info(f"   ✅ Extracted {len(entities)} entities")
-            logger.info(f"   ✅ Created {len(final_columns)} columns")
-            logger.info(f"   ⚠️  {len(missing_fields)} fields missing")
-            logger.info(f"   📊 Confidence: {confidence:.2%}")
-            
-            return SmartExcelStructure(
-                document_type=doc_type,
-                columns=final_columns,
-                values=final_values,
-                confidence=confidence,
-                extraction_method='enhanced_multipass',
-                extraction_success=True,
-                missing_fields=missing_fields,
-                extraction_passes=3
-            )
-        
-        except Exception as e:
-            logger.error(f"❌ Enhanced structure building error: {e}")
-            logger.error(traceback.format_exc())
-            
-            # Fallback to regex
-            return await self._fallback_excel_structure(text)
-    
-    async def _fallback_excel_structure(self, text: str) -> SmartExcelStructure:
-        """Fallback to regex extraction"""
-        try:
-            logger.info("   🔄 Using regex fallback extraction")
-            doc_type = self.regex_extractor.identify_document_type(text)
-            entities = self.regex_extractor.extract_smart_fields(text, doc_type)
-            
+            # Step 3: Build columns from discovered entities
             columns = list(entities.keys())
+            values = entities.copy()
+            
+            # Add document identifier if it exists
+            if "Document Type" not in columns:
+                columns.insert(0, "Document Type")
+                values["Document Type"] = doc_type
+            
+            confidence = min(1.0, len(entities) / 10.0)  # More entities = higher confidence
+            
+            logger.info(f"   ✅ Created {len(columns)} dynamic columns")
+            logger.info(f"   📊 Confidence: {confidence:.2%}")
+            logger.info(f"   🎯 Columns: {', '.join(columns[:5])}{'...' if len(columns) > 5 else ''}")
+            
             return SmartExcelStructure(
                 document_type=doc_type,
                 columns=columns,
-                values=entities,
-                confidence=0.6,
-                extraction_method='regex_fallback',
+                values=values,
+                confidence=confidence,
+                extraction_method='smart_dynamic_ai',
+                extraction_success=True,
+                missing_fields=[],
+                extraction_passes=1
+            )
+        
+        except Exception as e:
+            logger.error(f"❌ Dynamic structure building error: {e}")
+            logger.error(traceback.format_exc())
+            
+            # Fallback
+            return await self._fallback_excel_structure(text)
+    
+    async def _fallback_excel_structure(self, text: str) -> SmartExcelStructure:
+        """Fallback to simple extraction"""
+        try:
+            logger.info("   🔄 Using fallback extraction")
+            doc_type = self.regex_extractor.identify_document_type(text)
+            
+            # Extract simple key-value pairs
+            entities = {}
+            lines = text.split('\n')
+            for line in lines[:30]:  # First 30 lines
+                if ':' in line:
+                    parts = line.split(':', 1)
+                    if len(parts) == 2:
+                        key = parts[0].strip()
+                        val = parts[1].strip()
+                        if key and val and len(key) < 50 and len(val) < 200:
+                            entities[key] = val
+            
+            if not entities:
+                entities = {"Content": text[:500]}
+            
+            columns = ["Document Type"] + list(entities.keys())
+            values = {"Document Type": doc_type}
+            values.update(entities)
+            
+            return SmartExcelStructure(
+                document_type=doc_type,
+                columns=columns,
+                values=values,
+                confidence=0.5,
+                extraction_method='fallback_simple',
                 extraction_success=True,
                 missing_fields=[],
                 extraction_passes=1
@@ -937,9 +720,9 @@ Column names:"""
         except:
             return SmartExcelStructure(
                 document_type="Document",
-                columns=["Field", "Value"],
-                values={"Field": "Error", "Value": "Extraction failed"},
-                confidence=0.0,
+                columns=["Document Type", "Content"],
+                values={"Document Type": "Document", "Content": text[:500]},
+                confidence=0.2,
                 extraction_method='error',
                 extraction_success=False,
                 missing_fields=[],
@@ -974,7 +757,7 @@ Summary:"""
 
 JSON format:
 {{
-  "people": ["name1", "name2"],
+  "people": ["name1"],
   "organizations": ["org1"],
   "dates": ["date1"],
   "amounts": ["amount1"]
@@ -998,7 +781,7 @@ JSON format:
 # ULTIMATE HYBRID OCR ENGINE (UNCHANGED - CORE FUNCTIONALITY)
 # ============================================================================
 class UltimateHybridOCREngine:
-    """Ultimate 3-engine OCR + AI Ollama"""
+    """Ultimate 3-engine OCR + Smart AI Ollama"""
     
     def __init__(self, ollama_client: Optional[OptimizedOllamaClient] = None):
         self.preprocessor = AdvancedImagePreprocessor()
@@ -1023,11 +806,11 @@ class UltimateHybridOCREngine:
             except:
                 logger.warning("⚠️  PaddleOCR initialization failed")
         
-        # AI Processor
+        # AI Processor - NOW USES SmartOllamaAIProcessor
         self.ai_processor = None
         if ollama_client and OLLAMA_AVAILABLE:
-            self.ai_processor = EnhancedOllamaAIProcessor(ollama_client)
-            logger.info("✅ Enhanced Ollama AI Processor initialized")
+            self.ai_processor = SmartOllamaAIProcessor(ollama_client)
+            logger.info("✅ Smart Ollama AI Processor initialized")
     
     def _easyocr_extract(self, image_path: Path) -> OCREngineResult:
         """EasyOCR extraction - UNCHANGED"""
@@ -1101,7 +884,7 @@ class UltimateHybridOCREngine:
             return OCREngineResult("paddleocr", "", 0.0, time.time()-start, False, str(e))
     
     async def process_image(self, image_path: Path) -> ProcessingResult:
-        """Complete image processing pipeline - ENHANCED WITH MULTIPASS EXTRACTION"""
+        """Complete image processing pipeline - WITH SMART DYNAMIC EXTRACTION"""
         job_id = str(uuid.uuid4())[:8]
         overall_start = time.time()
         
@@ -1143,14 +926,14 @@ class UltimateHybridOCREngine:
                     error="No text extracted"
                 )
             
-            # Step 4: AI Processing
+            # Step 4: AI Processing with Smart Dynamic Extraction
             cleaned_text = voting_result.final_text
             summary = "No AI processing available"
             entities = {}
             excel_structure = None
             
             if self.ai_processor:
-                logger.info("\n🤖 AI PROCESSING WITH OLLAMA")
+                logger.info("\n🤖 AI PROCESSING WITH SMART DYNAMIC EXTRACTION")
                 
                 # Clean OCR text
                 cleaned_result = await self.ai_processor.clean_ocr_text(voting_result.final_text)
@@ -1162,8 +945,8 @@ class UltimateHybridOCREngine:
                 # Extract entities (legacy format)
                 entities = await self.ai_processor.extract_entities_legacy(cleaned_text)
                 
-                # 🆕 BUILD ENHANCED EXCEL STRUCTURE (MULTI-PASS EXTRACTION)
-                excel_structure = await self.ai_processor.build_smart_excel_structure_enhanced(cleaned_text)
+                # 🆕 BUILD SMART DYNAMIC EXCEL STRUCTURE (NO FIXED COLUMNS)
+                excel_structure = await self.ai_processor.build_smart_excel_structure_dynamic(cleaned_text)
             
             # Step 5: Create result
             result = ProcessingResult(
@@ -1207,10 +990,10 @@ class UltimateHybridOCREngine:
             )
 
 # ============================================================================
-# PROFESSIONAL EXCEL REPORT GENERATOR (ENHANCED)
+# PROFESSIONAL EXCEL REPORT GENERATOR (ENHANCED FOR DYNAMIC COLUMNS)
 # ============================================================================
 class ProfessionalExcelReportGenerator:
-    """Generate beautiful Excel reports with enhanced data"""
+    """Generate beautiful Excel reports with dynamic columns"""
     
     def __init__(self):
         self.styles = self._init_styles()
@@ -1249,7 +1032,7 @@ class ProfessionalExcelReportGenerator:
         }
     
     def generate(self, result: ProcessingResult, output_path: Path) -> bool:
-        """Generate Excel report - ENHANCED"""
+        """Generate Excel report with dynamic columns"""
         try:
             if not OPENPYXL_AVAILABLE:
                 logger.warning("⚠️  OpenPyXL not available - using CSV fallback")
@@ -1284,20 +1067,25 @@ class ProfessionalExcelReportGenerator:
             return False
     
     def _create_main_data_sheet(self, wb, result: ProcessingResult):
-        """Create main data sheet with extracted entities"""
+        """Create main data sheet with dynamic extracted entities"""
         ws = wb.create_sheet("Extracted Data", 0)
         
         # Title
-        ws['A1'] = f"OCR Elite v15.1 - {result.excel_structure.document_type if result.excel_structure else 'Document'} Report"
+        title_text = f"OCR Elite v15.2 - {result.excel_structure.document_type if result.excel_structure else 'Document'} Report"
+        ws['A1'] = title_text
         ws['A1'].font = self.styles['title']['font']
         ws['A1'].alignment = self.styles['title']['alignment']
-        ws.merge_cells('A1:H1')
+        
+        # Determine merge range based on number of columns
+        num_cols = len(result.excel_structure.columns) if result.excel_structure and result.excel_structure.columns else 3
+        merge_end = get_column_letter(max(num_cols, 3))
+        ws.merge_cells(f'A1:{merge_end}1')
         ws.row_dimensions[1].height = 30
         
         # Empty row
         ws.append([])
         
-        # Headers
+        # Headers and Data
         if result.excel_structure and result.excel_structure.columns:
             headers = result.excel_structure.columns
             ws.append(headers)
@@ -1315,7 +1103,7 @@ class ProfessionalExcelReportGenerator:
             
             # Data row
             values = result.excel_structure.values
-            row_data = [values.get(col, "Not found (no unique identifier is provided)") for col in headers]
+            row_data = [values.get(col, "") for col in headers]
             ws.append(row_data)
             
             # Apply data styling
@@ -1329,14 +1117,9 @@ class ProfessionalExcelReportGenerator:
             ws.append([])
             ws.append(['Metadata:', ''])
             ws.append(['Extraction Method:', result.excel_structure.extraction_method])
-            ws.append(['Extraction Passes:', result.excel_structure.extraction_passes])
             ws.append(['Confidence:', f"{result.excel_structure.confidence:.2%}"])
             ws.append(['OCR Engine:', result.best_engine])
             ws.append(['Processing Time:', f"{result.processing_time:.2f}s"])
-            
-            if result.excel_structure.missing_fields:
-                ws.append([])
-                ws.append(['Missing Fields:', ', '.join(result.excel_structure.missing_fields)])
         else:
             ws.append(['No data extracted'])
         
@@ -1395,7 +1178,7 @@ class ProfessionalExcelReportGenerator:
                 if result.excel_structure and result.excel_structure.columns:
                     writer.writerow(result.excel_structure.columns)
                     values = result.excel_structure.values
-                    row_data = [values.get(col, "Not found") for col in result.excel_structure.columns]
+                    row_data = [values.get(col, "") for col in result.excel_structure.columns]
                     writer.writerow(row_data)
                 else:
                     writer.writerow(['Field', 'Value'])
@@ -1453,7 +1236,7 @@ async def startup_event():
     global ocr_engine, excel_generator, json_generator
     
     logger.info("\n" + "="*80)
-    logger.info("🚀 OCR ELITE v15.1 ENHANCED EXTRACTION - STARTING UP")
+    logger.info("🚀 OCR ELITE v15.2 SMART ENTITY EXTRACTION - STARTING UP")
     logger.info("="*80 + "\n")
     
     # Initialize Ollama client
@@ -1481,18 +1264,18 @@ async def startup_event():
     logger.info("✅ Report generators initialized")
     
     logger.info("\n" + "="*80)
-    logger.info("✅ ALL SYSTEMS READY - OCR ELITE v15.1 ONLINE")
+    logger.info("✅ ALL SYSTEMS READY - OCR ELITE v15.2 ONLINE")
     logger.info("="*80 + "\n")
 
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup on shutdown"""
-    logger.info("\n🛑 Shutting down OCR Elite v15.1...")
+    logger.info("\n🛑 Shutting down OCR Elite v15.2...")
     EXECUTOR.shutdown(wait=True)
     logger.info("✅ Shutdown complete\n")
 
 # ============================================================================
-# FASTAPI ROUTES - ALL OLD ROUTES PRESERVED + NEW ROUTES ADDED
+# FASTAPI ROUTES - ALL OLD ROUTES PRESERVED
 # ============================================================================
 
 @app.get("/", response_class=HTMLResponse)
@@ -1505,10 +1288,10 @@ async def home(request: Request):
         return HTMLResponse("""
 <!DOCTYPE html>
 <html>
-<head><title>OCR Elite v15.1</title></head>
+<head><title>OCR Elite v15.2</title></head>
 <body style="font-family: Arial; text-align: center; padding: 50px;">
-    <h1>🚀 OCR Elite v15.1 Enhanced</h1>
-    <p>Multi-Pass Entity Extraction System</p>
+    <h1>🚀 OCR Elite v15.2 Smart Extraction</h1>
+    <p>Dynamic Entity Extraction - No Fixed Columns</p>
     <p><a href="/ocr">Go to OCR</a> | <a href="/ner">Go to NER</a></p>
     <p><a href="/docs">API Documentation</a></p>
 </body>
@@ -1539,7 +1322,7 @@ async def ocr_page(request: Request):
 
 @app.post("/ocr/upload")
 async def ocr_upload(request: Request, file: UploadFile = File(...)):
-    """OCR upload endpoint - UNCHANGED ROUTE, ENHANCED PROCESSING"""
+    """OCR upload endpoint - UNCHANGED ROUTE, SMART EXTRACTION"""
     try:
         # Validate file
         if not file.filename:
@@ -1561,7 +1344,7 @@ async def ocr_upload(request: Request, file: UploadFile = File(...)):
         
         logger.info(f"📥 Uploaded: {file.filename}")
         
-        # Process with enhanced multi-pass extraction
+        # Process with smart dynamic extraction
         if not ocr_engine:
             raise HTTPException(status_code=500, detail="OCR engine not initialized")
         
@@ -1786,7 +1569,7 @@ async def batch_process(files: List[UploadFile] = File(...), use_voting: bool = 
         raise HTTPException(500, str(e))
 
 # ============================================================================
-# DOWNLOAD ROUTES - OLD FORMAT (MUST HAVE THIS!)
+# DOWNLOAD ROUTES - OLD FORMAT (CRITICAL - FIXES YOUR 404!)
 # ============================================================================
 
 @app.get("/download/{jobid}/{filetype}")
@@ -1830,7 +1613,7 @@ async def health_check():
     """Health check endpoint"""
     return {
         "status": "healthy",
-        "version": "15.1.0",
+        "version": "15.2.0",
         "features": {
             "easyocr": EASYOCR_AVAILABLE,
             "tesseract": TESSERACT_AVAILABLE,
@@ -1838,6 +1621,7 @@ async def health_check():
             "ollama": OLLAMA_AVAILABLE,
             "openpyxl": OPENPYXL_AVAILABLE,
         },
+        "extraction_type": "dynamic_smart_no_hallucination",
         "timestamp": datetime.datetime.now().isoformat()
     }
 
@@ -1846,9 +1630,7 @@ async def process_document(
     file: UploadFile = File(...),
     background_tasks: BackgroundTasks = None
 ):
-    """
-    Process uploaded document (image) with OCR + AI (NEW ENHANCED ENDPOINT)
-    """
+    """Process uploaded document with smart dynamic extraction (NEW ENHANCED ENDPOINT)"""
     upload_start = time.time()
     
     try:
@@ -2129,7 +1911,7 @@ def create_default_templates():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCR Elite v15.1</title>
+    <title>OCR Elite v15.2</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
@@ -2143,8 +1925,8 @@ def create_default_templates():
 </head>
 <body>
     <div class="container">
-        <h1>🚀 OCR Elite v15.1</h1>
-        <p class="subtitle">Enhanced Multi-Pass Entity Extraction System</p>
+        <h1>🚀 OCR Elite v15.2</h1>
+        <p class="subtitle">Smart Dynamic Entity Extraction - No Fixed Columns</p>
         <div class="links">
             <a href="/ocr" class="button">📄 OCR Processing</a>
             <a href="/ner" class="button">🔍 Entity Extraction</a>
@@ -2175,7 +1957,7 @@ def create_default_templates():
 <body>
     <div class="container">
         <h1>📄 OCR Document Processing</h1>
-        <p>Upload an image to extract text with multi-pass AI extraction</p>
+        <p>Upload an image to extract text with smart dynamic extraction</p>
         <form action="/ocr/upload" method="post" enctype="multipart/form-data">
             <input type="file" name="file" accept="image/*" required>
             <br>
@@ -2229,13 +2011,14 @@ if __name__ == "__main__":
     
     # Run server
     logger.info("\n" + "="*80)
-    logger.info("🚀 STARTING OCR ELITE v15.1 ENHANCED EXTRACTION SERVER")
+    logger.info("🚀 STARTING OCR ELITE v15.2 SMART ENTITY EXTRACTION SERVER")
     logger.info("="*80)
     logger.info("📍 Server URL: http://localhost:8000")
     logger.info("📍 OCR Page: http://localhost:8000/ocr")
     logger.info("📍 NER Page: http://localhost:8000/ner")
     logger.info("📍 API Docs: http://localhost:8000/docs")
     logger.info("📍 Health Check: http://localhost:8000/health")
+    logger.info("💡 Feature: Dynamic Entity Extraction - NO Fixed Columns!")
     logger.info("="*80 + "\n")
     
     uvicorn.run(

@@ -1,0 +1,21 @@
+{
+  "job_id": "c16931f1",
+  "status": "success",
+  "document_type": "Pay Slip",
+  "ocr_confidence": 0.9500000000000001,
+  "quality_score": 0.6090576428641432,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 230.47599124908447,
+  "extracted_data": {
+    "E": "\\fast api project\\uploads\\58.jpg",
+    "Document Type": "Pay Slip"
+  },
+  "summary": "Here is a 3-sentence summary of the document:\n\nThe document appears to be an employee record for Sunil Babu, who works as a Software Engineer at Discoverture Solutions Pvt. Ltd in Bhubaneswar, India. The record includes details such as his designation, location, date of joining, and salary information, including basic pay, allowances, deductions, and total earnings. The document also lists various types of incentives and benefits that Sunil Babu has received or is eligible for during the specifi",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\58.jpg\nmin\ngeneral\nDiscoverture Solutiens (I) Pvt. Lte\nE 4 afocity.Bt\ntor Augus-2i\nPay Silip\nSunil Babu\nFunction\nEmplyee Numtar\n1297\nof Agcurt furtier\nIpe Ia tutar Po\nAVAP0338F\nESt Number\n13484/0000000266\nDesignation\nLocation\nSobware Engineer\nSanik Detals\n913010025900051, Auss Blara\nBhubanesaar, inda\nDate of Joining\n20-May-2013\nAltarnidence Detalls\nPrner\nAug-13\n31 Cays\n104 Days\nYTD\nEarninge\nBasic Pay\n13.097.00\nAup13\n47 400.00\nYTD\nHA\nConmyanca\n5,542.00\n800.00\n18,771.00\n2,710.00\nMirdical Aiowerce\nOther Aowancee\n2.308.0\n1,250.00\n4,234.80\nIncenitive-Compony Perlomance\n1.678.00\n8.122.00\nTotal Earnings\nIncanibre-Complinyee Perflomanca\n21.97.90\n83.474.00\n800.00\nDeductions\nPelessional Tax\nA 150 0\nAup-13\n0 0\nYTD\nPF Deduction\nFortal Deductions\nMet Amount\n120\n1,805.00\n777.404.0\n8.190.00\naTeye Thend Che mde tiy Ty\nAuesurt (n atie):\nThis is a Camputer Cenerstead Phey Sp",
+  "timestamp": "2025-10-07T14:12:12.717240"
+}

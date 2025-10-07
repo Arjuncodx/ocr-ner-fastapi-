@@ -1,0 +1,38 @@
+{
+  "job_id": "7b69b3ad",
+  "status": "success",
+  "document_type": "Pay Slip",
+  "ocr_confidence": 0.95,
+  "quality_score": 0.7444467021376656,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 193.8128945827484,
+  "extracted_data": {
+    "Document Type": "PAY SLIP",
+    "Employee ID": "F26017",
+    "Date Joined": "07 MAR 2015",
+    "Finance Department Position": "CONSTRUCTION WORKER",
+    "Ordinary Pay": "1,108.70",
+    "Basic Salary": "700.00",
+    "Total Wages": "1,808.70",
+    "Attendance Allowance": "20.00",
+    "Overtime Allowance": "25.24",
+    "Date (01/04/2016)": "363.46",
+    "Hours Worked (01/04/2016)": "1.5 HOURS @ $72.00 x 5.0481",
+    "Total Overtime": "2,171.16",
+    "Nett Pay": "1,108.70",
+    "Bank Account Number": "038752260",
+    "Year-To-Date Salary To Date": "2,800.00",
+    "Misc Allowance/Deduction": "45.53",
+    "Ordinary Wages": "1,544.13",
+    "Statutory Deductions": "0.00",
+    "Additional Wages": "0.00"
+  },
+  "summary": "Here is a 3-sentence summary of the document:\n\nThis appears to be a payslip for an employee named Rahman Habibur who works as a construction worker in the Finance Department, with an Employee ID F26017 and date joined on March 7th, 2015. The payslip covers the period from April 1st to April 30th, 2016, and shows total wages of $2,171.16 for that month. Rahman's net pay is listed as $1,108.70, with a post office savings bank account number provided.",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\28.jpg\nmin\ngeneral\nICL CONSTRUCTION PTE LTD\nPAYSLIP FOR 1 APR 2016 TO 30 APR 2016\nRAHMAN HABIBUR\nFIN G\nPAYMENT DATE: 30 Apr 2016\nDEPARTMENT: CONSTRUCTION WORKER\nEMPLOYEE ID F26017\nDATE JOIN: 07 Mar 2015\nPAY INFORMATION\nALLOWANCE / DEDUCTION\nPAY SUMMARY\nTHIS MONTH\nORDINARY\n1,108.70\nBASIC\n700.00\nTOTAL WAGES\n1,108.70\nAttendance Allowance\n20.00\nOVERTIME\nAllowance\n25.24\n01/04/2016\n1.5\n72.00 x 5.0481\n363.46\n-30/04/2016\n1,108.70\nTOTAL OVERTIME $\n363.46\nNETT PAY\n1,108.70\nPOST OFFICE SAVING BANK\n038752260\nYEAR-TO-DATE\nSALARY TO-DATE\n2,800.00\nMISC ALLOW/DEDUC\n45.53\nORDINARY WAGES\n1,544.13\nSTATUTORY DEDUC\n0.00\nADDITIONAL WAGES\n0.00",
+  "timestamp": "2025-10-07T14:02:19.094732"
+}
