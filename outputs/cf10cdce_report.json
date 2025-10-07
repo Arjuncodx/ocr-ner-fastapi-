@@ -1,0 +1,85 @@
+{
+  "job_id": "cf10cdce",
+  "status": "success",
+  "metadata": {
+    "job_id": "cf10cdce",
+    "filename": "content-gst-invoice.png",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.95,
+    "quality_score": 0.8215605379893729,
+    "processing_time": 61.458345890045166,
+    "document_type": "Invoice",
+    "extraction_method": "regex"
+  },
+  "document_type": "Invoice",
+  "extraction_method": "regex",
+  "excel_columns": [
+    "Date",
+    "Amount",
+    "Total",
+    "Invoice #",
+    "Name",
+    "Address"
+  ],
+  "excel_values": {
+    "Date": "09/22/2017",
+    "Amount": "0.85",
+    "Total": "0.00",
+    "Invoice #": "Ship",
+    "Name": "in due",
+    "Address": "53\nSGST"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\content-gst-invoice.png\nmin\ngeneral\nInvoice\nOriginal\nInput Tax credit is available to a Taxable Person against this copy only.\nYG\nWear Your Opinion\nD/6, Kol Dongri, Nr. Gokul Arcade, Sahakar Road, Vile Parle East\nMumbai Maharashtra\nIndia\nGST: 56546-ALPHA\nGSTIN: 56564sfdg3453\nBill To: Rajveen\nInvoice NO.\nInvoice Date\nDue Date\n#Lane 21, Block D\nINV-0867\nMumbai Maharastra\n09/22/2017\n09/22/2017\n1231332\nTerms\nP.O #\nIndia\nDUE ON RECEIPT\nShip To: Rajveen\n3432532\n#Lane 21, Block D\nDrop\nMumbai Maharastra\nVALUE 1\n1231332\nIndia\nGSTIN NO: 33dsfdsf3453\nItem & Description\nHSN\nqty\nRate (Rs.)\nAmount (Rs.)\nCGST\nSGST\nTotal\n%\nAmt\n%\nAmt\n1\nPearl Pink\n5756765\n10(PCS)\n360.00\n3,050.85\n9\n274.58\n9\n274.58\n3,600.00\nPearl Pink Jewellery.\n2\nPearl Green\n6868655\n10(PCS)\n350.00\n2,966.10\n9\n266.95\n9\n266.95\n3,500.00\nPearl Green Jewellery.\nTotal\n20\n6,016.95\n541.53\n541.53\n7,100.00\nAmount Chargeable(in words)\nTaxable Total :\n6,016.95\nRs.seven thousand, four hundred)(Rs.7,400.00)\nCGST :\n541.53\nSGST :\n541.53\nNotes:\n1. Deal in all types of phones.\nShipping Charges :\n200.00\n2.Deal in all phone accessories.\nAdjustment :\n100.00\n3. Deals in all mobile covers.\nTotal Amount : Rs.7,400.00\nBalance Due : Rs.7,400.00\nTerms & Conditions:\nFor Wear Your Opinion\n1. Need to pay amount within due date.\n2. Make all payment via cash.\n3. Make payment in due time.\nAuthorized Signature",
+  "cleaned_text": "E:\\fast api project\\uploads\\content-gst-invoice.png\nmin\ngeneral\nInvoice\nOriginal\nInput Tax credit is available to a Taxable Person against this copy only.\nYG\nWear Your Opinion\nD/6, Kol Dongri, Nr. Gokul Arcade, Sahakar Road, Vile Parle East\nMumbai Maharashtra\nIndia\nGST: 56546-ALPHA\nGSTIN: 56564sfdg3453\nBill To: Rajveen\nInvoice NO.\nInvoice Date\nDue Date\n#Lane 21, Block D\nINV-0867\nMumbai Maharastra\n09/22/2017\n09/22/2017\n1231332\nTerms\nP.O #\nIndia\nDUE ON RECEIPT\nShip To: Rajveen\n3432532\n#Lane 21, Block D\nDrop\nMumbai Maharastra\nVALUE 1\n1231332\nIndia\nGSTIN NO: 33dsfdsf3453\nItem & Description\nHSN\nqty\nRate (Rs.)\nAmount (Rs.)\nCGST\nSGST\nTotal\n%\nAmt\n%\nAmt\n1\nPearl Pink\n5756765\n10(PCS)\n360.00\n3,050.85\n9\n274.58\n9\n274.58\n3,600.00\nPearl Pink Jewellery.\n2\nPearl Green\n6868655\n10(PCS)\n350.00\n2,966.10\n9\n266.95\n9\n266.95\n3,500.00\nPearl Green Jewellery.\nTotal\n20\n6,016.95\n541.53\n541.53\n7,100.00\nAmount Chargeable(in words)\nTaxable Total :\n6,016.95\nRs.seven thousand, four hundred)(Rs.7,400.00)\nCGST :\n541.53\nSGST :\n541.53\nNotes:\n1. Deal in all types of phones.\nShipping Charges :\n200.00\n2.Deal in all phone accessories.\nAdjustment :\n100.00\n3. Deals in all mobile covers.\nTotal Amount : Rs.7,400.00\nBalance Due : Rs.7,400.00\nTerms & Conditions:\nFor Wear Your Opinion\n1. Need to pay amount within due date.\n2. Make all payment via cash.\n3. Make payment in due time.\nAuthorized Signature",
+  "summary": "Processed Invoice using REGEX extraction. Extracted 6 fields. Document contains 218 words.",
+  "entities": {
+    "dates": [
+      "09/22/2017"
+    ],
+    "amounts": [
+      "0.85",
+      "3,050.85",
+      "6.95",
+      "6,016.95",
+      "7,100.00",
+      "3",
+      "2,96",
+      "3,60",
+      "21",
+      "0.00"
+    ],
+    "emails": [],
+    "phones": [],
+    "invoice_numbers": [
+      "Ship",
+      "Date",
+      "NO",
+      "India",
+      "To",
+      "Original"
+    ],
+    "account_numbers": [],
+    "addresses": [
+      "53\nSGST"
+    ],
+    "tax_rates": [],
+    "names": [
+      "in due",
+      "Maharastra\nVALUE",
+      "Taxable Total",
+      "Kol Dongri",
+      "copy only",
+      "all phone",
+      "East\nMumbai",
+      "four hundred",
+      "India\nDUE",
+      "Shipping Charges"
+    ],
+    "totals": [
+      "6,01"
+    ],
+    "subtotals": [],
+    "quantities": []
+  }
+}

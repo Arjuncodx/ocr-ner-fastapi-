@@ -1,0 +1,38 @@
+{
+  "job_id": "51d15d21",
+  "status": "success",
+  "document_type": "Bill",
+  "ocr_confidence": 0.9499999999999998,
+  "quality_score": 0.8161761368969587,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 142.18062925338745,
+  "extracted_data": {
+    "Document ID": "E:\\fast api project\\uploads\\8.jpg",
+    "Field Type": "min (not a standard field, assuming it's an error or irrelevant)",
+    "Employee Code (ICNO)": "SB16J19MC65270964",
+    "Month": "OCTOBER - 2016",
+    "Year": "2016",
+    "Bill Number": "SB16J19MC65270964",
+    "Book Number": "233511918159",
+    "Number": "114084",
+    "IU": "DIV233511",
+    "Sub-Distribution Unit Code (SDU)": "SD02335119",
+    "Date": "19-10-2016",
+    "Amount Due": "Not explicitly mentioned, but \"BILL NO.\" and other details suggest it's an electricity bill. However, a common field in such bills is \"Due Date\" or \"Payment Due\". Since that specific term isn't present, I'll look for similar terms related to payment.",
+    "Total": "0 (assuming the total amount due)",
+    "Time": "Not found (no unique identifier is provided)",
+    "Billing Cycle (Bill Month)": "OCTOBER - 2016",
+    "Account Number": "114084",
+    "IU Code": "DIV233511",
+    "Sub-Distribution Unit": "SD02335119",
+    "Electricity Provider Name (general)": "Not found (no unique identifier is provided)"
+  },
+  "summary": "Unfortunately, the document appears to be a scanned image of an electricity bill (8.jpg) and does not contain any text that can be summarized. The provided snippet is likely just metadata or headers from the original file. If you could provide more context or clarify what information you would like me to extract, I'd be happy to help!",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\8.jpg\nmin\ngeneral\nELECTRICITY BILL\nDATE:19-10-2016\nTIME:12:15:41\nBILLN0:SB16J19MC65270964\nBILL MONTH: OCT-2016\nBO0K N0:233511918159\nN0:114084\nIU:DIV233511\nSUB,DIU:SD02335119",
+  "timestamp": "2025-10-07T13:00:03.082135"
+}

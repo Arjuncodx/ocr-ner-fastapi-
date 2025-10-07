@@ -1,0 +1,28 @@
+{
+  "job_id": "76e44954",
+  "status": "success",
+  "document_type": "Pay Slip",
+  "ocr_confidence": 0.43935606060606064,
+  "quality_score": 0.6355814393939394,
+  "best_engine": "tesseract",
+  "engines_used": [
+    "tesseract"
+  ],
+  "processing_time": 24.337336778640747,
+  "extracted_data": {
+    "Employee Code (ICNO)": "006246",
+    "Employee Name": "ESTIMATED reading",
+    "Month": "1",
+    "Year": "20",
+    "Date": "08/30/2012",
+    "Amount": "63.66",
+    "Total": "180",
+    "Document ID": "00000000",
+    "Address": "33 ure Last",
+    "Name": "ESTIMATED reading",
+    "Description": "Not found (no unique identifier is provided)"
+  },
+  "summary": "Summary unavailable",
+  "raw_ocr_text": "@ LPA- Rate 180- Residential, General Use\nELECTRIC USAGE Meter # 00000000 DELIVERY & SYSTEM CHARGES @\n\n@ 9927/2012 ACTUAL reading 56021 Basic Service : 28 day(s) @ $ 3600 $10.08\n08/30/2012 ESTIMATED reading -55150 233 KWH @ $ 0857 19.97\nKWH Used in 28 day(s) 871 638 KWH @$ 0975 __ 62.21\n\nSubtotal 92.26\nELECTRIC USAGE HISTORY (kWh) POWER SUPPLY CHARGES a\n\n© 33 871 KWH @ $ 073089 63.66\n2400\n#300 | Efficiency & Renewables Charge\n\nCe 871 KWH @ $ 006246 5.44\nSONDJFMAMJJAS\n2011 ———> “2012 OTHER CHARGES (7)\nActual Reading © Estimated Reading NY State Assessment 1.97\n——_ Average Dally Revenue-Based PILOTS 3.66\ncurrent Month C2 wn 2 eed Suffolk Property Tax Adjustment 3.33\nure\nLast Year 31 50 $1012 70 SEDO 48\n‘Subtotal 13.22\nTotal Charges $174.58\n",
+  "timestamp": "2025-10-07T12:40:41.126466"
+}

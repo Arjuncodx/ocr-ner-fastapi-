@@ -1,0 +1,73 @@
+{
+  "job_id": "c849418b",
+  "status": "success",
+  "metadata": {
+    "job_id": "c849418b",
+    "filename": "content-gst-invoice.png",
+    "engines": "easyocr, paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 1.0,
+    "extraction_confidence": 0.95,
+    "processing_time": 127.90867567062378,
+    "document_type": "Invoice",
+    "extraction_method": "hybrid"
+  },
+  "document_type": "Invoice",
+  "excel_values": {
+    "Date": "09/22/2017",
+    "Amount": "350.00",
+    "Invoice #": "NO",
+    "1. **Document ID (or File Name)**": "E:\\fast api project\\uploads\\content-gst-invoice.png",
+    "2. **Company Name**": "Wear Your Opinion",
+    "3. **GST Number**": "56546-ALPHA, GSTIN: 26564sfdg3453",
+    "4. **Invoice No.** is missing (only Invoice NO.": "INV-0867 mentioned)",
+    "5. **Invoice No.**": "INV-0867",
+    "6. **Date of Issue**": "09/22/2017",
+    "7. **Due Date**": "09/22/2017",
+    "8. **Ship To Address 1**": "#Lane 21, Block D, Mumbai Maharashtra",
+    "9. **Terms**": "P.O #, India, DUE ON RECEIPT"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\content-gst-invoice.png\nmin\ngeneral\nInvoice\nOriginal\nInput Tax credit is available to a Taxable Person against this copy only.\nYG\nWear Your Opinion\nD/6, Kol Dongri, Nr. Gokul Arcade, Sahakar Road, Vile Parle East\nMumbai Maharashtra\nIndia\nGST: 56546-ALPHA\nGSTIN: 56564sfdg3453\nBill To: Rajveen\nInvoice NO.\nInvoice Date\nDue Date\n#Lane 21, Block D\nINV-0867\nMumbai Maharastra\n09/22/2017\n09/22/2017\n1231332\nTerms\nP.O #\nIndia\nDUE ON RECEIPT\nShip To: Rajveen\n3432532\n#Lane 21, Block D\nDrop\nMumbai Maharastra\nVALUE 1\n1231332\nIndia\nGSTIN NO: 33dsfdsf3453\nItem & Description\nHSN\nqty\nRate (Rs.)\nAmount (Rs.)\nCGST\nSGST\nTotal\n%\nAmt\n%\nAmt\n1\nPearl Pink\n5756765\n10(PCS)\n360.00\n3,050.85\n9\n274.58\n9\n274.58\n3,600.00\nPearl Pink Jewellery.\n2\nPearl Green\n6868655\n10(PCS)\n350.00\n2,966.10\n9\n266.95\n9\n266.95\n3,500.00\nPearl Green Jewellery.\nTotal\n20\n6,016.95\n541.53\n541.53\n7,100.00\nAmount Chargeable(in words)\nTaxable Total :\n6,016.95\nRs.seven thousand, four hundred)(Rs.7,400.00)\nCGST :\n541.53\nSGST :\n541.53\nNotes:\n1. Deal in all types of phones.\nShipping Charges :\n200.00\n2.Deal in all phone accessories.\nAdjustment :\n100.00\n3. Deals in all mobile covers.\nTotal Amount : Rs.7,400.00\nBalance Due : Rs.7,400.00\nTerms & Conditions:\nFor Wear Your Opinion\n1. Need to pay amount within due date.\n2. Make all payment via cash.\n3. Make payment in due time.\nAuthorized Signature",
+  "cleaned_text": "Here is the corrected and formatted text:\n\nE:\\fast api project\\uploads\\content-gst-invoice.png\n\nGeneral Invoice\nOriginal\nInput Tax credit is available to a Taxable Person against this copy only.\n\nWear Your Opinion\nD/6, Kol Dongri, Nr. Gokul Arcade, Sahakar Road, Vile Parle East\nMumbai Maharashtra\nIndia\nGST: 56546-ALPHA\nGSTIN: 26564sfdg3453\nBill To: Rajveen\n\nInvoice NO.: INV-0867\nInvoice Date: 09/22/2017\nDue Date: 09/22/2017\n#Lane 21, Block D\nMumbai Maharashtra\n1231332\nTerms:\nP.O #\nIndia\nDUE ON RECEIPT\nShip To: Rajveen\n3432532\n#Lane 21, Block D\nDrop\nMumbai Maharastra\n\nVALUE \n1. Pearl Pink Jewellery.\n   HSN: 5756765\n   qty: 10(PCS)\n   Rate (Rs.): 360.00\n   Amount (Rs.): 3,050.85\n   CGST: 9%\n   SGST: 9%\n   Total Amt: 274.58\n\n2. Pearl Green Jewellery.\n   HSN: 6868655\n   qty: 10(PCS)\n   Rate (Rs.): 350.00\n   Amount (Rs.): 2,966.10\n   CGST: 9%\n   SGST: 9%\n   Total Amt: 266.95\n\nTotal \n20 items\n6,016.95\n541.53\n541.53\n7,100.00\n\nAmount Chargeable(in words)\nTaxable Total : Rs.six thousand sixteen (Rs.6,016.95)\n\nCGST :\n541.53\nSGST :\n541.53\n\nNotes:\n1. Deal in all types of phones.\nShipping Charges: 200.00\n2.Deal in all phone accessories.\nAdjustment: 100.00\n3. Deals in all mobile covers.\n\nTotal Amount : Rs.7,400.00\nBalance Due : Rs.7,400.00\n\nTerms & Conditions:\nFor Wear Your Opinion\n1. Need to pay amount within due date.\n2. Make all payment via cash.\n3. Make payment in due time.\n\nAuthorized Signature",
+  "summary": "Processed Invoice using HYBRID. 12 fields extracted with 95.0% confidence.",
+  "entities": {
+    "dates": [
+      "09/22/2017"
+    ],
+    "amounts": [
+      "350.00",
+      "541.53",
+      "6.10",
+      "0.00",
+      "0.85",
+      "100.00",
+      "3,05",
+      "200.00",
+      "266.95",
+      "6,01"
+    ],
+    "emails": [],
+    "phones": [],
+    "invoice_numbers": [
+      "NO",
+      "Original",
+      "Ship",
+      "Date"
+    ],
+    "names": [
+      "Kol Dongri",
+      "Shipping Charges",
+      "of phones",
+      "Wear Your",
+      "all phone",
+      "Maharashtra\nIndia",
+      "Gokul Arcade",
+      "copy only",
+      "available to",
+      "in due"
+    ],
+    "totals": []
+  },
+  "ocr_confidence": 1.0,
+  "extraction_confidence": 0.95
+}

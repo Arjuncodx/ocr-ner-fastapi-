@@ -1,0 +1,29 @@
+{
+  "job_id": "6e77f47d",
+  "status": "success",
+  "document_type": "Bill",
+  "ocr_confidence": 0.9499999999999998,
+  "quality_score": 0.8161761368969587,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 27.18634533882141,
+  "extracted_data": {
+    "Employee Code (ICNO)": "114084",
+    "Employee Name": "ELECTRICITY BILL DATE",
+    "Month": "12",
+    "Year": "20",
+    "Date": "19-10-2016",
+    "Amount": "12",
+    "Total": "10",
+    "Document ID": "N0",
+    "Name": "ELECTRICITY BILL DATE",
+    "Description": "Not found (no unique identifier is provided)"
+  },
+  "summary": "Summary unavailable",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\8.jpg\nmin\ngeneral\nELECTRICITY BILL\nDATE:19-10-2016\nTIME:12:15:41\nBILLN0:SB16J19MC65270964\nBILL MONTH: OCT-2016\nBO0K N0:233511918159\nN0:114084\nIU:DIV233511\nSUB,DIU:SD02335119",
+  "timestamp": "2025-10-07T12:39:40.816160"
+}

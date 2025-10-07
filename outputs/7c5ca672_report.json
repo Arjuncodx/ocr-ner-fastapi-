@@ -1,0 +1,27 @@
+{
+  "job_id": "7c5ca672",
+  "status": "success",
+  "document_type": "Pay Slip",
+  "ocr_confidence": 0.9500000000000001,
+  "quality_score": 0.7945511866154725,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 25.910176515579224,
+  "extracted_data": {
+    "Employee Name": "Install AMT",
+    "Month": "8",
+    "Amount": "130.44",
+    "Total": "9",
+    "Document ID": "Not found (no unique identifier is provided)",
+    "Date": "Not found (no unique identifier is provided)",
+    "Name": "Install AMT",
+    "Description": "Not found (no unique identifier is provided)"
+  },
+  "summary": "Summary unavailable",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\69.jpg\nmin\ngeneral\nInstall AMT:0.00\nMisc.Credit:0.00\nMisc.Debit :0.0\nCurrent Amt:6185150163.0\n9\nPrevArrLps :\nArrear\n:9612.23\nCurrent, Lps: 130.44\nArrLPs\n:108.77\nISD AMT\n:0.00\nCollInstall:0\nAmt Payable:6185159884.0\n8",
+  "timestamp": "2025-10-07T12:56:04.270159"
+}

@@ -1,0 +1,39 @@
+{
+  "job_id": "e21df9c9",
+  "status": "success",
+  "document_type": "Bill",
+  "ocr_confidence": 0.95,
+  "quality_score": 0.7460473154326325,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 152.55149841308594,
+  "extracted_data": {
+    "Document ID": "E:\\fast api project\\uploads\\16.jpg",
+    "Amount (Rs.)": "6440.00",
+    "Employee Code (ICNO)": "XXXXXXXXXX",
+    "Bill Date": "26-Jun-2009",
+    "Due Date": "14-Jul-2009",
+    "Month": "JUN-2009",
+    "LPSC for days or Part": "JUN-2009",
+    "Derived Connected Load / Max Mdl": "4.00 KW",
+    "Bill Number": "XXXXXXXXXX",
+    "Amount Due": "6530.00",
+    "Total": "6630.00",
+    "File Path": "Not found (no unique identifier is provided)",
+    "Category": "Not found (no unique identifier is provided)",
+    "Billing Type": "Not found (no unique identifier is provided)",
+    "Invoice Number (XXXXXXXXXXXXXX)": "Not found (no unique identifier is provided)",
+    "Amount Due (Rs.)": "6530.00",
+    "Supplier Name (Alamy)": "Not found (no unique identifier is provided)",
+    "Month of Service (JUN-2009)": "JUN-2009",
+    "Derived Connected Load / Max Mdl (4.00 KW)": "4.00 KW",
+    "Tariff Details (LPSC for 30 days or Part)": "Not found (no unique identifier is provided)"
+  },
+  "summary": "Here is a summary of the document in 2-3 sentences:\n\nThis appears to be an electricity bill from LPSC, dated June 26, 2009, with a due date of July 14, 2009. The total amount owed is Rs. 6440.00 for consumption during the month of June 2009. There are also additional charges listed for derived connected load and maximum monthly demand (MMD).",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\16.jpg\nmin\ngeneral\nELECTRICITY BILL\nNo.:\nXXXXXXXXXXXXXX\nAmount\n(Rs.) :\n6440.00\nalamy\nBill Date\n26-Jun-2009\nDue Date:\n14-Jul-2009\na\nBill Month:\nLPSC for 30 days or Part :\nJUN-2009\n96.64\nAmount Upto 30 days:\n6530.00\nAmount Upto 60 days :\n6630.0\na\nDerived Connected Load / Max MDl 4.00 KW",
+  "timestamp": "2025-10-07T13:07:13.396207"
+}

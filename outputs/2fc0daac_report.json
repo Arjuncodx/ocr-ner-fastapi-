@@ -1,0 +1,94 @@
+{
+  "job_id": "2fc0daac",
+  "status": "success",
+  "metadata": {
+    "job_id": "2fc0daac",
+    "filename": "Receipt-Example-1018x1440.jpg",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.95,
+    "quality_score": 0.9015449293406783,
+    "processing_time": 94.88044595718384,
+    "document_type": "Invoice",
+    "extraction_method": "hybrid"
+  },
+  "document_type": "Invoice",
+  "extraction_method": "hybrid",
+  "excel_columns": [
+    "Date",
+    "Amount",
+    "Total",
+    "Invoice #",
+    "Name",
+    "Address",
+    "1. **Invoice Number**",
+    "2. **Date of Purchase**",
+    "3. **Bill To (Name)**",
+    "7. **Total Amount**"
+  ],
+  "excel_values": {
+    "Date": "December 8, 2023",
+    "Amount": "10",
+    "Total": "5",
+    "Invoice #": "Receipt",
+    "Name": "jpg\n\nMINIMUM",
+    "Address": "1111 Flemming St",
+    "1. **Invoice Number**": "117 - 44332",
+    "2. **Date of Purchase**": "December 8, 2023",
+    "3. **Bill To (Name)**": "Doe John",
+    "7. **Total Amount**": "$152.32"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\Receipt-Example-1018x1440.jpg\nmin\ngeneral\nRECEIPT\nReceipt number: 117 - 44332\nDate of purchase: December 8, 2023\nBig Machinery, LLC\nBill By\n3345, Diamond St, Orange City, ST\nDoe John\n9987\nAddress: 1111, Flemming St, Yellow\nmachinery@big.com\nCity, AT 1121\nItem\nQuantity\nUnit Price\nTotal\n$34.00\n$34.00\nFuel Plastic Jug (10 gallons)\n01\nGas Hose (5 feet)\n01\n$15.00\n$15.00\nAluminum Screw (4 inches)\n$0.87\n$87.00\n100\n- nothing follows -\nSubtotal: $136.00\nAdditional Charges\nTax (12%): $16.32\nTotal: $147.32",
+  "cleaned_text": "E:\\fast api project\\uploads\\Receipt-Example-1018x1440.jpg\nmin\ngeneral\nRECEIPT\nReceipt number: 117 - 44332\nDate of purchase: December 8, 2023\nBig Machinery, LLC\nBill By\n3345, Diamond St, Orange City, ST\nDoe John\n9987\nAddress: 1111, Flemming St, Yellow\nmachinery@big.com\nCity, AT 1121\nItem\nQuantity\nUnit Price\nTotal\n$34.00\n$34.00\nFuel Plastic Jug (10 gallons)\n01\nGas Hose (5 feet)\n01\n$15.00\n$15.00\nAluminum Screw (4 inches)\n$0.87\n$87.00\n100\n- nothing follows -\nSubtotal: $136.00\nAdditional Charges\nTax (12%): $16.32\nTotal: $147.32",
+  "summary": "Processed Invoice using HYBRID extraction. Extracted 10 fields. Document contains 80 words.",
+  "entities": {
+    "dates": [
+      "December 8, 2023"
+    ],
+    "amounts": [
+      "10",
+      "117",
+      "$34.00",
+      "01",
+      "0.87",
+      "4",
+      "$15.00",
+      "100",
+      "5",
+      "34.00"
+    ],
+    "emails": [
+      "machinery@big.com"
+    ],
+    "phones": [],
+    "invoice_numbers": [
+      "Receipt",
+      "-Example-1018x1440",
+      "By"
+    ],
+    "account_numbers": [],
+    "addresses": [],
+    "tax_rates": [],
+    "names": [
+      "Big Machinery",
+      "Yellow\nmachinery",
+      "jpg\nmin",
+      "Gas Hose",
+      "Fuel Plastic",
+      "Item\nQuantity",
+      "Flemming St",
+      "com\nCity",
+      "nothing follows",
+      "Date of"
+    ],
+    "totals": [
+      "147.32",
+      "136.00",
+      "34.00"
+    ],
+    "subtotals": [
+      "136.00"
+    ],
+    "quantities": []
+  }
+}

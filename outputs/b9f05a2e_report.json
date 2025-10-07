@@ -1,0 +1,77 @@
+{
+  "job_id": "b9f05a2e",
+  "status": "success",
+  "metadata": {
+    "job_id": "b9f05a2e",
+    "filename": "24.jpg",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.9500000000000001,
+    "quality_score": 0.9350605459281427,
+    "processing_time": 59.9317421913147,
+    "document_type": "Invoice",
+    "extraction_method": "hybrid"
+  },
+  "document_type": "Invoice",
+  "extraction_method": "hybrid",
+  "excel_columns": [
+    "Amount",
+    "Total",
+    "Name",
+    "1. Document ID",
+    "2. Employee Code (ICNO)",
+    "3. Month",
+    "4. Year",
+    "5. Employee Name",
+    "6. State",
+    "- Total Dues",
+    "- Net Amount Payable"
+  ],
+  "excel_values": {
+    "Amount": "1",
+    "Total": "500",
+    "Name": "Mysore\nDues",
+    "1. Document ID": "Not found (no unique identifier is provided)",
+    "2. Employee Code (ICNO)": "160192",
+    "3. Month": "6",
+    "4. Year": "2016",
+    "5. Employee Name": "Shri Prathap Simha",
+    "6. State": "Karnataka",
+    "- Total Dues": "110000",
+    "- Net Amount Payable": "109500"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\24.jpg\nmin\ngeneral\nLOK SABHA SECRETARIAT\nParliament House Annexe, New Delhi - 110001\nPAY SLIP\nICNO:\n160192\nMonth:\n6\nYear:\n2016\nName of The\nShri Prathap Simha\nState Name:\nKarnataka\nConstituency Name:\nMysore\nDues Details\nSalary\n50000\nArrears(AIli)\n0\nOffice Expenses Allowances\n15000\nConstituency Allowances\n45000\nTotal Dues\n110000\nDeduction Detail\nEstate Office (Licence Fee-1)\n0\nCGHS\n500\nTotal\n500\nNet Amount Payable :\n109500",
+  "cleaned_text": "E:\\fast api project\\uploads\\24.jpg\nmin\ngeneral\nLOK SABHA SECRETARIAT\nParliament House Annexe, New Delhi - 110001\nPAY SLIP\nICNO:\n160192\nMonth:\n6\nYear:\n2016\nName of The\nShri Prathap Simha\nState Name:\nKarnataka\nConstituency Name:\nMysore\nDues Details\nSalary\n50000\nArrears(AIli)\n0\nOffice Expenses Allowances\n15000\nConstituency Allowances\n45000\nTotal Dues\n110000\nDeduction Detail\nEstate Office (Licence Fee-1)\n0\nCGHS\n500\nTotal\n500\nNet Amount Payable :\n109500",
+  "summary": "Processed Invoice using HYBRID extraction. Extracted 11 fields. Document contains 67 words.",
+  "entities": {
+    "dates": [],
+    "amounts": [
+      "1",
+      "24",
+      "6",
+      "0",
+      "500"
+    ],
+    "emails": [],
+    "phones": [],
+    "invoice_numbers": [],
+    "account_numbers": [],
+    "addresses": [],
+    "tax_rates": [],
+    "names": [
+      "Mysore\nDues",
+      "The\nShri",
+      "jpg\nmin",
+      "Deduction Detail",
+      "Karnataka\nConstituency",
+      "Name of",
+      "State Name",
+      "Constituency Allowances",
+      "PAY SLIP",
+      "Details\nSalary"
+    ],
+    "totals": [],
+    "subtotals": [],
+    "quantities": []
+  }
+}
