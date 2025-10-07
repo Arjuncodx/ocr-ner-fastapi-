@@ -1,0 +1,90 @@
+{
+  "job_id": "99190eef",
+  "status": "success",
+  "metadata": {
+    "job_id": "99190eef",
+    "filename": "spa bill.jpg",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.95,
+    "quality_score": 0.8431383629951164,
+    "processing_time": 48.10693430900574,
+    "document_type": "Receipt",
+    "extraction_method": "hybrid"
+  },
+  "document_type": "Receipt",
+  "extraction_method": "hybrid",
+  "excel_columns": [
+    "Date",
+    "Amount",
+    "Total",
+    "Invoice #",
+    "Name",
+    "Address",
+    "1. Receipt ID",
+    "2. Date Received",
+    "3. Business Name (or Spa Name)",
+    "4. Customer Name",
+    "7. Total Amount Paid"
+  ],
+  "excel_values": {
+    "Date": "2025-02-09",
+    "Amount": "138.00",
+    "Total": "110.00",
+    "Invoice #": "2025-100034",
+    "Name": "great day",
+    "Address": "00\nThank you\nHave",
+    "1. Receipt ID": "2025-100034",
+    "2. Date Received": "Feb 9,2025",
+    "3. Business Name (or Spa Name)": "Lotus Blossom Spa",
+    "4. Customer Name": "Gia Bruno",
+    "7. Total Amount Paid": "US$138.00"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\spa bill.jpg\nmin\ngeneral\nReceipt 2025-100034\nFeb 9,2025\nLotus Blossom Spa\nSan Francisco 94158-2230\nUnited States\njuliekennedy@zmail.com\n5551234\nCustomer details\nGia Bruno\nItems\nQuantity\nPrice\nTax\nLine Total\nColor Explosion Bottle\n1\nUS$28.00\nUS$28.00\nSalt Rub Massage\n1\nUS$110.00\nUS$110.00\nSubtotal\nUS$138.00\nTotal\nUS$138.00\nTotal paid\nUS$138.00\nPayment details\n2025-02-09\nPay in Person\nUS$138.00\nThank you\nHave a great day!",
+  "cleaned_text": "E:\\fast api project\\uploads\\spa bill.jpg\nmin\ngeneral\nReceipt 2025-100034\nFeb 9,2025\nLotus Blossom Spa\nSan Francisco 94158-2230\nUnited States\njuliekennedy@zmail.com\n5551234\nCustomer details\nGia Bruno\nItems\nQuantity\nPrice\nTax\nLine Total\nColor Explosion Bottle\n1\nUS$28.00\nUS$28.00\nSalt Rub Massage\n1\nUS$110.00\nUS$110.00\nSubtotal\nUS$138.00\nTotal\nUS$138.00\nTotal paid\nUS$138.00\nPayment details\n2025-02-09\nPay in Person\nUS$138.00\nThank you\nHave a great day!",
+  "summary": "Processed Receipt using HYBRID extraction. Extracted 11 fields. Document contains 62 words.",
+  "entities": {
+    "dates": [
+      "2025-02-09"
+    ],
+    "amounts": [
+      "138.00",
+      "$138.00",
+      "02",
+      "9",
+      "$28.00",
+      "$110.00",
+      "1",
+      "09",
+      "28.00",
+      "110.00"
+    ],
+    "emails": [
+      "juliekennedy@zmail.com"
+    ],
+    "phones": [],
+    "invoice_numbers": [
+      "2025-100034"
+    ],
+    "account_numbers": [],
+    "addresses": [
+      "00\nThank you\nHave"
+    ],
+    "tax_rates": [],
+    "names": [
+      "great day",
+      "Thank you",
+      "United States",
+      "Subtotal\nUS",
+      "Items\nQuantity",
+      "jpg\nmin",
+      "Total paid",
+      "Gia Bruno",
+      "Pay in",
+      "Payment details"
+    ],
+    "totals": [],
+    "subtotals": [],
+    "quantities": []
+  }
+}

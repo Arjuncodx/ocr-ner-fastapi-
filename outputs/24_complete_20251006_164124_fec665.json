@@ -1,0 +1,26 @@
+{
+  "entities": {
+    "Employee Id": "160192",
+    "Month": "",
+    "Year": "2016",
+    "Name Of The Employee": "Shri Prathap Simha",
+    "State Name": "Karnataka",
+    "Constituency Name": "Mysore",
+    "Salary": "5000",
+    "Arrears All": "Office Expenses Allowances: 5000, Constituency Allowances: 45000",
+    "Total Dues": "110000",
+    "Deduction Detail Estate Licence Fee CGHS": "500",
+    "Net Amount Payable": "109500"
+  },
+  "metadata": {
+    "filename": "24.jpg",
+    "processing_date": "2025-10-06T16:41:24.085526",
+    "app_version": "10.1.0",
+    "best_ocr_engine": "easyocr_orig",
+    "confidence_score": "91.96%",
+    "image_quality_score": "71.03%",
+    "total_processing_time": "0.00s"
+  },
+  "raw_text": "LOK SABHA SECRETARIAT\nParliament House Annexe\nNcw Delhi\n110001\nPAY SLIP\nICNO:\n160192\nMonth:\nYear:\n2016\nName of The\nShri Prathap Simha\nState Name:\nKarnataka\nConstituency Name:\nMysore\nDues Details\nSalary\n5000o\nArrears(AII)\nOffice Expenses Allowances\n5000\nConstituency Allowances\n45000\nTotal Dues\n110000\nDeduction Detail\nEstate\n(Licence Fee\nCGHS\n500\nTotal\n500\nNet Amount Payable\n109500\nOifice",
+  "cleaned_text": "LOK SABHA SECRETARIAT\nParliament House Annexe\nNew Delhi\n110001\nPAY SLIP\nICNO:\n160192\nMonth: \nYear: 2016\nName of The Employee\nShri Prathap Simha\nState Name: Karnataka\nConstituency Name: Mysore\nDues Details\nSalary Rs.5000/-\nArrears (All)\nOffice Expenses Allowances\nRs.5000\nConstituency Allowances\nRs.45000\nTotal Dues\nRs.110000\nDeduction Detail\nEstate \n(Licence Fee) CGHS\nRs. 500\nTotal Rs. 500\nNet Amount Payable\nRs.109500"
+}

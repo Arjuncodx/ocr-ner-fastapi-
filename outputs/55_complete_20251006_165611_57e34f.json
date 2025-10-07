@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "Company Name": "COMPANY NAME",
+    "Address of the Company": "",
+    "Slip May-21": "",
+    "Employee Name": "Radha Kishore T",
+    "Total Working Days": "",
+    "Employee ID": "4587",
+    "LOP Days": "",
+    "Designation": "Sales Executive",
+    "Paid Days": "",
+    "Department": "Marketing",
+    "Bank Name": "SBI",
+    "Date of Joining": "03/04/20",
+    "Bank A/c No.": "32145XXX123",
+    "UAN": "10090XXXX456",
+    "Earnings": {
+      "Basic Salary": "₹ 7,500.00",
+      "EPF": "₹ 900.00",
+      "House Rent Allowance": "₹3,750.00",
+      "ESI": "₹8,112.50",
+      "Conveyance Allowances ": "₹1,600.00",
+      "Professional Tax": "₹0.00",
+      "Medical Allowance": "₹21,250.00",
+      "Special Allowance": "₹900.00"
+    },
+    "Deductions": {
+      "EPF": "₹ 900.00",
+      "ESI": "₹8,112.50",
+      "Professional Tax": "₹0.00",
+      "Medical Allowance": "₹21,250.00",
+      "Special Allowance": "₹900.00"
+    },
+    "Gross Salary": "₹15,000.00",
+    "Total Deductions": "₹ 1,012.50",
+    "Net Pay": "₹81,3987.50"
+  },
+  "metadata": {
+    "filename": "55.jpg",
+    "processing_date": "2025-10-06T16:56:11.614430",
+    "app_version": "10.1.0",
+    "best_ocr_engine": "easyocr_orig",
+    "confidence_score": "81.29%",
+    "image_quality_score": "66.74%",
+    "total_processing_time": "0.00s"
+  },
+  "raw_text": "COMPANY NAME\nAddress ofthe Company\nSlip May-21\nEmployee Name\nRadah Kishore T\nTotal Working_Days_\nEmployee ID\n4587\nLOP Days\nDesignation_\nSales Executive\nPaid Days\nDepartment\nMarketing\nBank Name\nSBI\nDate of Joining_\n03/04/20\nBank Alc No\n32145XXX123\nUAN\n10090xXX456\nEarnings\nDeductions\nBasic Salary\n[7500.00\nEPF\n{900.00\nHouse Rent Allowances\n<3750.00\nESE\n8112.50\nConveyance_Allowances |1600.00\nProfessional Tax\n{0.00\nMedical Allowances\n21250.00\nSpecial Allowances\n900.00\nGross Salary\n15000.00\nTotal Deductions\n{1012.50\nNet Pay\n813987.50\nEmployer Signature\nEmployee Signature\nPay",
+  "cleaned_text": "COMPANY NAME\nAddress of the Company\nSlip May-21\nEmployee Name\nRadha Kishore T\nTotal Working Days\nEmployee ID\n4587\nLOP Days\nDesignation\nSales Executive\nPaid Days\nDepartment\nMarketing\nBank Name\nSBI\nDate of Joining\n03/04/20\nBank A/c No.\n32145XXX123\nUAN\n10090XXXX456\nEarnings\nDeductions\nBasic Salary\n₹ 7,500.00\nEPF\n₹ 900.00\nHouse Rent Allowance\n₹3,750.00\nESI\n₹8,112.50\nConveyance Allowances ₹1,600.00\nProfessional Tax\n₹0.00\nMedical Allowance\n₹21,250.00\nSpecial Allowance\n₹900.00\nGross Salary\n₹15,000.00\nTotal Deductions\n₹ 1,012.50\nNet Pay\n₹81,3987.50"
+}

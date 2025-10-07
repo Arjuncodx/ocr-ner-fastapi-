@@ -1,0 +1,78 @@
+{
+  "job_id": "384d7f11",
+  "status": "success",
+  "metadata": {
+    "job_id": "384d7f11",
+    "filename": "20.jpg",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.95,
+    "quality_score": 0.8042428918247084,
+    "processing_time": 46.44090962409973,
+    "document_type": "Invoice",
+    "extraction_method": "hybrid"
+  },
+  "document_type": "Invoice",
+  "extraction_method": "hybrid",
+  "excel_columns": [
+    "Amount",
+    "Total",
+    "Name",
+    "1. Employee Name",
+    "2. Month",
+    "3. Year",
+    "4. Gross Salary",
+    "5. Deductions",
+    "6. Net Salary"
+  ],
+  "excel_values": {
+    "Amount": "10,773",
+    "Total": "300.00",
+    "Name": "Typist has",
+    "1. Employee Name": "[NAME]",
+    "2. Month": "September",
+    "3. Year": "2005",
+    "4. Gross Salary": "Rs.12,106/-",
+    "5. Deductions": "Rs.1,333/-",
+    "6. Net Salary": "Rs.10,773/-"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\20.jpg\nmin\ngeneral\nSALARY CERTIFICATE\nThis is to certify that [NAME], Steno-Typist has drawn Pay and\nAllowances are as follows for the month of September 2005. This Salary\nCertificate is issued for the purpose of..Housing Loan.\nDEDUCTIONS:\nRs.\nRs.\nPAY\n6,650.00\nEPF\n1,333.00\nD.A\n4,456.00\nH.R.A\n700.00\nC.C.A\n300.00\nMedl. Allowance\nGross\nRs.\n12,106.00\nTotal\nRs. 1,333.00\nGROSS SALARY\n= Rs.12,106/-\nDEDUCTIONS\n= Rs.1,333/-\nNET SALARY\n= Rs.10,773/-\n(Rupees Ten Thousand Seven hundred and seventy Three Only)",
+  "cleaned_text": "E:\\fast api project\\uploads\\20.jpg\nmin\ngeneral\nSALARY CERTIFICATE\nThis is to certify that [NAME], Steno-Typist has drawn Pay and\nAllowances are as follows for the month of September 2005. This Salary\nCertificate is issued for the purpose of..Housing Loan.\nDEDUCTIONS:\nRs.\nRs.\nPAY\n6,650.00\nEPF\n1,333.00\nD.A\n4,456.00\nH.R.A\n700.00\nC.C.A\n300.00\nMedl. Allowance\nGross\nRs.\n12,106.00\nTotal\nRs. 1,333.00\nGROSS SALARY\n= Rs.12,106/-\nDEDUCTIONS\n= Rs.1,333/-\nNET SALARY\n= Rs.10,773/-\n(Rupees Ten Thousand Seven hundred and seventy Three Only)",
+  "summary": "Processed Invoice using HYBRID extraction. Extracted 9 fields. Document contains 79 words.",
+  "entities": {
+    "dates": [],
+    "amounts": [
+      "10,773",
+      "20",
+      "12,106",
+      "0.00",
+      "3.00",
+      "6.00",
+      "6,650.00",
+      "4,456.00",
+      "1,333",
+      "300.00"
+    ],
+    "emails": [],
+    "phones": [],
+    "invoice_numbers": [],
+    "account_numbers": [],
+    "addresses": [],
+    "tax_rates": [],
+    "names": [
+      "Typist has",
+      "Rupees Ten",
+      "Total\nRs",
+      "This Salary",
+      "jpg\nmin",
+      "CERTIFICATE\nThis",
+      "hundred and",
+      "certify that",
+      "and\nAllowances",
+      "the month"
+    ],
+    "totals": [],
+    "subtotals": [],
+    "quantities": []
+  }
+}

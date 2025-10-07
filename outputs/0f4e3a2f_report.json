@@ -1,0 +1,18 @@
+{
+  "job_id": "0f4e3a2f",
+  "metadata": {
+    "job_id": "0f4e3a2f",
+    "filename": "spa bill.jpg",
+    "engines": "easyocr, tesseract, paddleocr",
+    "quality": 0.8074493844109201,
+    "time": 95.79300165176392
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\spa bill.jpg\nmin\ngeneral\nReceipt 2025-100034\nFeb 9,2025\nLotus Blossom Spa\nSan Francisco 94158-2230\nUnited States\njuliekennedy@zmail.com\n5551234\nCustomer details\nGia Bruno\nItems\nQuantity\nPrice\nTax\nLine Total\nColor Explosion Bottle\n1\nUS$28.00\nUS$28.00\nSalt Rub Massage\n1\nUS$110.00\nUS$110.00\nSubtotal\nUS$138.00\nTotal\nUS$138.00\nTotal paid\nUS$138.00\nPayment details\n2025-02-09\nPay in Person\nUS$138.00\nThank you\nHave a great day!",
+  "summary": {
+    "response": "Here is the cleaned OCR text:\n\nE:\\fast api project\\uploads\\spa bill.jpg\nMinimum: general \nReceipt 2025-100034\nFebruary 9, 2025\nLotus Blossom Spa\nSan Francisco, CA 94158-2230\nUnited States\njuliekennedy@zmail.com\n(555)1234\n\nCustomer Details:\nGia Bruno\n\nItems:\n\n* Color Explosion Bottle: \n\t+ Quantity: 1\n\t+ Price: US$28.00\n\t+ Tax: US$28.00\n\t+ Line Total: US$56.00\n* Salt Rub Massage: \n\t+ Quantity: 1\n\t+ Price: US$110.00\n\t+ Tax: US$0.00\n\t+ Line Total: US$110.00\n\nSubtotal: US$138.00\nTotal: US$138.00\nTotal Paid: US$138.00\n\nPayment Details:\nDate: February 9, 2025\nMethod of Payment: Pay in Person\nAmount: US$138.00",
+    "processing_time": 45.304972887039185,
+    "from_cache": false,
+    "tokens": 88
+  },
+  "entities": {}
+}

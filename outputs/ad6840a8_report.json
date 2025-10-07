@@ -1,0 +1,96 @@
+{
+  "job_id": "ad6840a8",
+  "status": "success",
+  "metadata": {
+    "job_id": "ad6840a8",
+    "filename": "Receipt-Example-1018x1440.jpg",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.95,
+    "quality_score": 0.9015449293406783,
+    "processing_time": 12.866064071655273,
+    "document_type": "Receipt"
+  },
+  "document_type": "Receipt",
+  "excel_columns": [
+    "Date",
+    "Amount",
+    "Total",
+    "Invoice #",
+    "Name",
+    "Email",
+    "Subtotal",
+    "Description",
+    "Store",
+    "Receipt #",
+    "Items Count"
+  ],
+  "excel_values": {
+    "Date": "December 8, 2023",
+    "Amount": "147.32",
+    "Total": "147.32",
+    "Invoice #": "-Example-1018x1440",
+    "Name": "LLC\nBill",
+    "Email": "machinery@big.com",
+    "Subtotal": "136.00",
+    "Description": "Quantity",
+    "Store": "RECEIPT",
+    "Receipt #": "-Example-1018x1440",
+    "Items Count": "1"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\Receipt-Example-1018x1440.jpg\nmin\ngeneral\nRECEIPT\nReceipt number: 117 - 44332\nDate of purchase: December 8, 2023\nBig Machinery, LLC\nBill By\n3345, Diamond St, Orange City, ST\nDoe John\n9987\nAddress: 1111, Flemming St, Yellow\nmachinery@big.com\nCity, AT 1121\nItem\nQuantity\nUnit Price\nTotal\n$34.00\n$34.00\nFuel Plastic Jug (10 gallons)\n01\nGas Hose (5 feet)\n01\n$15.00\n$15.00\nAluminum Screw (4 inches)\n$0.87\n$87.00\n100\n- nothing follows -\nSubtotal: $136.00\nAdditional Charges\nTax (12%): $16.32\nTotal: $147.32",
+  "summary": "This is a Receipt document. Contains 80 words and 528 characters. Key fields extracted: Date, Amount, Total, Invoice #, Name.",
+  "entities": {
+    "dates": [
+      "December 8, 2023"
+    ],
+    "amounts": [
+      "147.32",
+      "10",
+      "$34.00",
+      "$136.00",
+      "01",
+      "136.00",
+      "8",
+      "4",
+      "100",
+      "$15.00"
+    ],
+    "emails": [
+      "machinery@big.com"
+    ],
+    "phones": [],
+    "invoice_numbers": [
+      "-Example-1018x1440",
+      "Receipt",
+      "By"
+    ],
+    "account_numbers": [],
+    "addresses": [],
+    "tax_rates": [],
+    "names": [
+      "LLC\nBill",
+      "Aluminum Screw",
+      "Diamond St",
+      "Orange City",
+      "jpg\nmin",
+      "Additional Charges",
+      "general\nRECEIPT",
+      "Item\nQuantity",
+      "Unit Price",
+      "Gas Hose"
+    ],
+    "totals": [
+      "147.32",
+      "136.00",
+      "34.00"
+    ],
+    "subtotals": [
+      "136.00"
+    ],
+    "quantities": [],
+    "descriptions": [
+      "Quantity"
+    ]
+  }
+}

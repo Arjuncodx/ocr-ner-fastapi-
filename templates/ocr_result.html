@@ -1,216 +1,664 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>{{ title if title else 'OCR Result' }}</title>
-  <style>
-    :root{
-      --bg1:#071028; --bg2:#0b1220; --panel:#0e2333;
-      --muted:#9fb6d0; --text:#e6f0ff; --accent:#4f46e5; --accent2:#06b6d4;
-      --ok:#16a34a; --err:#ef4444; --warning:#f59e0b;
-    }
-    *{ box-sizing:border-box }
-    html,body{ margin:0; padding:0; min-height:100%; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:linear-gradient(180deg,var(--bg1),var(--bg2)); }
-    header{ display:flex; align-items:center; justify-content:space-between; padding:18px 28px; border-bottom:1px solid rgba(255,255,255,0.05); }
-    .brand{ font-weight:800; font-size:18px; background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    .nav a{ color:#cde7ff; text-decoration:none; margin-left:14px; padding:8px 10px; border-radius:8px; border:1px solid rgba(255,255,255,0.08); transition:all 0.2s; }
-    .nav a:hover{ background:rgba(255,255,255,0.05); }
-
-    main{ display:grid; gap:24px; grid-template-columns: 1fr 380px; padding:32px; max-width:1400px; margin:0 auto; }
-    @media (max-width:1100px){ main{ grid-template-columns:1fr; } }
-
-    .card{ background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:24px; box-shadow:0 4px 20px rgba(0,0,0,0.3); }
-    h2{ margin:0 0 12px 0; font-size:24px; font-weight:700; }
-    .meta{ color:var(--muted); font-size:14px; margin:6px 0; display:flex; align-items:center; gap:8px; }
-    .badge{ display:inline-block; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:700; }
-    .badge.ok{ background:rgba(22,163,74,0.2); color:#4ade80; }
-    .badge.info{ background:rgba(59,130,246,0.2); color:#60a5fa; }
-    .ok{ color:var(--ok); font-weight:800; }
-    .err{ color:var(--err); font-weight:800; }
-
-    .actions{ display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 12px; }
-    .btn{ display:inline-flex; align-items:center; gap:8px; padding:11px 16px; border-radius:10px; text-decoration:none; font-weight:700; border:1px solid rgba(255,255,255,.1); color:var(--text); transition:all 0.2s; font-size:14px; }
-    .btn.primary{ background:linear-gradient(90deg,var(--accent),var(--accent2)); border:none; box-shadow:0 4px 12px rgba(79,70,229,0.3); }
-    .btn.primary:hover{ box-shadow:0 6px 16px rgba(79,70,229,0.4); transform:translateY(-2px); }
-    .btn.success{ background:linear-gradient(90deg,#16a34a,#22c55e); border:none; }
-    .btn.ghost{ background:transparent; }
-    .btn.ghost:hover{ background:rgba(255,255,255,0.05); }
-
-    .section-title{ margin:20px 0 10px; color:#dff7ff; font-size:18px; font-weight:700; display:flex; align-items:center; gap:8px; }
-    .section-title::before{ content:''; width:4px; height:20px; background:linear-gradient(180deg,var(--accent),var(--accent2)); border-radius:2px; }
-    
-    pre.ocr-text{
-      white-space:pre-wrap; word-wrap:break-word; background:rgba(0,0,0,.3);
-      border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:16px;
-      color:#d1e7ff; max-height:420px; overflow:auto; font-size:13px; line-height:1.6;
-      font-family:'Courier New', monospace;
-    }
-    pre.ocr-text::-webkit-scrollbar{ width:8px; }
-    pre.ocr-text::-webkit-scrollbar-track{ background:rgba(255,255,255,0.05); border-radius:4px; }
-    pre.ocr-text::-webkit-scrollbar-thumb{ background:rgba(255,255,255,0.2); border-radius:4px; }
-
-    .aside{ color:#bcd7ee; }
-    .info-box{ background:rgba(79,70,229,0.1); border:1px solid rgba(79,70,229,0.3); border-radius:10px; padding:16px; margin:12px 0; }
-    .info-box h4{ margin:0 0 8px 0; color:#a5b4fc; font-size:15px; }
-    .info-box ul{ margin:8px 0 0; padding-left:20px; color:#bcd7ee; }
-    .info-box ul li{ margin:4px 0; }
-
-    .excel-preview{ background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); border-radius:10px; padding:16px; margin:12px 0; }
-    .excel-preview h4{ margin:0 0 10px 0; color:#86efac; font-size:15px; }
-    .excel-preview .columns{ display:flex; flex-wrap:wrap; gap:8px; }
-    .excel-preview .col-tag{ background:rgba(34,197,94,0.2); padding:6px 12px; border-radius:6px; font-size:13px; color:#bbf7d0; }
-
-    footer{ text-align:center; padding:20px; color:#87a6c1; font-size:13px; }
-
-    .pulse{ animation:pulse 2s infinite; }
-    @keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:0.6} }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Results - OCR Elite v12.0 Ultimate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+            color: #e8eaed;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        .nav {
+            background: rgba(26, 31, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border: 1px solid rgba(138, 180, 248, 0.1);
+        }
+        
+        .nav-brand {
+            font-size: 1.4em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8ab4f8 0%, #a8c7fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links a {
+            color: #8ab4f8;
+            text-decoration: none;
+            margin-left: 25px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(138, 180, 248, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        /* Success Banner */
+        .success-banner {
+            background: linear-gradient(135deg, #1e4620 0%, #2d6a31 100%);
+            border: 2px solid #81c784;
+            border-radius: 12px;
+            padding: 20px 30px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 20px rgba(129, 199, 132, 0.2);
+            animation: slideIn 0.5s ease;
+        }
+        
+        .success-icon {
+            font-size: 2.5em;
+            animation: bounce 1s infinite;
+        }
+        
+        .success-text {
+            flex: 1;
+        }
+        
+        .success-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #a5d6a7;
+            margin-bottom: 5px;
+        }
+        
+        .success-subtitle {
+            color: #c8e6c9;
+            font-size: 0.95em;
+        }
+        
+        /* Cards */
+        .card {
+            background: rgba(26, 31, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            border: 1px solid rgba(138, 180, 248, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+            border-color: rgba(138, 180, 248, 0.2);
+        }
+        
+        .card-header {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #8ab4f8;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(138, 180, 248, 0.2);
+        }
+        
+        /* AI Badge */
+        .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        /* Download Buttons */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
+            color: white;
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #1e8e3e 0%, #0d652d 100%);
+            color: white;
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #f9ab00 0%, #e37400 100%);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            filter: brightness(1.15);
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #252d3d 0%, #1a2130 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #8ab4f8;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(138, 180, 248, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .stat-box:hover::before {
+            opacity: 1;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-left-width: 6px;
+        }
+        
+        .stat-label {
+            color: #9aa0a6;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        
+        .stat-subtext {
+            color: #8ab4f8;
+            font-size: 0.9em;
+        }
+        
+        /* Winner Badge */
+        .winner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a1f2e;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+            animation: glow 2s infinite;
+        }
+        
+        /* Excel Preview */
+        .excel-preview {
+            background: #0d1117;
+            border: 2px solid #30363d;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .excel-table th {
+            background: linear-gradient(135deg, #4472C4 0%, #2e5aaa 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid #30363d;
+        }
+        
+        .excel-table td {
+            padding: 12px;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+        }
+        
+        .excel-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .excel-table tr:hover {
+            background: rgba(138, 180, 248, 0.1);
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            margin-top: 15px;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: #9aa0a6;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #252d3d;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        /* Text Content */
+        .text-content {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #c9d1d9;
+        }
+        
+        .text-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .text-content::-webkit-scrollbar-track {
+            background: #1a1f2e;
+            border-radius: 10px;
+        }
+        
+        .text-content::-webkit-scrollbar-thumb {
+            background: #8ab4f8;
+            border-radius: 10px;
+        }
+        
+        /* Entity Grid */
+        .entity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .entity-card {
+            background: linear-gradient(135deg, #252d3d 0%, #1a2130 100%);
+            padding: 18px;
+            border-radius: 12px;
+            border-top: 3px solid #8ab4f8;
+            transition: all 0.3s ease;
+        }
+        
+        .entity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        
+        .entity-title {
+            color: #8ab4f8;
+            font-weight: 600;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .entity-item {
+            background: #1a1f2e;
+            padding: 10px 14px;
+            margin: 6px 0;
+            border-radius: 8px;
+            color: #e8eaed;
+            border-left: 3px solid #8ab4f8;
+            transition: all 0.2s;
+        }
+        
+        .entity-item:hover {
+            background: #252d3d;
+            padding-left: 18px;
+        }
+        
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(102, 126, 234, 0.6); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4); }
+            50% { box-shadow: 0 4px 35px rgba(255, 215, 0, 0.6); }
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="brand">OCR Model Pro</div>
-    <nav class="nav">
-      <a href="/">🏠 Home</a>
-      <a href="/ocr">📸 OCR</a>
-      <a href="/ner">🏷️ NER</a>
-      <a href="/health">💚 Health</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="card">
-      <h2>📄 OCR Processing Results</h2>
-
-      {% if error %}
-        <div class="err">❌ {{ error }}</div>
-        <p class="meta">Please try again or check the server logs for details.</p>
-        <div class="actions">
-          <a class="btn ghost" href="/ocr">↩️ Try Again</a>
-          <a class="btn ghost" href="/">🏠 Home</a>
+    <!-- Navigation -->
+    <div class="nav">
+        <div class="nav-brand">🎯 OCR Elite v12.0 Ultimate</div>
+        <div class="nav-links">
+            <a href="/">🏠 Home</a>
+            <a href="/ocr">📷 OCR</a>
+            <a href="/ner">🏷️ NER</a>
+            <a href="/health">💚 Health</a>
         </div>
-      {% else %}
-        <div class="ok">✅ OCR Processing Completed Successfully</div>
-        
-        <div style="margin-top:16px;">
-          {% if filename %}
-            <div class="meta">
-              <span class="badge info">RAW TEXT</span>
-              <strong>{{ filename }}</strong>
+    </div>
+
+    <div class="container">
+        <!-- Success Banner -->
+        <div class="success-banner">
+            <div class="success-icon">✅</div>
+            <div class="success-text">
+                <div class="success-title">Processing Completed Successfully!</div>
+                <div class="success-subtitle">AI has analyzed your document and created an intelligent Excel report</div>
             </div>
-          {% endif %}
-          {% if ocr_source %}
-            <div class="meta">
-              <span class="badge ok">OCR ENGINE</span>
-              <strong>{{ ocr_source }}</strong>
+            <span class="ai-badge">🧠 AI Powered</span>
+        </div>
+
+        <!-- Download Options -->
+        <div class="card">
+            <div class="card-header">
+                💾 Download Your Reports
             </div>
-          {% endif %}
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="window.location.href='/ocr'">
+                    🔄 Process Another Document
+                </button>
+                <a href="/" class="btn btn-primary">
+                    🏠 Back to Home
+                </a>
+                {% if excel_report %}
+                <a href="/download/{{ job_id }}/excel" class="btn btn-success">
+                    📊 Download Intelligent Excel
+                </a>
+                {% endif %}
+                {% if json_report %}
+                <a href="/download/{{ job_id }}/json" class="btn btn-warning">
+                    📄 Download JSON Data
+                </a>
+                {% endif %}
+            </div>
         </div>
 
-        <h3 class="section-title">⬇️ Download Options</h3>
-        <div class="actions">
-          {% if filename %}
-            <a class="btn primary" href="/ocr/download/{{ filename }}">
-              <span>📝</span> Download OCR Text (.txt)
-            </a>
-          {% endif %}
-          {% if summary_file %}
-            <a class="btn primary" href="/download/{{ summary_file }}">
-              <span>📋</span> Download Summary (.txt)
-            </a>
-          {% endif %}
-          {% if xlsx_file %}
-            <a class="btn success" href="/download/{{ xlsx_file }}">
-              <span>📊</span> Download Excel (.xlsx)
-            </a>
-          {% endif %}
-          {% if csv_file %}
-            <a class="btn success" href="/download/{{ csv_file }}">
-              <span>📈</span> Download CSV
-            </a>
-          {% endif %}
-          <a class="btn ghost" href="/ocr">🔄 Process Another</a>
-          <a class="btn ghost" href="/">🏠 Home</a>
+        <!-- Processing Statistics -->
+        <div class="card">
+            <div class="card-header">
+                📊 Processing Statistics
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-label">🏆 Winning OCR Engine</div>
+                    <div class="stat-value">{{ best_engine|upper }}</div>
+                    <div class="winner-badge">🥇 {{ best_engine|upper }}</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">📄 Document Type</div>
+                    <div class="stat-value">{{ document_type if document_type else 'Document' }}</div>
+                    <div class="stat-subtext">AI Identified</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">🎯 OCR Confidence</div>
+                    <div class="stat-value">{{ "%.1f"|format(confidence * 100) }}%</div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: {{ confidence * 100 }}%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">⭐ Quality Score</div>
+                    <div class="stat-value">{{ "%.1f"|format(quality_score * 100) }}%</div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: {{ quality_score * 100 }}%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">⏱️ Processing Time</div>
+                    <div class="stat-value">{{ "%.2f"|format(processing_time) }}s</div>
+                    <div class="stat-subtext">Fast & Accurate</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">📝 Characters Extracted</div>
+                    <div class="stat-value">{{ ocr_text|length }}</div>
+                    <div class="stat-subtext">{{ (ocr_text|length / processing_time)|int }} chars/sec</div>
+                </div>
+            </div>
         </div>
 
-        {% if ocr_text %}
-          <h3 class="section-title">📝 Raw OCR Text</h3>
-          <pre class="ocr-text">{{ ocr_text | e }}</pre>
+        <!-- Excel Preview -->
+        {% if excel_columns %}
+        <div class="card">
+            <div class="card-header">
+                📊 Intelligent Excel Structure <span class="ai-badge">🧠 AI Generated</span>
+            </div>
+            <div class="excel-preview">
+                <strong>AI created {{ excel_columns|length }} columns for your {{ document_type if document_type else 'document' }}:</strong>
+                <table class="excel-table">
+                    <thead>
+                        <tr>
+                            {% for column in excel_columns %}
+                            <th>{{ column }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for column in excel_columns %}
+                            <td>✓ Data Extracted</td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top:15px;color:#9aa0a6;font-size:0.9em;">
+                    📌 Download the Excel file to see all extracted values
+                </p>
+            </div>
+        </div>
         {% endif %}
 
-        {% if summary_preview %}
-          <h3 class="section-title">🤖 AI-Generated Summary</h3>
-          <pre class="ocr-text">{{ summary_preview | e }}</pre>
-        {% endif %}
-
-        {% if excel_structure %}
-          <h3 class="section-title">📊 Excel Structure Preview</h3>
-          <div class="excel-preview">
-            <h4>Suggested Columns:</h4>
-            <div class="columns">
-              {% for col in excel_structure.get('suggested_columns', []) %}
-                <span class="col-tag">{{ col }}</span>
-              {% endfor %}
+        <!-- AI Summary -->
+        {% if summary and summary.strip() %}
+        <div class="card">
+            <div class="card-header">
+                📝 AI-Generated Summary <span class="ai-badge">🧠 Llama 3.1</span>
             </div>
-            <p style="margin-top:12px; color:#86efac; font-size:13px;">
-              ✓ Generated {{ excel_structure.get('rows', [])|length }} rows
-            </p>
-          </div>
+            <div class="text-content">{{ summary }}</div>
+        </div>
         {% endif %}
 
-      {% endif %}
-    </section>
-
-    <aside class="aside">
-      <div class="card">
-        <h3 style="margin:0 0 12px 0; font-size:18px;">💡 About This Processing</h3>
-        
-        <div class="info-box">
-          <h4>🔍 OCR Pipeline</h4>
-          <ul>
-            <li>Image preprocessing (CLAHE, filters)</li>
-            <li>Multi-engine OCR (EasyOCR + Tesseract)</li>
-            <li>Best result selection</li>
-            <li>Text cleaning & normalization</li>
-          </ul>
+        <!-- Extracted Entities -->
+        {% if entities %}
+        <div class="card">
+            <div class="card-header">
+                🔍 Extracted Entities <span class="ai-badge">🧠 AI Powered</span>
+            </div>
+            <div class="entity-grid">
+                {% for entity_type, values in entities.items() %}
+                {% if values %}
+                <div class="entity-card">
+                    <div class="entity-title">
+                        {% if entity_type == 'dates' %}📅{% elif entity_type == 'amounts' %}💰{% elif entity_type == 'names' %}👤{% elif entity_type == 'emails' %}📧{% elif entity_type == 'phones' %}📞{% else %}📌{% endif %}
+                        {{ entity_type.replace('_', ' ').title() }}
+                    </div>
+                    {% for value in values %}
+                    <div class="entity-item">{{ value }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
+        {% endif %}
 
-        <div class="info-box">
-          <h4>🤖 AI-Powered Features</h4>
-          <ul>
-            <li><strong>Summary:</strong> Ollama LLM analyzes the document</li>
-            <li><strong>Excel Structure:</strong> AI suggests optimal table format</li>
-            <li><strong>Smart Extraction:</strong> Detects fields, values, data types</li>
-            <li><strong>Fallback:</strong> Regex-based extraction if AI unavailable</li>
-          </ul>
+        <!-- Raw OCR Text -->
+        <div class="card">
+            <div class="card-header">
+                📄 Raw OCR Text
+            </div>
+            <div class="text-content">{{ ocr_text }}</div>
         </div>
+    </div>
 
-        <div class="info-box">
-          <h4>📊 Excel/CSV Export</h4>
-          <ul>
-            <li>AI-suggested column structure</li>
-            <li>Automatic data typing</li>
-            <li>Formatted headers</li>
-            <li>Ready for analysis</li>
-          </ul>
-        </div>
-      </div>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-      <div class="card" style="margin-top:20px;">
-        <h3 style="margin:0 0 10px 0; font-size:18px;">✨ Tips for Better OCR</h3>
-        <ul style="padding-left:20px; color:#bcd7ee; line-height:1.8;">
-          <li>Use high-resolution images (≥ 300 DPI)</li>
-          <li>Ensure good lighting and contrast</li>
-          <li>Avoid skewed or rotated text</li>
-          <li>Crop to document area only</li>
-          <li>Remove shadows and reflections</li>
-        </ul>
-      </div>
-    </aside>
-  </main>
-
-  <footer>
-    © {{ year }} {{ site_name if site_name else 'OCR Model' }} — Powered by EasyOCR, Tesseract & Ollama AI
-  </footer>
+        // Animate progress bars on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.progress-fill').forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        });
+    </script>
 </body>
 </html>

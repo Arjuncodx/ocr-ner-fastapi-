@@ -1,0 +1,83 @@
+{
+  "job_id": "b8a18f39",
+  "status": "success",
+  "metadata": {
+    "job_id": "b8a18f39",
+    "filename": "37.jpg",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.95,
+    "quality_score": 0.8398363378852488,
+    "processing_time": 47.43072319030762,
+    "document_type": "Invoice",
+    "extraction_method": "hybrid"
+  },
+  "document_type": "Invoice",
+  "extraction_method": "hybrid",
+  "excel_columns": [
+    "Amount",
+    "Total",
+    "Name",
+    "1. Employee ID",
+    "2. Employee Name",
+    "3. Designation",
+    "4. Department",
+    "5. Earnings Rate",
+    "6. Gross Pay (or Basic)",
+    "7. Net Pay"
+  ],
+  "excel_values": {
+    "Amount": "2,88",
+    "Total": "4,04",
+    "Name": "Emp ID",
+    "1. Employee ID": "16",
+    "2. Employee Name": "SANDHYA",
+    "3. Designation": "Operator",
+    "4. Department": "Manufacturing",
+    "5. Earnings Rate": "Not explicitly mentioned, but \"BASIC\" is given as Rs. 20,000.00 which seems to be the earnings rate.",
+    "6. Gross Pay (or Basic)": "40,000.00",
+    "7. Net Pay": "32,878.00"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\37.jpg\nmin\ngeneral\nSadhana Infotech\nsaral\n#335, 19th Main, Rajaji Nagar, 1st Block, Bangalore-560(\nWage Slip for the month of Feb/2019\nEmp ID\n16\nEmployee Name:\nPF. No.\nSANDHYA\nKN/45889/1016\nDesignation\nDepartment\nOperator\nManufacturing\nPAN\nA/c No\nsb-1041\nJOPPL8989S\nMode of Pay\nState Bank of India\nEarnings\nRate\nAmount\nDeductions\nAmount\nBASIC\n20,000.00\n20,000.00\nPF\n2,880.00\nDA\n4,000.00\n4,000.00\nPT\n200.00\nHRA\n9,600.00\n9,600.00\nTDS\n4,042.00\nCONV\n800.00\n800.00\nSPL ALLOW\n5,600.00\n5,600.00\nTotal\n40,000.00\n40,000.00\nTotal\n7,122.00\nNet Pay\n32,878.00\nIn Words\nRupees Thirty Two Thousand Eight Hundred Seventy Eight Only\nSignature",
+  "cleaned_text": "E:\\fast api project\\uploads\\37.jpg\nmin\ngeneral\nSadhana Infotech\nsaral\n#335, 19th Main, Rajaji Nagar, 1st Block, Bangalore-560(\nWage Slip for the month of Feb/2019\nEmp ID\n16\nEmployee Name:\nPF. No.\nSANDHYA\nKN/45889/1016\nDesignation\nDepartment\nOperator\nManufacturing\nPAN\nA/c No\nsb-1041\nJOPPL8989S\nMode of Pay\nState Bank of India\nEarnings\nRate\nAmount\nDeductions\nAmount\nBASIC\n20,000.00\n20,000.00\nPF\n2,880.00\nDA\n4,000.00\n4,000.00\nPT\n200.00\nHRA\n9,600.00\n9,600.00\nTDS\n4,042.00\nCONV\n800.00\n800.00\nSPL ALLOW\n5,600.00\n5,600.00\nTotal\n40,000.00\n40,000.00\nTotal\n7,122.00\nNet Pay\n32,878.00\nIn Words\nRupees Thirty Two Thousand Eight Hundred Seventy Eight Only\nSignature",
+  "summary": "Processed Invoice using HYBRID extraction. Extracted 10 fields. Document contains 95 words.",
+  "entities": {
+    "dates": [],
+    "amounts": [
+      "2,88",
+      "4,000.00",
+      "40,000.00",
+      "2.00",
+      "32,878.00",
+      "20,00",
+      "4,042.00",
+      "0.00",
+      "5,60",
+      "4,04"
+    ],
+    "emails": [],
+    "phones": [],
+    "invoice_numbers": [],
+    "account_numbers": [],
+    "addresses": [],
+    "tax_rates": [],
+    "names": [
+      "Emp ID",
+      "fast api",
+      "Infotech\nsaral",
+      "SPL ALLOW",
+      "Employee Name",
+      "Only\nSignature",
+      "India\nEarnings",
+      "Seventy Eight",
+      "month of",
+      "Eight Hundred"
+    ],
+    "totals": [
+      "40,00",
+      "7,12"
+    ],
+    "subtotals": [],
+    "quantities": []
+  }
+}

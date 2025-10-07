@@ -1,0 +1,64 @@
+{
+  "job_id": "4cd25e85",
+  "status": "success",
+  "metadata": {
+    "job_id": "4cd25e85",
+    "filename": "content-gst-invoice.png",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.95,
+    "quality_score": 0.8215605379893729,
+    "processing_time": 153.1774458885193,
+    "document_type": "Invoice"
+  },
+  "document_type": "Invoice",
+  "excel_columns": [
+    "Date",
+    "Amount",
+    "Total",
+    "Description"
+  ],
+  "excel_values": {
+    "Date": "09/22/2017",
+    "Amount": "360.00",
+    "Total": "0.00",
+    "Description": "E:\\fast api project\\uploads\\content-gst-invoice.png min general Invoice Original Input Tax credit is"
+  },
+  "ocr_confidence": 0.95,
+  "quality_score": 0.8215605379893729,
+  "ocr_text": "E:\\fast api project\\uploads\\content-gst-invoice.png\nmin\ngeneral\nInvoice\nOriginal\nInput Tax credit is available to a Taxable Person against this copy only.\nYG\nWear Your Opinion\nD/6, Kol Dongri, Nr. Gokul Arcade, Sahakar Road, Vile Parle East\nMumbai Maharashtra\nIndia\nGST: 56546-ALPHA\nGSTIN: 56564sfdg3453\nBill To: Rajveen\nInvoice NO.\nInvoice Date\nDue Date\n#Lane 21, Block D\nINV-0867\nMumbai Maharastra\n09/22/2017\n09/22/2017\n1231332\nTerms\nP.O #\nIndia\nDUE ON RECEIPT\nShip To: Rajveen\n3432532\n#Lane 21, Block D\nDrop\nMumbai Maharastra\nVALUE 1\n1231332\nIndia\nGSTIN NO: 33dsfdsf3453\nItem & Description\nHSN\nqty\nRate (Rs.)\nAmount (Rs.)\nCGST\nSGST\nTotal\n%\nAmt\n%\nAmt\n1\nPearl Pink\n5756765\n10(PCS)\n360.00\n3,050.85\n9\n274.58\n9\n274.58\n3,600.00\nPearl Pink Jewellery.\n2\nPearl Green\n6868655\n10(PCS)\n350.00\n2,966.10\n9\n266.95\n9\n266.95\n3,500.00\nPearl Green Jewellery.\nTotal\n20\n6,016.95\n541.53\n541.53\n7,100.00\nAmount Chargeable(in words)\nTaxable Total :\n6,016.95\nRs.seven thousand, four hundred)(Rs.7,400.00)\nCGST :\n541.53\nSGST :\n541.53\nNotes:\n1. Deal in all types of phones.\nShipping Charges :\n200.00\n2.Deal in all phone accessories.\nAdjustment :\n100.00\n3. Deals in all mobile covers.\nTotal Amount : Rs.7,400.00\nBalance Due : Rs.7,400.00\nTerms & Conditions:\nFor Wear Your Opinion\n1. Need to pay amount within due date.\n2. Make all payment via cash.\n3. Make payment in due time.\nAuthorized Signature",
+  "summary": "Here is the cleaned OCR text:\n\nE:\\fast api project\\uploads\\content-gst-invoice.png\n\nInvoice No.: INV-0867\nDate: 09/22/2017\nDue Date: 09/22/2017\n\nBill To:\nRajveen\n#Lane 21, Block D\nMumbai Maharastra\n\nShip To:\nRajveen\n3432532\n#Lane 21, Block D\nDrop\nMumbai Maharastra\n\nGSTIN NO.: 56546-ALPHA\nGSTIN: 33dsfdsf3453\n\nItem & Description    HSN   qty Rate (Rs.) Amount (Rs.)\nCGST SGST Total % Amt %\nAmt %\n\n1. Pearl Pink Jewellery     -      10(PCS)       360.00        3,050.85\n9          274.58         9           274.58    3,600.00\n\n2. Pearl Green Jewellery   -      10(PCS)       350.00        2,966.10\n9          266.95         9           266.95    3,500.00\n\nTotal     20            6,016.95     541.53     541.53    7,100.00",
+  "entities": {
+    "dates": [],
+    "amounts": [],
+    "names": [],
+    "addresses": [],
+    "emails": [],
+    "phones": [],
+    "invoice_number": "INV-0867",
+    "date": "09/22/2017",
+    "due_date": "09/22/2017",
+    "bill_to_name": "Rajveen",
+    "ship_to_name": "Rajveen",
+    "gst_in_no": "56546-ALPHA",
+    "address_bill_to": "#Lane 21, Block D Mumbai Maharastra",
+    "address_ship_to": "#Lane 21, Block D Drop Mumbai Maharastra",
+    "items": [
+      {
+        "description": "Pearl Pink Jewellery",
+        "hsn_code": "-",
+        "quantity": "10(PCS)",
+        "rate": "360.00",
+        "amount": "3,050.85"
+      },
+      {
+        "description": "Pearl Green Jewellery",
+        "hsn_code": "-",
+        "quantity": "10(PCS)",
+        "rate": "350.00",
+        "amount": "2,966.10"
+      }
+    ],
+    "total_amount": "7,100.00"
+  }
+}

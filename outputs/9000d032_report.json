@@ -1,0 +1,18 @@
+{
+  "job_id": "9000d032",
+  "metadata": {
+    "job_id": "9000d032",
+    "filename": "Invoice-examples-and-templates-724x1024.webp",
+    "engines": "easyocr, tesseract",
+    "quality": 0.8420769891094518,
+    "time": 50.51028871536255
+  },
+  "ocr_text": "\u20ac13,715.52\n\nRel)\n",
+  "summary": {
+    "response": "\u20ac13,715.52 \n\nReturned",
+    "processing_time": 23.664506912231445,
+    "from_cache": false,
+    "tokens": 2
+  },
+  "entities": {}
+}

@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "EmployeeName": "MUKESH CHANDRA",
+    "Designation": "DIPLoma ENGINEER",
+    "DateOfJoining": "January 2012",
+    "Code": "11121032",
+    "ClientName": "BSFS Zridhani Pokoi",
+    "BankAccountNumber": "1202604",
+    "PunjabNationalBank": true,
+    "EarningsPercentage": "20%",
+    "Amount1": "B4910.04600",
+    "Amount2": "206.00",
+    "Amount3": "050.00",
+    "NetAmount": "212.UU"
+  },
+  "metadata": {
+    "filename": "57.jpg",
+    "processing_date": "2025-10-06T16:44:32.250171",
+    "app_version": "10.1.0",
+    "best_ocr_engine": "easyocr_orig",
+    "confidence_score": "44.45%",
+    "image_quality_score": "78.39%",
+    "total_processing_time": "0.00s"
+  },
+  "raw_text": "Vi\nSTAFFING\nVision India Staffing Pvt Ltd\nPAY\nSLIP\nPayslip for the\nonth of September,2014\nName\nMUKESH CHANDRA\nLocalon\nDeini\nFmolore\nCode\n11121032\nClient Name\nBSFS Zridhani Pokoi\nLimiino\nDepanimeni\nNzdiO\nJoinina DBle\nJja 2012\nDegionation\nDIPLova ENGINEER\n0jy5\nPr *o\nDL 43308/165\nESI Noj\n12272607\nCo6i\nCenter\nVision Indiz\nStatting\nArroar Days\nBanz Accouni No\n120uuu4u003260r\nPunjab National\n3nk\nEaininas\n20nec\n4T[ean\nDcouciCns\nAmount\nB4910\n10.046-00\n206.00\n050.00\n0_Uo\n212.UU\nGroup\nMnanmnce\n2700m\nGioae\nEafain @\n096-0d\n638.00\nRm 0Un |\n408-0d\nNet Amouni\nVords:\nTEN THOUSAND FOUR HUNDRED\nGHT ONLY |\neyetey\nOEXERATEC\npaYelip\nDOES\nREODIREATaGNATUPI\nCCpa\nGe3\nCut Here",
+  "cleaned_text": "Vision India Staffing Pvt Ltd\nPAY SLIP\nPayslip for the month of September 2014\nName MUKESH CHANDRA\nLocal Address: \nDesignation DIPLoma ENGINEER\nDate of Joining January 2012\nCode 11121032\nClient Name BSFS Zridhani Pokoi\nLimitations:\nDependents NzdiO\nJoining Date DBle (Not clear)\nDegree Degionation (Not clear)\n\nCenter Vision India\nStatutory Days \nBank Account No. 1202604\nPunjab National Bank\nEarnings: \n20% of Basic Pay\nAmount B4910.04600\n206.00\n050.00\nNet Amount 212.UU\n\nGroup Management\nGross Earning 2700m (Not clear)\nAllowances:\n096-06d\n638.00\nDeductions:\n408-06d\nCut Here"
+}

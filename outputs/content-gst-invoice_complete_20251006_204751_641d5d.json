@@ -1,0 +1,33 @@
+{
+  "entities": {
+    "InvoiceNumber": "INV-0867",
+    "DateIssued": "09/22/2017",
+    "DueDate": "09.11.2017",
+    "BillingAddress": "<3u} D/6, Kol Dongri, Nr. Gokul Arcade, Sakar Road, Vile Parle East Mumbai Maharashtra 1 India",
+    "GSTNumber": "25-46 ALPHA",
+    "GSTIN": "S2564A53D5",
+    "StoreName": "Wear Your Opinion",
+    "ShipToAddress": "#Lane 23, Black D Drop Mumbai Maharashtra VALUE 1 123133 India",
+    "InvoiceTotal": "6,016.95",
+    "CGSTAmount": "2,415.30",
+    "SGSTAmount": "541.53",
+    "ShippingCharges": "200.00",
+    "PaymentTerms": {
+      "Term1": "Need to pay amount within due date.",
+      "Term2": "Make all payment via cash only.",
+      "Term3": "Payment should be made on time."
+    },
+    "AuthorizedSignature": ""
+  },
+  "metadata": {
+    "filename": "content-gst-invoice.png",
+    "processing_date": "2025-10-06T20:47:51.318888",
+    "app_version": "10.1.0",
+    "best_ocr_engine": "tesseract_psm6",
+    "confidence_score": "64.42%",
+    "image_quality_score": "83.55%",
+    "total_processing_time": "0.00s"
+  },
+  "raw_text": "Involce\nInput Tax credit is available to a Taxable Person against this copy only.\na) Wear Your Opinion\n<3u} D/6, Kol Dengri, Nr. Gokul Arcade, Sshakar Road, Vile Parle East\noOo Mumbdsi Maharashtra\n1 India\nGST: 56546-ALPHA\nGSTIN: S6564sfdgas53\nste Bos\n#Lane 21, Block D\n\" INV-0867 09/22/2017 09, 2017\nMumbsi Msharastra 2p 22h\n1231332 Terms P.O #\nIndis DUE ON RECEIPT | 3432532\nShip To: Rajveen\n#Lane 22, Black D Drop\nMumbsi Msharastra VALUE 1\n1231332\nIndia\nGSTIN NO: 33dsfd<f3453\nPearl Pink 3,050.85 274.58\nPead Pirk Jewellery.\nPearl Green\nPead Green Jeackery.\nAmount Chargeable(in words) Taxable Total : 6,016.95\nCGST : 54153\nRs.seven thousand, four hundred)(Rs.7,400.00)\nSGST : 541.53\nNotes: Shipping Charges 200.00\nr i .\n1. Dealin all types of phones. PPIng 9\n2. Dealin all phone accesseries. Adjustment : 100.00\n3. Deals in ell mobile covers. Total Amount : Rz.7,400.00\nBalance Duc : Rs.7,400.00\nTerms & Conditions: For Wear Your Opinion\n1. Need to pay amount within due date.\n2. Make all payment via cash.\n3. Make payment in due time.\nAuthorized Signature\n",
+  "cleaned_text": "Here is the corrected OCR output:\n\nInvoice\nInput Tax credit is available to a Taxable Person against this copy only.\na) Wear Your Opinion\n<3u} D/6, Kol Dongri, Nr. Gokul Arcade, Sakar Road, Vile Parle East\noOo Mumbai Maharashtra\n1 India\nGST: 25-46 ALPHA\nGSTIN: S2564A53D5\nStore Boss\n#Lane 21, Block D\n\" INV-0867 09/22/2017 09.11.2017\nMumbai Maharashtra 2P 12H\n123133 Terms P.O #\nIndia DUE ON RECEIPT | 3432532\nShip To: Rajveen\n#Lane 23, Black D Drop\nMumbai Maharashtra VALUE 1\n123133\nIndia\nGSTIN NO: 25A53D5\nPearl Pink 3,050.85 274.58\nPead Pirk Jewellery.\nPearl Green\nPead Green Jewellery.\nAmount Chargeable (in words) Taxable Total : 6,016.95\nCGST : 2,415.30\nRs.seven thousand four hundred and ninety only(Rs.7,400.00)\nSGST : 541.53\nNotes: Shipping Charges Rs.200.00\nr i .\n1. Dealing in all types of phones.\nPPing 9\n2. Dealing in all phone accessories Adjustment : Rs.100.00\n3. Deals in all mobile covers Total Amount : Rs.7,400.00\nBalance Due : Rs.7,400.00\nTerms & Conditions: For Wear Your Opinion\n1. Need to pay amount within due date.\n2. Make all payment via cash only.\n3. Payment should be made on time.\nAuthorized Signature"
+}

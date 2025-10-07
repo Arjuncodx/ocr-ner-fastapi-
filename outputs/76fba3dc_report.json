@@ -1,0 +1,76 @@
+{
+  "job_id": "76fba3dc",
+  "status": "success",
+  "metadata": {
+    "job_id": "76fba3dc",
+    "filename": "receipt-template-us-classic-white-750px.png",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "quality_score": 0.8939086045671122,
+    "processing_time": 131.49341654777527,
+    "document_type": "Receipt"
+  },
+  "document_type": "Receipt",
+  "excel_columns": [
+    "Receipt #",
+    "Date (Receipt Date)",
+    "Bill To Name",
+    "Ship To Address",
+    "Items",
+    "QTY",
+    "DESCRIPTION",
+    "UNIT PRICE",
+    "AMOUNT",
+    "Subtotal",
+    "Sales Tax Rate (%)",
+    "Tax Amount",
+    "Total"
+  ],
+  "excel_values": {
+    "Receipt #": "N/A",
+    "Date (Receipt Date)": "N/A",
+    "Bill To Name": "N/A",
+    "Ship To Address": "N/A",
+    "Items": "N/A",
+    "QTY": "N/A",
+    "DESCRIPTION": "N/A",
+    "UNIT PRICE": "N/A",
+    "AMOUNT": "N/A",
+    "Subtotal": "N/A",
+    "Sales Tax Rate (%)": "N/A",
+    "Tax Amount": "N/A",
+    "Total": "N/A"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\receipt-template-us-classic-white-750px.png\nmin\ngeneral\nEast Repair Inc.\nRECEIPT\n1912 Harvest Lane\nNew York, NY 12210\nBill To\nShip To\nReceipt #\nUS-001\nJohn Smith\nJohn Smith\nReceipt Date\n11/02/2019\n2 Court Square\n3787 Pineview Drive\nP.O.#\n2312/2019\nNew York, NY 12210\nCambridge, MA 12210\nDue Date\n26/02/2019\nQTY\nDESCRIPTION\nUNIT PRICE\nAMOUNT\n1\nFront and rear brake cables\n100.00\n100.00\n2\nNew set of pedal arms\n15.00\n30.00\n3\nLabor 3hrs\n5.00\n15.00\nSubtotal\n145.00\nSales Tax 6.25%\n9.06\nTOTAL\n$154.06\nJohn.Smith\nTerms & Conditions\nPayment is due within 15 days\nPlease make checks payable to: East Repair Inc.",
+  "summary": "Here's the cleaned OCR text:\n\nE:\\fast api project\\uploads\\receipt-template-us-classic-white-750px.png\n\nReceipt Information:\nBill To: John Smith\nShip To: John Smith\nReceipt #: US-001\nDate: 11/02/2019\n\nItems Purchased:\n1. Front and rear brake cables - $100.00\n2. New set of pedal arms - $30.00\n3. Labor (3 hours) - $15.00\n\nSubtotal: $145.00\nSales Tax (6.25%): $9.06\nTotal Due: $154.06",
+  "entities": {
+    "dates": [],
+    "amounts": [],
+    "names": [],
+    "addresses": [],
+    "emails": [],
+    "phones": [],
+    "receipt_number": "US-001",
+    "date": "11/02/2019",
+    "bill_to_name": "John Smith",
+    "ship_to_name": "John Smith",
+    "items_purchased": [
+      {
+        "description": "Front and rear brake cables",
+        "price": "$100.00"
+      },
+      {
+        "description": "New set of pedal arms",
+        "price": "$30.00"
+      },
+      {
+        "description": "Labor (3 hours)",
+        "price": "$15.00"
+      }
+    ],
+    "subtotal": "$145.00",
+    "sales_tax_rate": "6.25%",
+    "sales_tax_amount": "$9.06",
+    "total_due": "$154.06"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "job_id": "38952395",
+  "status": "success",
+  "metadata": {
+    "job_id": "38952395",
+    "filename": "54.jpg",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.9499999999999998,
+    "quality_score": 0.8394304412724438,
+    "processing_time": 49.90101170539856,
+    "document_type": "Invoice",
+    "extraction_method": "hybrid"
+  },
+  "document_type": "Invoice",
+  "extraction_method": "hybrid",
+  "excel_columns": [
+    "Amount",
+    "Total",
+    "Name",
+    "Address",
+    "1. Document ID",
+    "2. Image Path",
+    "3. Institution Type",
+    "4. University/College",
+    "5. Department",
+    "6. Contact Name",
+    "7. Address Line 1"
+  ],
+  "excel_values": {
+    "Amount": "54",
+    "Total": "736",
+    "Name": "Cardiovascular Institute",
+    "Address": "265 Campus Drive",
+    "1. Document ID": "E:\\fast api project\\uploads\\54.jpg",
+    "2. Image Path": "E:\\fast api project\\uploads\\54.jpg",
+    "3. Institution Type": "GENERAL",
+    "4. University/College": "Stanford",
+    "5. Department": "MEDICINE, Cardiovascular Institute (Note: I extracted both as they are mentioned separately)",
+    "6. Contact Name": "Joseph C. Wu, MD, PhD",
+    "7. Address Line 1": "265 Campus Drive"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\54.jpg\nmin\ngeneral\nStanford\nStanford\nMEDICINE\nCardiovascular Institute\nJoseph C. Wu, MD, PhD\nDirector, Stanford Cardiovascular Institute\nProfessor Medicine (Cardiology) & Radiology\n265 Campus Drive, G-1120B\nTel: (650) 736-2246\nStanford, CA 94305, MC-5454\nFax: (650) 736-0234\nhttp://wulab.stanford.edu\nCVI: (650) 725-7964\ne-mail: joewu@stanford.edu\nhttp://cvi.stanford.edu",
+  "cleaned_text": "E:\\fast api project\\uploads\\54.jpg\nmin\ngeneral\nStanford\nStanford\nMEDICINE\nCardiovascular Institute\nJoseph C. Wu, MD, PhD\nDirector, Stanford Cardiovascular Institute\nProfessor Medicine (Cardiology) & Radiology\n265 Campus Drive, G-1120B\nTel: (650) 736-2246\nStanford, CA 94305, MC-5454\nFax: (650) 736-0234\nhttp://wulab.stanford.edu\nCVI: (650) 725-7964\ne-mail: joewu@stanford.edu\nhttp://cvi.stanford.edu",
+  "summary": "Processed Invoice using HYBRID extraction. Extracted 11 fields. Document contains 45 words.",
+  "entities": {
+    "dates": [],
+    "amounts": [
+      "54",
+      "725",
+      "650",
+      "265",
+      "736"
+    ],
+    "emails": [
+      "joewu@stanford.edu"
+    ],
+    "phones": [],
+    "invoice_numbers": [],
+    "account_numbers": [],
+    "addresses": [
+      "265 Campus Drive",
+      "2246\nStanford"
+    ],
+    "tax_rates": [],
+    "names": [
+      "general\nStanford",
+      "Cardiovascular Institute",
+      "Stanford Cardiovascular",
+      "edu\nCVI",
+      "edu\nhttp",
+      "fast api",
+      "jpg\nmin",
+      "Institute\nProfessor",
+      "PhD\nDirector",
+      "Stanford\nMEDICINE"
+    ],
+    "totals": [],
+    "subtotals": [],
+    "quantities": []
+  }
+}

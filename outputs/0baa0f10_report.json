@@ -1,0 +1,68 @@
+{
+  "job_id": "0baa0f10",
+  "status": "success",
+  "metadata": {
+    "job_id": "0baa0f10",
+    "filename": "spa bill.jpg",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "quality_score": 0.8074493844109201,
+    "processing_time": 100.21424841880798
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\spa bill.jpg\nmin\ngeneral\nReceipt 2025-100034\nFeb 9,2025\nLotus Blossom Spa\nSan Francisco 94158-2230\nUnited States\njuliekennedy@zmail.com\n5551234\nCustomer details\nGia Bruno\nItems\nQuantity\nPrice\nTax\nLine Total\nColor Explosion Bottle\n1\nUS$28.00\nUS$28.00\nSalt Rub Massage\n1\nUS$110.00\nUS$110.00\nSubtotal\nUS$138.00\nTotal\nUS$138.00\nTotal paid\nUS$138.00\nPayment details\n2025-02-09\nPay in Person\nUS$138.00\nThank you\nHave a great day!",
+  "summary": "Here is the cleaned OCR text:\n\nE:\\fast api project\\uploads\\spa bill.jpg\nMinimum: general \nReceipt 2025-100034\nFebruary 9, 2025\nLotus Blossom Spa\nSan Francisco, CA 94158-2230\nUnited States\njuliekennedy@zmail.com\n(555)1234\n\nCustomer Details:\nGia Bruno\n\nItems:\n\n* Color Explosion Bottle: \n\t+ Quantity: 1\n\t+ Price: US$28.00\n\t+ Tax: US$28.00\n\t+ Line Total: US$56.00\n* Salt Rub Massage: \n\t+ Quantity: 1\n\t+ Price: US$110.00\n\t+ Tax: US$0.00\n\t+ Line Total: US$110.00\n\nSubtotal: US$138.00\nTotal: US$138.00\nTotal Paid: US$138.00\n\nPayment Details:\nDate: February 9, 2025\nMethod of Payment: Pay in Person\nAmount: US$138.00",
+  "entities": {
+    "dates": [
+      "February 9, 2025"
+    ],
+    "amounts": [],
+    "names": [
+      "Gia Bruno",
+      "Julie Kennedy"
+    ],
+    "addresses": [],
+    "emails": [],
+    "phones": [],
+    "file_path": "E:\\fast api project\\uploads\\spa bill.jpg",
+    "minimum": "general",
+    "receipt_number": "2025-100034",
+    "date": "February 9, 2025",
+    "business_name": "Lotus Blossom Spa",
+    "address": {
+      "street": "",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip_code": "94158-2230"
+    },
+    "country": "United States",
+    "email": "juliekennedy@zmail.com",
+    "phone_number": "(555)1234",
+    "customer_name": "Gia Bruno",
+    "items": [
+      {
+        "name": "Color Explosion Bottle",
+        "quantity": 1,
+        "price": "$28.00",
+        "tax": "$28.00",
+        "line_total": "$56.00"
+      },
+      {
+        "name": "Salt Rub Massage",
+        "quantity": 1,
+        "price": "$110.00",
+        "tax": "$0.00",
+        "line_total": "$110.00"
+      }
+    ],
+    "subtotals": [
+      {
+        "amount": "$138.00"
+      }
+    ],
+    "total_paid": {
+      "date": "February 9, 2025",
+      "method_of_payment": "Pay in Person",
+      "amount": "$138.00"
+    }
+  }
+}

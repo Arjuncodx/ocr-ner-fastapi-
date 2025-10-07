@@ -1,0 +1,82 @@
+{
+  "job_id": "05b75fb3",
+  "status": "success",
+  "metadata": {
+    "job_id": "05b75fb3",
+    "filename": "95.jpg",
+    "engines": "paddleocr",
+    "best_engine": "paddleocr",
+    "ocr_confidence": 0.9499999999999998,
+    "quality_score": 0.9474619777045413,
+    "processing_time": 65.79999232292175,
+    "document_type": "Receipt",
+    "extraction_method": "regex"
+  },
+  "document_type": "Receipt",
+  "extraction_method": "regex",
+  "excel_columns": [
+    "Date",
+    "Amount",
+    "Total",
+    "Invoice #",
+    "Name"
+  ],
+  "excel_values": {
+    "Date": "15/05/2019",
+    "Amount": "4.00",
+    "Total": "5.00",
+    "Invoice #": "Particulars",
+    "Name": "karnataka\nSWIGGY"
+  },
+  "ocr_text": "E:\\fast api project\\uploads\\95.jpg\nmin\ngeneral\nCompany Name\nSwiggy bundl technology private limited\nHosur main road bengalore 560008 karnataka\nSWIGGY\nPhone.\n(080)39513247\nEmail\ngauthamthala8016@email.com\nPay slip for the month of may 2019\nEmployee Name\nGAUTAM P\nDesignation\nDI\nDepartment\nDELIVERY EXECUTIVE\nSalary Month\nMAY\nCOMMENTS:\n(NA)\nDate\n15/05/2019\nCompany ID\n607470\nP.O Number\n897-A23\nPhones\n(080)39513247\nTERMS\nDue on Receipt\nParticulars\nAdvance\nAmount\nBasic\n16,500.00\nConveyance\n800.00\nDearness Allowance\n2,289.00\nOvertime\n1,365.00\nSUBTOTAL\n19,954.00\nEmployee State Insurance\n960.00\nProvident Fund\n390.00\nProfessional Tax\n4%\nNet Salary\n18,417.56",
+  "cleaned_text": "E:\\fast api project\\uploads\\95.jpg\nmin\ngeneral\nCompany Name\nSwiggy bundl technology private limited\nHosur main road bengalore 560008 karnataka\nSWIGGY\nPhone.\n(080)39513247\nEmail\ngauthamthala8016@email.com\nPay slip for the month of may 2019\nEmployee Name\nGAUTAM P\nDesignation\nDI\nDepartment\nDELIVERY EXECUTIVE\nSalary Month\nMAY\nCOMMENTS:\n(NA)\nDate\n15/05/2019\nCompany ID\n607470\nP.O Number\n897-A23\nPhones\n(080)39513247\nTERMS\nDue on Receipt\nParticulars\nAdvance\nAmount\nBasic\n16,500.00\nConveyance\n800.00\nDearness Allowance\n2,289.00\nOvertime\n1,365.00\nSUBTOTAL\n19,954.00\nEmployee State Insurance\n960.00\nProvident Fund\n390.00\nProfessional Tax\n4%\nNet Salary\n18,417.56",
+  "summary": "Processed Receipt using REGEX extraction. Extracted 5 fields. Document contains 86 words.",
+  "entities": {
+    "dates": [
+      "15/05/2019"
+    ],
+    "amounts": [
+      "4.00",
+      "15",
+      "7.56",
+      "2,289.00",
+      "16,50",
+      "9.00",
+      "1,365.00",
+      "18,417.56",
+      "95",
+      "5.00"
+    ],
+    "emails": [
+      "gauthamthala8016@email.com"
+    ],
+    "phones": [],
+    "invoice_numbers": [
+      "Particulars"
+    ],
+    "account_numbers": [],
+    "addresses": [],
+    "tax_rates": [
+      "4"
+    ],
+    "names": [
+      "karnataka\nSWIGGY",
+      "Dearness Allowance",
+      "Month\nMAY",
+      "Amount\nBasic",
+      "Particulars\nAdvance",
+      "jpg\nmin",
+      "Designation\nDI",
+      "of may",
+      "Employee State",
+      "Name\nSwiggy"
+    ],
+    "totals": [
+      "19,95"
+    ],
+    "subtotals": [
+      "19,95"
+    ],
+    "quantities": []
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "DeductorName": "STANDARD CHARtered Bank Reddy Nandipati Sreelakshmi Kant",
+    "DeducteeName": "",
+    "DeductorAddress": "0-, MG Road, MUMBAI MAHARASHTRA 400023",
+    "TANNumber": "AAUCSIO31D",
+    "DateOfPayment1": "Upto Date — BAN Fest",
+    "ReceiptNo": "900/4 Hh Floor",
+    "KGMutualFundAddress": "Hospital Building, Quarter Road OIMI2012 Navan Mumbai: 400020",
+    "AmountPaid": [
+      {
+        "NatureOfPayment": "Interest other than interest on Securities",
+        "DateOfPayment": "TUI2012 MATCIILD"
+      },
+      {
+        "NatureOfPayment": "Interest other than interest on Securites",
+        "DateOfPayment": "1101/2012 MATCHED"
+      }
+    ],
+    "VerifiedStatus": "",
+    "BookingNumber": ""
+  },
+  "metadata": {
+    "filename": "27.jpg",
+    "processing_date": "2025-10-06T16:53:19.576377",
+    "app_version": "10.1.0",
+    "best_ocr_engine": "tesseract_psm6",
+    "confidence_score": "55.22%",
+    "image_quality_score": "61.00%",
+    "total_processing_time": "0.00s"
+  },
+  "raw_text": "FORM NO.16A\n[See rule 31(1xb))\nCertificate under section 203 of the Income-tay Act, 1961 for Tax deducted af source\nName and address of the Deductor Name and address of the Deductce\nSTANDARD CUARTI RID BANK REDDY NANDIPATI SRELKANTH\n—————\no-,\nMG ROAD =»,\nMUMDAI MAHARASIITRA 400023\nNote: Name and address Is as present In Income Tay PAN database,\nApply for PAN change request to update details,\nDAN of te Deduct TAN Uf lee Dice — ~ BAN fest\nAAUCSIO31D MUMS25200\nThe Cummusiunct of Inawne Tax (TDS) Frem To\nRocen No, 900.4 Hh | oor\nKG Mutual Ayunndes Hospial Building Qui Read OIMI20I2 Navan\nMumba: 400U02\nAmount pald/eredited Nature of payment Date of pay menVeredit Status ef Booking\n(%) (dW/mmv)yy yy)\n| © tssco Da. Interest cther than fracrest on Secures TLUI2012 MATCIILD\n2375.00 | 194A « Interest ceher than Interest on Secunpes 1101/2012 MATCHED\n",
+  "cleaned_text": "FORM NO.16A\n[See rule 31(1)(x)]\n\nCertificate under section 203 of the Income-tax Act, 1961 for Tax deducted at source\n\nName and address of the Deductor Name and address of the Deductee\n\nSTANDARD CHARtered Bank Reddy Nandipati Sreelakshmi Kant\n—————\n0-,\nMG Road,\nMUMBAI MAHARASHTRA 400023\nNote: Name and address is as present in Income-tax PAN database.\nApply for PAN change request to update details.\n\nDate of the Deductor TAN Upto Date — BAN Fest\nAAUCSIO31D MUMS25200\n\nThe Cumulative Total of Incomes Tax (TDS) From To\nReceipt No. 900/4 Hh Floor\nKG Mutual Fund's Hospital Building, Quarter Road OIMI2012 Navan\nMumbai: 400020\nAmount paid/Credited Nature of payment Date of Payment Verified Status of Booking\n\n(%) (dW/mmv)yy yy)\n| @ tssco Da. Interest other than interest on Securities TUI2012 MATCIILD\n2375.00 | 194A « Interest other than interest on Securites 1101/2012 MATCHED"
+}
