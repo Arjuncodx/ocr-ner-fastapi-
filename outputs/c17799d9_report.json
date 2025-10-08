@@ -1,0 +1,29 @@
+{
+  "job_id": "c17799d9",
+  "status": "success",
+  "document_type": "Electricity Bill",
+  "ocr_confidence": 0.85,
+  "quality_score": 0.7711761368969589,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 109.72351861000061,
+  "extracted_data": {
+    "Document Type": "Electricity Bill",
+    "E": "\\fast api project\\uploads\\8.jpg:",
+    "DATE": "19-10-2016",
+    "TIME": "12:15:41",
+    "BILL NO.": "SB16J19MC65270964",
+    "BILL MONTH": "OCTOBER - 2016",
+    "BOOK NUMBER": "233511918159",
+    "NUMBER": "114084",
+    "IU": "DIV233511",
+    "SUB-DISTRIBUTION UNIT": "SD02335119"
+  },
+  "summary": "Unfortunately, the document appears to be a scanned image of an electricity bill (8.jpg) and does not contain any text that can be summarized. The provided snippet is likely just metadata or headers from the original file. If you could provide more context or clarify what information you would like me to extract, I'd be happy to help!",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\8.jpg\nmin\ngeneral\nELECTRICITY BILL\nDATE:19-10-2016\nTIME:12:15:41\nBILLN0:SB16J19MC65270964\nBILL MONTH: OCT-2016\nBO0K N0:233511918159\nN0:114084\nIU:DIV233511\nSUB,DIU:SD02335119",
+  "timestamp": "2025-10-08T22:17:43.938237"
+}

@@ -1,0 +1,31 @@
+{
+  "job_id": "e41cd883",
+  "status": "success",
+  "document_type": "Pay Slip",
+  "ocr_confidence": 0.9166278283115114,
+  "quality_score": 0.9083802858371717,
+  "best_engine": "easyocr",
+  "engines_used": [
+    "easyocr",
+    "paddleocr"
+  ],
+  "processing_time": 12.79237699508667,
+  "extracted_data": {
+    "ICNO": "160192",
+    "Year": "2016",
+    "Name of The Employee": "Shri Prathap Simha",
+    "State Name": "Karnataka",
+    "Constituency Name": "Mysore",
+    "Salary Rs.": "5000/-",
+    "Office Expenses Allowances Rs.": "5000/",
+    "Constituency Allowances Rs.": "45000/",
+    "Total Dues Rs.": "110000/",
+    "Estate Licence Fee CGHS": "Rs. 500",
+    "Total Deduction Detail": "Rs. 500",
+    "Net Amount Payable Rs.": "109500/",
+    "Document Type": "Pay Slip"
+  },
+  "summary": "Here is a summary of the document in 2-3 sentences:\n\nThis appears to be a pay slip for Shri Prathap Simha, an MP from Karnataka's Mysore constituency, detailing his dues and deductions for the year 2016. The total amount due to him is Rs.110000, with office expenses allowance and constituency allowances making up most of it. After deducting estate fees (CGHS licence fee), a net payable amount of Rs.109500 remains.",
+  "raw_ocr_text": "LOK SABHA SECRETARIAT\nParliament House Annexe\nNcw Delhi\n110001\nPAY SLIP\nICNO:\n160192\nMonth:\nYear:\n2016\nName of The\nShri Prathap Simha\nState Name:\nKarnataka\nConstituency Name:\nMysore\nDues Details\nSalary\n5000o\nArrears(AII)\nOffice  Expenses Allowances\n5000\nConstituency Allowances\n45000\nTotal Dues\n110000\nDeduction Detail\nEstate\n(Licence Fee\nCGHS\n500\nTotal\n500\nNet Amount Payable\n109500\nOifice",
+  "timestamp": "2025-10-08T21:58:58.962564"
+}

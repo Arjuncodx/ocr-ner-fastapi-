@@ -1,0 +1,37 @@
+{
+  "job_id": "42c09852",
+  "status": "success",
+  "document_type": "Pay Slip",
+  "ocr_confidence": 0.85,
+  "quality_score": 0.7873681409730657,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 145.71261620521545,
+  "extracted_data": {
+    "Document Type": "Pay Slip",
+    "Address of the Company": "General Minimum",
+    "Date": "May-21",
+    "Employee Name": "Radha Kishore T",
+    "Total Working Days": "31",
+    "Employee ID": "4587",
+    "LOP (Leave on Pay) Days": "0",
+    "Overtime": "Sales Executive Paid",
+    "Paid Days": "22",
+    "Bank Name": "SBI",
+    "Joining Date": "03/04/20",
+    "Salary": "7500.00",
+    "EPF (Employees' Provident Fund)": "7900.00",
+    "Rent Allowances": "23750.00",
+    "ESI (Employee State Insurance)": "7112.50",
+    "Gross Salary": "215000.00",
+    "Total Deductions": "1012.50",
+    "Net Pay": "713987.50"
+  },
+  "summary": "Here is a 3-sentence summary of the document:\n\nThis appears to be an employee's pay slip for May-21, detailing their earnings and deductions from salary. The employee, Radha Kishore T with ID 4587, has been paid Rs. 713987.50 after deducting various amounts such as EPF, ESI, Professional Tax, etc. The document also includes the employee's address, bank account details, and other relevant information.",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\55.jpg\nmin\ngeneral\nAddress of the Company\nPay Slip\nMay-21\nee Name\nRadah Kishore T\nTotal Working Days\n31\nee ID\n4587\nLOP Days\n0\nation\nSales Executive\nPaid Days\n22\nnent,\nMarketing\nBank Name\nSBI\nJoining\n03/04/20\nBank A/c No\n32145XXX123\n10090XXX456\nEarnings\nDeductions\nSalary\n7500.00\nEPF\n7900.00\nRent Allowances\n23750.00\nESI\n7112.50\neyance Allowances\n21600.00\nProfessional Tax\n20.00\ncal Allowances\n21250.00\ncial Allowances\n7900.00\ns Salary\n215000.00\nTotal Deductions\n1012.50\nNet Pay\n713987.50\nnplover Signature\nEmployee Signature",
+  "timestamp": "2025-10-08T21:57:25.752670"
+}

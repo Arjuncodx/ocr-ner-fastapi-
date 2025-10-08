@@ -1,0 +1,50 @@
+{
+  "job_id": "ocr_e5491959abba",
+  "timestamp": "2025-10-08T16:09:13.951032",
+  "processing_time_seconds": 6.62,
+  "ocr_results": {
+    "best_engine": "EasyOCR",
+    "confidence": 0.493,
+    "quality_score": 0.8,
+    "engines_used": [
+      "Tesseract",
+      "EasyOCR"
+    ],
+    "individual_engines": {
+      "PaddleOCR": {
+        "success": false,
+        "confidence": 0.0,
+        "processing_time": 0.0,
+        "lines_detected": 0,
+        "error": "'PaddleOCREngine' object has no attribute 'process_image'"
+      },
+      "Tesseract": {
+        "success": true,
+        "confidence": 0.61,
+        "processing_time": 0.73,
+        "lines_detected": 1,
+        "error": null
+      },
+      "EasyOCR": {
+        "success": true,
+        "confidence": 0.8,
+        "processing_time": 3.02,
+        "lines_detected": 7,
+        "error": null
+      }
+    }
+  },
+  "text_cleaning": {
+    "corrections_made": 0,
+    "confidence": 0.5
+  },
+  "extracted_data": {
+    "document_type": "Unknown",
+    "fields": {},
+    "confidence": 0.0,
+    "extraction_success": false
+  },
+  "entities": {},
+  "summary": "Summary generation failed",
+  "full_text": "Ic c DWR Sotc\nrelmnce\nP#+d\nEttea\nDe\n5\"\nLd"
+}

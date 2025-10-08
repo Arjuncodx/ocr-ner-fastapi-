@@ -1,0 +1,27 @@
+{
+  "job_id": "ca12d20a",
+  "status": "success",
+  "document_type": "Electricity Bill",
+  "ocr_confidence": 0.6578260455865038,
+  "quality_score": 0.6943603600713584,
+  "best_engine": "easyocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract"
+  ],
+  "processing_time": 101.25189208984375,
+  "extracted_data": {
+    "BILL DATE": "19-10-2016",
+    "TIME": "12:58:41",
+    "BILL NO.": "SB16JISMCG5270964",
+    "MONTH": "OCT-2016",
+    "BOOKING NUMBER": "233511918159",
+    "SCHEME NUI": "144034",
+    "DIVISION": "DIV. 23/351]",
+    "SUBJECT": "Division SP02335119",
+    "Document Type": "Electricity Bill"
+  },
+  "summary": "Unfortunately, the document appears to be truncated and does not provide a complete summary of its contents. However, based on what is provided, here is a possible 2-3 sentence summary:\n\nThis is an electricity bill dated October 2016 with billing number SB16JISMCG5270964. The bill details consumption for Division SP02335119 at Reading Point CD in the month of OCT-2016.",
+  "raw_ocr_text": "ELECTRICTTY\nRILL\nDATE: 19-10-2016\nTIME: 12815841\nBILLNO:SB16JISMCG5270964\nBILL\nMONTH:\nOCT-?016\nBOOK\nN0:233511918159\nSC\nNui144034\nDIU DIV23351]\nSUB: DIV:Sp02335119\nRP CD:",
+  "timestamp": "2025-10-08T17:17:00.797310"
+}

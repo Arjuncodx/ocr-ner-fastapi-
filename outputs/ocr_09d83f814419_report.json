@@ -1,0 +1,50 @@
+{
+  "job_id": "ocr_09d83f814419",
+  "timestamp": "2025-10-08T16:20:30.481076",
+  "processing_time_seconds": 3.21,
+  "ocr_results": {
+    "best_engine": "Tesseract",
+    "confidence": 0.38,
+    "quality_score": 0.6,
+    "engines_used": [
+      "Tesseract",
+      "EasyOCR"
+    ],
+    "individual_engines": {
+      "PaddleOCR": {
+        "success": false,
+        "confidence": 0.0,
+        "processing_time": 0.0,
+        "lines_detected": 0,
+        "error": "'PaddleOCREngine' object has no attribute 'process_image'"
+      },
+      "Tesseract": {
+        "success": true,
+        "confidence": 0.54,
+        "processing_time": 0.66,
+        "lines_detected": 1,
+        "error": null
+      },
+      "EasyOCR": {
+        "success": true,
+        "confidence": 0.545,
+        "processing_time": 1.46,
+        "lines_detected": 3,
+        "error": null
+      }
+    }
+  },
+  "text_cleaning": {
+    "corrections_made": 0,
+    "confidence": 0.5
+  },
+  "extracted_data": {
+    "document_type": "Unknown",
+    "fields": {},
+    "confidence": 0.0,
+    "extraction_success": false
+  },
+  "entities": {},
+  "summary": "Summary generation failed",
+  "full_text": "— antinited sf.\nHeley *\n, ste:\n\n: wll ona? & * ,\n. ARS A. Ver +\n"
+}

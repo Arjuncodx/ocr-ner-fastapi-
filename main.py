@@ -392,7 +392,7 @@ class AdvancedRegexExtractor:
                 r'\b\d{1,3}(?:,\d{3})*(?:\.\d{2})?\b'
             ],
             'emails': [r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'],
-            'phones': [r'\b\d{3}[-.\s]?\d{3}[-.\s]?\d{4}\b'],
+            'phones': [r'\b\d{3}[-.\ s]?\d{3}[-.\ s]?\d{4}\b'],
         }
     
     def identify_document_type(self, text: str) -> str:
@@ -420,6 +420,7 @@ class AdvancedRegexExtractor:
                     found.extend([m if isinstance(m, str) else ''.join(m) for m in matches])
             results[entity_type] = list(set(found))[:10]
         return results
+
 # ============================================================================
 # SMART OLLAMA AI PROCESSOR - PURE ENTITY EXTRACTION, NO FIXED COLUMNS
 # ============================================================================
@@ -539,7 +540,7 @@ DATE: 19-10-2016
 TIME: 12:15:41
 BILLNO: SB16J19MC65270964
 BILL MONTH: OCT-2016
-BOOK NO: 233511918159
+BOOK NO: 2.33511918159e+11
 SC NO: 114084
 
 Now extract ALL fields from the document above (use EXACT field names from document):"""
@@ -777,6 +778,8 @@ JSON format:
                 return {"extracted": ["See Excel report for details"]}
         except:
             return {}
+
+
 # ============================================================================
 # ULTIMATE HYBRID OCR ENGINE (UNCHANGED - CORE FUNCTIONALITY)
 # ============================================================================
@@ -989,6 +992,7 @@ class UltimateHybridOCREngine:
                 error=str(e)
             )
 
+
 # ============================================================================
 # PROFESSIONAL EXCEL REPORT GENERATOR (ENHANCED FOR DYNAMIC COLUMNS)
 # ============================================================================
@@ -997,7 +1001,6 @@ class ProfessionalExcelReportGenerator:
     
     def __init__(self):
         self.styles = self._init_styles()
-    
     def _init_styles(self):
         """Initialize Excel styles"""
         if not OPENPYXL_AVAILABLE:
@@ -1189,6 +1192,7 @@ class ProfessionalExcelReportGenerator:
         except:
             return False
 
+
 # ============================================================================
 # JSON REPORT GENERATOR (UNCHANGED)
 # ============================================================================
@@ -1220,12 +1224,15 @@ class JSONReportGenerator:
             return True
         except:
             return False
+
+
 # ============================================================================
 # GLOBAL INSTANCES
 # ============================================================================
 ocr_engine: Optional[UltimateHybridOCREngine] = None
 excel_generator: Optional[ProfessionalExcelReportGenerator] = None
 json_generator: Optional[JSONReportGenerator] = None
+
 
 # ============================================================================
 # STARTUP & SHUTDOWN
@@ -1267,6 +1274,7 @@ async def startup_event():
     logger.info("✅ ALL SYSTEMS READY - OCR ELITE v15.2 ONLINE")
     logger.info("="*80 + "\n")
 
+
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup on shutdown"""
@@ -1274,13 +1282,13 @@ async def shutdown_event():
     EXECUTOR.shutdown(wait=True)
     logger.info("✅ Shutdown complete\n")
 
-# ============================================================================
-# FASTAPI ROUTES - ALL OLD ROUTES PRESERVED
-# ============================================================================
 
+# ============================================================================
+# FASTAPI ROUTES - FIXED HTML RESPONSES
+# ============================================================================
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    """Home page - UNCHANGED"""
+    """Home page"""
     try:
         return templates.TemplateResponse("index.html", {"request": request})
     except Exception as e:
@@ -1298,9 +1306,10 @@ async def home(request: Request):
 </html>
         """)
 
+
 @app.get("/ocr", response_class=HTMLResponse)
 async def ocr_page(request: Request):
-    """OCR page - UNCHANGED"""
+    """OCR page"""
     try:
         return templates.TemplateResponse("ocr.html", {"request": request})
     except Exception as e:
@@ -1320,9 +1329,13 @@ async def ocr_page(request: Request):
 </html>
         """)
 
+
+# ============================================================================
+# 🔥 FIXED /ocr/upload ROUTE - RETURNS HTML WITH DOWNLOAD BUTTONS
+# ============================================================================
 @app.post("/ocr/upload")
 async def ocr_upload(request: Request, file: UploadFile = File(...)):
-    """OCR upload endpoint - UNCHANGED ROUTE, SMART EXTRACTION"""
+    """OCR upload endpoint - FIXED TO RETURN HTML"""
     try:
         # Validate file
         if not file.filename:
@@ -1344,7 +1357,7 @@ async def ocr_upload(request: Request, file: UploadFile = File(...)):
         
         logger.info(f"📥 Uploaded: {file.filename}")
         
-        # Process with smart dynamic extraction
+        # Process with OCR engine
         if not ocr_engine:
             raise HTTPException(status_code=500, detail="OCR engine not initialized")
         
@@ -1364,41 +1377,87 @@ async def ocr_upload(request: Request, file: UploadFile = File(...)):
                 json_generator.generate(result, json_path)
                 result.json_report = str(json_path)
             
-            # Try to render template
-            try:
-                return templates.TemplateResponse("ocr_result.html", {
-                    "request": request,
-                    "job_id": result.job_id,
-                    "ocr_text": result.ocr_text,
-                    "cleaned_text": result.cleaned_text,
-                    "summary": result.summary,
-                    "entities": result.entities,
-                    "confidence": result.ocr_confidence,
-                    "engines_used": result.ocr_engines,
-                    "best_engine": result.best_engine,
-                    "quality_score": result.quality_score,
-                    "processing_time": result.processing_time,
-                    "excel_report": result.excel_report,
-                    "json_report": result.json_report,
-                    "document_type": result.excel_structure.document_type if result.excel_structure else "Document",
-                    "excel_columns": result.excel_structure.columns if result.excel_structure else [],
-                    "extraction_method": result.excel_structure.extraction_method if result.excel_structure else "unknown"
-                })
-            except Exception as template_error:
-                logger.warning(f"Template error: {template_error}")
-                # Fallback to JSON response
-                return JSONResponse(content={
-                    "job_id": result.job_id,
-                    "status": result.status,
-                    "ocr_text": result.ocr_text[:1000],
-                    "confidence": result.ocr_confidence,
-                    "quality_score": result.quality_score,
-                    "best_engine": result.best_engine,
-                    "document_type": result.excel_structure.document_type if result.excel_structure else "Document",
-                    "extraction_method": result.excel_structure.extraction_method if result.excel_structure else "unknown",
-                    "download_excel": f"/download/{result.job_id}/excel",
-                    "download_json": f"/download/{result.job_id}/json"
-                })
+            # Generate entity HTML
+            entity_html = ""
+            if result.excel_structure and result.excel_structure.values:
+                for field, value in list(result.excel_structure.values.items())[:20]:
+                    entity_html += f'<div class="entity"><strong>{field}:</strong> {value}</div>\n'
+                if len(result.excel_structure.values) > 20:
+                    entity_html += f'<p style="color: #666;">... and {len(result.excel_structure.values) - 20} more fields</p>'
+            else:
+                entity_html = "<p>No entities extracted</p>"
+            
+            # ✅ RETURN HTML RESPONSE WITH DOWNLOAD BUTTONS
+            return HTMLResponse(f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Results - {result.job_id}</title>
+    <style>
+        body {{ font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }}
+        .container {{ max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }}
+        h1 {{ color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; }}
+        h2 {{ color: #333; margin-top: 30px; }}
+        .success {{ background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 5px solid #28a745; }}
+        .info-grid {{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }}
+        .info-item {{ background: #f8f9fa; padding: 15px; border-radius: 5px; }}
+        .info-item strong {{ color: #667eea; display: block; margin-bottom: 5px; }}
+        .button {{ display: inline-block; padding: 12px 25px; background: #667eea; color: white; text-decoration: none; border-radius: 5px; margin: 10px 5px; transition: background 0.3s; }}
+        .button:hover {{ background: #5568d3; }}
+        .button-success {{ background: #28a745; }}
+        .button-success:hover {{ background: #218838; }}
+        .text-box {{ background: #f8f9fa; padding: 20px; border-radius: 5px; border-left: 5px solid #667eea; max-height: 300px; overflow-y: auto; font-family: monospace; white-space: pre-wrap; margin: 20px 0; }}
+        .entity {{ background: #fff3cd; padding: 10px 15px; margin: 5px 0; border-left: 4px solid #ffc107; border-radius: 3px; }}
+        .entity strong {{ color: #856404; }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ OCR Processing Complete!</h1>
+        
+        <div class="success">
+            <strong>✓ Processing Successful</strong><br>
+            Job ID: <strong>{result.job_id}</strong>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>📊 OCR Confidence</strong>
+                {result.ocr_confidence:.2%}
+            </div>
+            <div class="info-item">
+                <strong>⭐ Quality Score</strong>
+                {result.quality_score:.2%}
+            </div>
+            <div class="info-item">
+                <strong>🔧 Best Engine</strong>
+                {result.best_engine.upper()}
+            </div>
+            <div class="info-item">
+                <strong>⏱️ Processing Time</strong>
+                {result.processing_time:.2f} seconds
+            </div>
+        </div>
+        
+        <h2>📥 Download Reports</h2>
+        <div style="margin: 20px 0;">
+            <a href="/download/{result.job_id}/excel" class="button button-success">📊 Download Excel Report</a>
+            <a href="/download/{result.job_id}/json" class="button button-success">📄 Download JSON Report</a>
+            <a href="/ocr" class="button">🔄 Process Another Document</a>
+            <a href="/" class="button">🏠 Back to Home</a>
+        </div>
+        
+        <h2>📋 Extracted Data ({len(result.excel_structure.columns) if result.excel_structure else 0} fields)</h2>
+        <div style="margin: 20px 0;">
+            {entity_html}
+        </div>
+        
+        <h2>📄 Raw OCR Text</h2>
+        <div class="text-box">{result.ocr_text[:2000]}{'...' if len(result.ocr_text) > 2000 else ''}</div>
+    </div>
+</body>
+</html>
+            """)
         else:
             raise HTTPException(status_code=500, detail=result.error or "Processing failed")
     
@@ -1409,9 +1468,10 @@ async def ocr_upload(request: Request, file: UploadFile = File(...)):
         logger.error(traceback.format_exc())
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/ner", response_class=HTMLResponse)
 async def ner_page(request: Request):
-    """NER page - UNCHANGED"""
+    """NER page"""
     try:
         return templates.TemplateResponse("ner.html", {"request": request})
     except Exception as e:
@@ -1431,16 +1491,15 @@ async def ner_page(request: Request):
 </html>
         """)
 
+
 @app.post("/ner/upload")
 async def ner_upload(request: Request, file: UploadFile = File(...)):
-    """NER upload endpoint - UNCHANGED"""
+    """NER upload endpoint"""
     try:
-        # Save file
         filepath = UPLOAD_DIR / file.filename
         with open(filepath, 'wb') as f:
             f.write(await file.read())
         
-        # Process
         if not ocr_engine:
             raise HTTPException(status_code=500, detail="OCR engine not initialized")
         
@@ -1471,17 +1530,19 @@ async def ner_upload(request: Request, file: UploadFile = File(...)):
         logger.error(f"NER upload error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/success", response_class=HTMLResponse)
 async def success_page(request: Request):
-    """Success page - UNCHANGED"""
+    """Success page"""
     try:
         return templates.TemplateResponse("success.html", {"request": request})
     except:
         return HTMLResponse("<h1>✅ Success</h1><p><a href='/'>Back to Home</a></p>")
 
+
 @app.post("/upload")
 async def upload(request: Request, file: UploadFile = File(...)):
-    """Main upload endpoint - UNCHANGED"""
+    """Main upload endpoint"""
     try:
         if not file.filename:
             raise HTTPException(400, "No file provided")
@@ -1514,9 +1575,10 @@ async def upload(request: Request, file: UploadFile = File(...)):
         logger.error(f"Upload error: {e}")
         raise HTTPException(500, str(e))
 
+
 @app.post("/api/process")
 async def api_process(file: UploadFile = File(...), use_voting: bool = True):
-    """API processing endpoint - UNCHANGED"""
+    """API processing endpoint"""
     try:
         filepath = UPLOAD_DIR / file.filename
         with open(filepath, 'wb') as f:
@@ -1532,9 +1594,10 @@ async def api_process(file: UploadFile = File(...), use_voting: bool = True):
         logger.error(f"API process error: {e}")
         raise HTTPException(500, str(e))
 
+
 @app.post("/api/batch-process")
 async def batch_process(files: List[UploadFile] = File(...), use_voting: bool = True):
-    """Batch processing endpoint - UNCHANGED"""
+    """Batch processing endpoint"""
     try:
         results = []
         for file in files:
@@ -1568,13 +1631,13 @@ async def batch_process(files: List[UploadFile] = File(...), use_voting: bool = 
         logger.error(f"Batch process error: {e}")
         raise HTTPException(500, str(e))
 
-# ============================================================================
-# DOWNLOAD ROUTES - OLD FORMAT (CRITICAL - FIXES YOUR 404!)
-# ============================================================================
 
+# ============================================================================
+# DOWNLOAD ROUTES - CRITICAL FOR YOUR DOWNLOAD BUTTONS
+# ============================================================================
 @app.get("/download/{jobid}/{filetype}")
 async def download_report_old(jobid: str, filetype: str):
-    """Download reports - OLD ROUTE FORMAT (UNCHANGED) - THIS FIXES YOUR 404!"""
+    """Download reports - THIS MAKES YOUR DOWNLOAD BUTTONS WORK!"""
     try:
         if filetype not in ['excel', 'json']:
             raise HTTPException(status_code=400, detail="Invalid file type")
@@ -1604,10 +1667,10 @@ async def download_report_old(jobid: str, filetype: str):
         logger.error(traceback.format_exc())
         raise HTTPException(status_code=500, detail=str(e))
 
+
 # ============================================================================
 # NEW API V1 ROUTES
 # ============================================================================
-
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
@@ -1625,16 +1688,16 @@ async def health_check():
         "timestamp": datetime.datetime.now().isoformat()
     }
 
+
 @app.post("/api/v1/process")
 async def process_document(
     file: UploadFile = File(...),
     background_tasks: BackgroundTasks = None
 ):
-    """Process uploaded document with smart dynamic extraction (NEW ENHANCED ENDPOINT)"""
+    """Process uploaded document with smart dynamic extraction"""
     upload_start = time.time()
     
     try:
-        # Validate file
         if not file.filename:
             raise HTTPException(status_code=400, detail="No filename provided")
         
@@ -1645,7 +1708,6 @@ async def process_document(
                 detail=f"Unsupported format. Supported: {', '.join(SUPPORTED_FORMATS)}"
             )
         
-        # Read file
         contents = await file.read()
         if len(contents) > MAX_FILE_SIZE:
             raise HTTPException(
@@ -1653,7 +1715,6 @@ async def process_document(
                 detail=f"File too large. Max size: {MAX_FILE_SIZE / 1024 / 1024:.1f}MB"
             )
         
-        # Save uploaded file
         job_id = str(uuid.uuid4())[:8]
         upload_path = UPLOAD_DIR / f"{job_id}_{file.filename}"
         
@@ -1662,15 +1723,12 @@ async def process_document(
         
         logger.info(f"\n📥 File uploaded: {file.filename} ({len(contents)} bytes)")
         
-        # Process with OCR engine
         if not ocr_engine:
             raise HTTPException(status_code=500, detail="OCR engine not initialized")
         
         result = await ocr_engine.process_image(upload_path)
         
-        # Generate reports
         if result.status == "success":
-            # Excel report
             excel_filename = f"{job_id}_report.xlsx"
             excel_path = OUTPUT_DIR / excel_filename
             
@@ -1679,7 +1737,6 @@ async def process_document(
                 if excel_success:
                     result.excel_report = str(excel_path)
             
-            # JSON report
             json_filename = f"{job_id}_report.json"
             json_path = OUTPUT_DIR / json_filename
             
@@ -1688,7 +1745,6 @@ async def process_document(
                 if json_success:
                     result.json_report = str(json_path)
         
-        # Build response
         response_data = {
             "job_id": result.job_id,
             "status": result.status,
@@ -1715,7 +1771,6 @@ async def process_document(
             "error": result.error
         }
         
-        # Add Excel structure details
         if result.excel_structure:
             response_data["excel"] = {
                 "document_type": result.excel_structure.document_type,
@@ -1728,7 +1783,6 @@ async def process_document(
                 "extraction_success": result.excel_structure.extraction_success
             }
         
-        # Schedule cleanup
         if background_tasks:
             background_tasks.add_task(cleanup_old_files, upload_path)
         
@@ -1741,6 +1795,7 @@ async def process_document(
         logger.error(traceback.format_exc())
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/api/v1/download/{filename}")
 async def download_report(filename: str):
     """Download generated report"""
@@ -1750,7 +1805,6 @@ async def download_report(filename: str):
         if not file_path.exists():
             raise HTTPException(status_code=404, detail="File not found")
         
-        # Determine media type
         if filename.endswith('.xlsx'):
             media_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         elif filename.endswith('.json'):
@@ -1772,6 +1826,7 @@ async def download_report(filename: str):
         logger.error(f"❌ Download error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/api/v1/reports")
 async def list_reports():
     """List all available reports"""
@@ -1789,7 +1844,6 @@ async def list_reports():
                     "type": file_path.suffix[1:]
                 })
         
-        # Sort by creation time (newest first)
         reports.sort(key=lambda x: x["created"], reverse=True)
         
         return {"reports": reports, "total": len(reports)}
@@ -1797,6 +1851,7 @@ async def list_reports():
     except Exception as e:
         logger.error(f"❌ List reports error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.delete("/api/v1/reports/{filename}")
 async def delete_report(filename: str):
@@ -1817,6 +1872,7 @@ async def delete_report(filename: str):
     except Exception as e:
         logger.error(f"❌ Delete error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.post("/api/v1/batch")
 async def batch_process_v1(
@@ -1860,6 +1916,7 @@ async def batch_process_v1(
         logger.error(f"❌ Batch processing error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+
 # ============================================================================
 # UTILITY FUNCTIONS
 # ============================================================================
@@ -1873,6 +1930,7 @@ def cleanup_old_files(file_path: Path, max_age_hours: int = 24):
                 logger.info(f"🗑️  Cleaned up old file: {file_path.name}")
     except:
         pass
+
 
 async def cleanup_old_reports():
     """Clean up old reports"""
@@ -1896,13 +1954,13 @@ async def cleanup_old_reports():
     except:
         pass
 
+
 # ============================================================================
-# HTML TEMPLATE CREATION (AUTO-GENERATE IF NOT EXISTS)
+# HTML TEMPLATE CREATION
 # ============================================================================
 def create_default_templates():
     """Create default HTML templates if they don't exist"""
     
-    # index.html
     index_path = TEMPLATES_DIR / "index.html"
     if not index_path.exists():
         with open(index_path, 'w', encoding='utf-8') as f:
@@ -1936,7 +1994,6 @@ def create_default_templates():
 </body>
 </html>""")
     
-    # ocr.html
     ocr_path = TEMPLATES_DIR / "ocr.html"
     if not ocr_path.exists():
         with open(ocr_path, 'w', encoding='utf-8') as f:
@@ -1968,7 +2025,6 @@ def create_default_templates():
 </body>
 </html>""")
     
-    # ner.html
     ner_path = TEMPLATES_DIR / "ner.html"
     if not ner_path.exists():
         with open(ner_path, 'w', encoding='utf-8') as f:
@@ -2002,14 +2058,13 @@ def create_default_templates():
     
     logger.info("✅ Default templates created")
 
+
 # ============================================================================
 # MAIN EXECUTION
 # ============================================================================
 if __name__ == "__main__":
-    # Create default templates
     create_default_templates()
     
-    # Run server
     logger.info("\n" + "="*80)
     logger.info("🚀 STARTING OCR ELITE v15.2 SMART ENTITY EXTRACTION SERVER")
     logger.info("="*80)

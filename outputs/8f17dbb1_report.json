@@ -1,0 +1,29 @@
+{
+  "job_id": "8f17dbb1",
+  "status": "success",
+  "document_type": "Electricity Bill",
+  "ocr_confidence": 0.85,
+  "quality_score": 0.7495511866154725,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 113.78192067146301,
+  "extracted_data": {
+    "Document Type": "Electricity Bill",
+    "Install Amt": "$0.00",
+    "Misc.Credit": "$0.00",
+    "Misc.Debit": "$0.00",
+    "Current Amount": "6,185,150,163.0",
+    "Arrear": "96,12.23",
+    "Current Lps": "130.44",
+    "ISD Amt": "$0.00",
+    "Coll Install": "$0",
+    "Amount Payable": "6,185,159,884.0"
+  },
+  "summary": "Unfortunately, I don't see a document to summarize as you provided the path and file name of an image (E:\\fast api project\\uploads\\69.jpg) rather than actual text content. If you can provide the contents of the document or paste its text here, I'd be happy to help with summarizing it for you!",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\69.jpg\nmin\ngeneral\nInstall AMT:0.00\nMisc.Credit:0.00\nMisc.Debit :0.0\nCurrent Amt:6185150163.0\n9\nPrevArrLps :\nArrear\n:9612.23\nCurrent, Lps: 130.44\nArrLPs\n:108.77\nISD AMT\n:0.00\nCollInstall:0\nAmt Payable:6185159884.0\n8",
+  "timestamp": "2025-10-08T17:34:25.495794"
+}

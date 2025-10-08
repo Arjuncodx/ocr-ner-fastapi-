@@ -1,0 +1,59 @@
+{
+  "job_id": "ocr_7590d697b8b5",
+  "timestamp": "2025-10-08T16:48:09.406652",
+  "processing_time_seconds": 35.66,
+  "ocr_results": {
+    "best_engine": "Tesseract",
+    "confidence": 0.38,
+    "quality_score": 0.6,
+    "engines_used": [
+      "Tesseract",
+      "EasyOCR"
+    ],
+    "individual_engines": {
+      "PaddleOCR": {
+        "success": false,
+        "confidence": 0.0,
+        "processing_time": 0.0,
+        "lines_detected": 0,
+        "error": "'PaddleOCREngine' object has no attribute 'process_image'"
+      },
+      "Tesseract": {
+        "success": true,
+        "confidence": 0.54,
+        "processing_time": 0.84,
+        "lines_detected": 1,
+        "error": null
+      },
+      "EasyOCR": {
+        "success": true,
+        "confidence": 0.545,
+        "processing_time": 1.63,
+        "lines_detected": 3,
+        "error": null
+      }
+    }
+  },
+  "text_cleaning": {
+    "corrections_made": 49,
+    "confidence": 0.7
+  },
+  "extracted_data": {
+    "document_type": "receipt",
+    "fields": {
+      "name (Haley)": "Haley",
+      "state": "",
+      "date (?)": ""
+    },
+    "confidence": 1.0,
+    "extraction_success": true
+  },
+  "entities": {
+    "names": [
+      "Haley",
+      "ARS A. Vere"
+    ]
+  },
+  "summary": "Unfortunately, the provided snippet does not contain enough information to provide a summary of more than just its content:\n\n\"Antiquated SF\"\n\nIt appears to be an incomplete or cryptic document with no clear context or meaning.",
+  "full_text": "antiquated sf.\n\nHaley \n, state:\n\n\nwill on a? & , \nARS A. Vere"
+}

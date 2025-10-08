@@ -1,0 +1,40 @@
+{
+  "job_id": "85f65b9e",
+  "status": "success",
+  "document_type": "Pay Slip",
+  "ocr_confidence": 0.5431834852936164,
+  "quality_score": 0.4708286224098618,
+  "best_engine": "easyocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract"
+  ],
+  "processing_time": 172.4890172481537,
+  "extracted_data": {
+    "BILL NO": "Not present in this document, but there is a \"BILLNO\" equivalent which I will use as-is.",
+    "DATE": "02/01/2018",
+    "BOOK NO": "Not explicitly mentioned; however, it's possible that some other field might be related to book numbers (e.g., \"vertical:\" or \"Region:\", etc.), but none of them are labeled exactly like this in the document.",
+    "BILLNO": "Not present explicitly; however, it's mentioned that there is a field named \"BILL NO\" which isn't used here.",
+    "DOL (Date of Last)": "02/01/2018",
+    "Empl Code": "Rgi36919",
+    "PALID": "DVXPMI0523",
+    "vertical": "RCAP",
+    "Region": "Delhi",
+    "State": "Location DH",
+    "Designation; Entry Credt Fatol PF Action": ": #HVASHV",
+    "UATNo": "101250482539",
+    "Days Worked": "0.00",
+    "Earnings Rate (PA) Current Adj Total Deductons Amount Month Basic Salary": "14098,00",
+    "Provident Fundo FRA": "1692 (",
+    "ESIC": "260,",
+    "Periodical , Magazine @ Densities": "0.00",
+    "Professional Tax Skill Development Allowance": "0,00",
+    "TDS Deduction": "OL00 CO LWF Statutory Jonus: 2350,00",
+    "Total Earnings": "14803.00",
+    "Netpay": "15200 .",
+    "Document Type": "Pay Slip"
+  },
+  "summary": "Here is a 3-sentence summary of the document:\n\nThis appears to be an employee payslip for Bhavesh Mshra, with details such as employment code, date of last attendance (02/01/2018), and various deductions. The payslip shows earnings and deductions for June 2019, including basic salary, provident fund, ESIC, professional tax, TDS, LWF, and statutory dues. The net pay is shown to be Rs. 15,200.",
+  "raw_ocr_text": "83322019\nSensys HRMThtead Report Viewet\nSelect Report Format;\nRepoit Viewer\nOpen\n171\n10096\nReliance HR Services\nRellance\nPayslip for the month of June 2019\nDemanzlInmnatom\nKame;\nBhavesh Mshra\nDOL\n02/01/2018\nEme Code:\nRgi36919\nPALID :\nDVXPMI0523\nvertcal:\nRCAP\nBusness\nRelanc\nGeneral Insurance\nPraduct\nSmart Office\none\nVotth\nRegion:\nDalhi\nSrate:\nLocaticni\nDH\nDesignadon;\nEntry Cpel\nFatol\nPF Actio::\n#HVASHV\n18056/ 222456\nEsiCIR ;\n2017014883\nUATNo :\n101250482539\nDays Wothed:\nJ0.00\nFlTeans\nDavs:\nOom\nEamnings\nRate (PA)\nCurtent\nAdj\nTotal\nDeductons\nAmou\nMont\nBasc\nSalary\n14098,00\n14058_\n14098 00\nProvident Funo\n1692 (\nFRA\n705,00\n705 00\nESIC\n260,(\nPeriodical ,\nMagazine @ Denses\n0 00\nPretessicn Tax\nskill Development Allovance\n0,00\n0 00\nTDS\nDersona\n0L00\n0 CO\nLWF\nStatuton\nJonus\n2350,00\n2350 00\nTotl Eatnings\n14803.00\n17153.00\n0.d o\n17153.00\nTotal Deduc tons\nJ0s2\nNatpay\n15200 .\nthrs thrs attendance comtview Ptint aspx?RepName=RLP*-%-cPayS[pEmployee_GeneraLipeRepKer 4074108138008758127033727eQuery __",
+  "timestamp": "2025-10-08T22:03:38.071144"
+}

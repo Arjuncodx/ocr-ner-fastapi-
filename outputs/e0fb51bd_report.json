@@ -1,0 +1,41 @@
+{
+  "job_id": "e0fb51bd",
+  "status": "success",
+  "document_type": "Pay Slip",
+  "ocr_confidence": 0.85,
+  "quality_score": 0.7873681409730657,
+  "best_engine": "paddleocr",
+  "engines_used": [
+    "easyocr",
+    "tesseract",
+    "paddleocr"
+  ],
+  "processing_time": 204.20600771903992,
+  "extracted_data": {
+    "Document Type": "Pay Slip",
+    "E": "\\fast api project\\uploads\\55.jpg:",
+    "Date": "May-21",
+    "ee Name (Employee Name)": "Radah Kishore T",
+    "Total Working Days": "31",
+    "ee ID (Employee ID)": "4587",
+    "LOP Days": "0",
+    "ation (Designation)": "Sales Executive",
+    "Paid Days": "22",
+    "Bank Name": "SBI",
+    "Joining Date": "03/04/20",
+    "Salary": "$7500.00",
+    "EPF": "$7900.00",
+    "Rent Allowances": "$23750.00",
+    "ESI": "$7112.50",
+    "eyance Allowances (Allowance)": "$21600.00",
+    "Professional Tax": "$20.00",
+    "cal Allowances (Allowance)": "$21250.00",
+    "cial Allowances (Allowance)": "$7900.00",
+    "s Salary (Gross Salary)": "$215000.00",
+    "Total Deductions": "$1012.50",
+    "Net Pay": "$713987.50"
+  },
+  "summary": "Here is a 3-sentence summary of the document:\n\nThis appears to be a pay slip for an employee named Radah Kishore T with ID number 4587, who works as a Sales Executive in the Marketing department. The pay slip details their earnings and deductions from May-21, including salary, EPF, ESI, professional tax, and other allowances. Their net pay is listed as Rs. 713987.50 for 31 working days with no leave on public holidays (LOP) taken.",
+  "raw_ocr_text": "E:\\fast api project\\uploads\\55.jpg\nmin\ngeneral\nAddress of the Company\nPay Slip\nMay-21\nee Name\nRadah Kishore T\nTotal Working Days\n31\nee ID\n4587\nLOP Days\n0\nation\nSales Executive\nPaid Days\n22\nnent,\nMarketing\nBank Name\nSBI\nJoining\n03/04/20\nBank A/c No\n32145XXX123\n10090XXX456\nEarnings\nDeductions\nSalary\n7500.00\nEPF\n7900.00\nRent Allowances\n23750.00\nESI\n7112.50\neyance Allowances\n21600.00\nProfessional Tax\n20.00\ncal Allowances\n21250.00\ncial Allowances\n7900.00\ns Salary\n215000.00\nTotal Deductions\n1012.50\nNet Pay\n713987.50\nnplover Signature\nEmployee Signature",
+  "timestamp": "2025-10-08T20:48:27.683675"
+}
